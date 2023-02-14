@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -53,6 +55,44 @@ class ExampleDragAndDrop extends StatefulWidget {
   State<ExampleDragAndDrop> createState() => _ExampleDragAndDropState();
 }
 
+class DialogBox extends StatelessWidget {
+  const DialogBox({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
+    return AlertDialog(
+      backgroundColor: Colors.amber,
+      content: const SizedBox(
+        height: 130,
+        child: Text('oops'),
+        // Text('oops')
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //   children: const [
+        //     Text('Something went wrong!'),
+
+        //   ],
+        // ),
+      ),
+    );
+  }
+}
+
+// void createNewTask() {
+//   showDialog(
+//     context: context,
+//     builder: (context) {
+//       return DialogBox();
+//       // input och dess värde som hittas
+//       // funktionen save kallas på
+//       // navigeras bort ifrån modalen.
+//       // sparas texten i controllern vid onCancel, då den inte clearas här?
+//       // onCancel: () => Navigator.of(context).pop());
+//     },
+//   );
+// }
+
 class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     with TickerProviderStateMixin {
   final List<Customer> _people = [
@@ -83,6 +123,52 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       } else if (!item.healthy && !customer.healthy) {
         customer.items.add(item);
         _items.removeWhere((produce) => produce.uid == item.uid);
+      } else if (!item.healthy && customer.healthy) {
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => Dialog(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text('u sure about that?'),
+                  const SizedBox(height: 15),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Close'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      } else if (item.healthy && !customer.healthy) {
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => Dialog(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text('u sure about that?'),
+                  const SizedBox(height: 15),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Close'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
       }
     });
   }
@@ -235,7 +321,9 @@ class CustomerCart extends StatelessWidget {
       child: Material(
         elevation: highlighted ? 8.0 : 4.0,
         borderRadius: BorderRadius.circular(22.0),
-        color: highlighted ? Color.fromARGB(255, 88, 162, 136) : Colors.white,
+        color: highlighted
+            ? const Color.fromARGB(255, 88, 162, 136)
+            : Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 12.0,
