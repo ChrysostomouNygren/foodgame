@@ -20,12 +20,6 @@ class Home extends StatelessWidget {
           Center(
             child: Column(
               children: [
-                SizedBox(
-                  width: 180,
-                  height: 180,
-                  child: Image.network(
-                      'https://cdn-icons-png.flaticon.com/512/1182/1182756.png'),
-                ),
                 TextButton(
                   onPressed: () {
                     Navigator.push(context,
@@ -33,12 +27,25 @@ class Home extends StatelessWidget {
                       return const ExampleDragAndDrop();
                     }));
                   },
-                  child: const Text(
-                    'Play',
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        width: 180,
+                        height: 180,
+                        child: Image.network(
+                            'https://cdn-icons-png.flaticon.com/512/1182/1182756.png'),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text(
+                        'Play',
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ),
+                    ],
                   ),
                 ),
               ],
