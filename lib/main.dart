@@ -1,6 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 void main() {
   runApp(
@@ -10,6 +9,41 @@ void main() {
     ),
   );
 }
+
+const List<Item> _itemsConst = [
+  // ignore: prefer_const_constructors
+  Item(
+    name: 'Banana',
+    healthy: true,
+    uid: 1,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/2909/2909761.png'),
+  ),
+  // ignore: prefer_const_constructors
+  Item(
+    name: 'Crisps',
+    healthy: false,
+    uid: 2,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/3050/3050268.png'),
+  ),
+  // ignore: prefer_const_constructors
+  Item(
+    name: 'Pizza',
+    healthy: false,
+    uid: 3,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/3595/3595458.png'),
+  ),
+  // ignore: prefer_const_constructors
+  // Item(
+  //   name: 'Carrot',
+  //   healthy: true,
+  //   uid: 4,
+  //   const imageProvider:
+  //       NetworkImage('https://cdn-icons-png.flaticon.com/512/883/883760.png'),
+  // ),
+];
 
 // Can't be const due to changes in the list
 List<Item> _items = [
@@ -47,6 +81,43 @@ List<Item> _items = [
   // ),
 ];
 
+class StarClipper extends CustomClipper<Path> {
+  StarClipper(this.numberOfPoints);
+
+  /// The number of points of the star
+  final int numberOfPoints;
+
+  @override
+  Path getClip(Size size) {
+    double width = size.width;
+    double halfWidth = width / 2;
+    double bigRadius = halfWidth;
+    double radius = halfWidth / 1.3;
+    double degreesPerStep = _degToRad(360 / numberOfPoints);
+    double halfDegreesPerStep = degreesPerStep / 2;
+    var path = Path();
+    double max = 2 * math.pi;
+    path.moveTo(width, halfWidth);
+
+    for (double step = 0; step < max; step += degreesPerStep) {
+      path.lineTo(halfWidth + bigRadius * math.cos(step),
+          halfWidth + bigRadius * math.sin(step));
+      path.lineTo(halfWidth + radius * math.cos(step + halfDegreesPerStep),
+          halfWidth + radius * math.sin(step + halfDegreesPerStep));
+    }
+    path.close();
+    return path;
+  }
+
+  double _degToRad(num deg) => deg * (math.pi / 180.0);
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    StarClipper oldie = oldClipper as StarClipper;
+    return numberOfPoints != oldie.numberOfPoints;
+  }
+}
+
 @immutable
 class ExampleDragAndDrop extends StatefulWidget {
   const ExampleDragAndDrop({super.key});
@@ -54,44 +125,6 @@ class ExampleDragAndDrop extends StatefulWidget {
   @override
   State<ExampleDragAndDrop> createState() => _ExampleDragAndDropState();
 }
-
-class DialogBox extends StatelessWidget {
-  const DialogBox({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
-    return AlertDialog(
-      backgroundColor: Colors.amber,
-      content: const SizedBox(
-        height: 130,
-        child: Text('oops'),
-        // Text('oops')
-        // child: Column(
-        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //   children: const [
-        //     Text('Something went wrong!'),
-
-        //   ],
-        // ),
-      ),
-    );
-  }
-}
-
-// void createNewTask() {
-//   showDialog(
-//     context: context,
-//     builder: (context) {
-//       return DialogBox();
-//       // input och dess värde som hittas
-//       // funktionen save kallas på
-//       // navigeras bort ifrån modalen.
-//       // sparas texten i controllern vid onCancel, då den inte clearas här?
-//       // onCancel: () => Navigator.of(context).pop());
-//     },
-//   );
-// }
 
 class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     with TickerProviderStateMixin {
@@ -120,57 +153,212 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       if (item.healthy && customer.healthy) {
         customer.items.add(item);
         _items.removeWhere((produce) => produce.uid == item.uid);
+        if (_items.isEmpty) {
+          succesfullDialogModal();
+        }
       } else if (!item.healthy && !customer.healthy) {
         customer.items.add(item);
         _items.removeWhere((produce) => produce.uid == item.uid);
+        if (_items.isEmpty) {
+          succesfullDialogModal();
+        }
       } else if (!item.healthy && customer.healthy) {
-        showDialog<String>(
-          context: context,
-          builder: (BuildContext context) => Dialog(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  const Text('u sure about that?'),
-                  const SizedBox(height: 15),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text('Close'),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
+        failedDialogModal();
       } else if (item.healthy && !customer.healthy) {
-        showDialog<String>(
-          context: context,
-          builder: (BuildContext context) => Dialog(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  const Text('u sure about that?'),
-                  const SizedBox(height: 15),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text('Close'),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
+        failedDialogModal();
       }
     });
+  }
+
+// dialog box when food goes into the wrong bin
+  Future<String?> failedDialogModal() {
+    return showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => Dialog(
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  const SizedBox(
+                    height: 150,
+                    width: 200,
+                    // child: ClipPath(
+                    //   clipper: StarClipper(14),
+                    //   child: Container(
+                    //     height: 150,
+                    //     color: const Color.fromARGB(255, 255, 255, 255),
+                    //   ),
+                    // ),
+                  ),
+                  Image.network(
+                    'https://cdn-icons-png.flaticon.com/512/4303/4303935.png',
+                    height: 120,
+                    fit: BoxFit.fill,
+                  )
+                ],
+              ),
+              const SizedBox(height: 15),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  "This food isn't going here",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    textStyle: const TextStyle(
+                      fontSize: 15,
+                    )),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Column(
+                  children: [
+                    Image.network(
+                      'https://cdn-icons-png.flaticon.com/512/2550/2550386.png',
+                      height: 50,
+                      fit: BoxFit.fill,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text('Try again'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+// succesfull dialog modal
+  Future<String?> succesfullDialogModal() {
+    return showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => Dialog(
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Stack(alignment: Alignment.center, children: [
+                SizedBox(
+                  height: 200,
+                  width: 200,
+                  child: ClipPath(
+                    clipper: StarClipper(14),
+                    child: Container(
+                      height: 150,
+                      color: const Color.fromARGB(255, 0, 255, 0),
+                    ),
+                  ),
+                ),
+                Image.network(
+                  'https://cdn-icons-png.flaticon.com/512/1705/1705348.png',
+                  height: 140,
+                  fit: BoxFit.fill,
+                ),
+              ]),
+              const SizedBox(height: 15),
+              const Text(
+                'Congratulations!',
+                style: TextStyle(fontSize: 30),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  'Would you like to try again, or view your recipies?',
+                  style: TextStyle(fontSize: 18),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              // Buttons instead?
+              // Play again & Recipes
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    style: TextButton.styleFrom(
+                        foregroundColor: Colors.black,
+                        textStyle: const TextStyle(
+                          fontSize: 15,
+                        )),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      setState(() {
+                        _items.addAll(_itemsConst);
+                        for (var pers in _people) {
+                          pers.items.clear();
+                        }
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Image.network(
+                          'https://cdn-icons-png.flaticon.com/512/2550/2550386.png',
+                          height: 50,
+                          fit: BoxFit.fill,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Text('Play again'),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                        foregroundColor: Colors.black,
+                        textStyle: const TextStyle(
+                          fontSize: 15,
+                        )),
+                    onPressed: () {
+                      // Navigate to recipe page
+                      // Navigator.pop(context);
+                    },
+                    child: Column(
+                      children: [
+                        Image.network(
+                          'https://cdn-icons-png.flaticon.com/512/2729/2729077.png',
+                          height: 50,
+                          fit: BoxFit.fill,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Text('Recipes'),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   @override
@@ -481,5 +669,5 @@ class Customer {
   final String name;
   final ImageProvider imageProvider;
   final bool healthy;
-  final List<Item> items;
+  List<Item> items;
 }
