@@ -1,3 +1,4 @@
+import 'package:drag_drop/componants/back_btn.dart';
 import 'package:flutter/material.dart';
 
 class Recipe extends StatelessWidget {
@@ -7,8 +8,23 @@ class Recipe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Recipe :)')),
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(40.0),
+            child: BackBtn(),
+          ),
+          Center(
+            child: SizedBox(
+              height: 200,
+              child: Column(children: const [Text('data'), Text('data')]),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

@@ -10,20 +10,31 @@ class Recipes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            const BackBtn(),
-            TextButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const Recipe();
-                }));
-              },
-              child: const Text('Recipe componant'),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(40.0),
+            child: BackBtn(),
+          ),
+          Center(
+            child: SizedBox(
+              height: 200,
+              child: Column(children: [
+                const Text('data'),
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const Recipe();
+                      }));
+                    },
+                    child: const Text('recipe componant'))
+              ]),
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
