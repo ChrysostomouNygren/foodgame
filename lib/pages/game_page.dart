@@ -324,6 +324,12 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
                           MaterialPageRoute(builder: (context) {
                         return const Recipes();
                       }));
+                      setState(() {
+                        _items.addAll(_itemsConst);
+                        for (var pers in _people) {
+                          pers.items.clear();
+                        }
+                      });
                     },
                     child: Column(
                       children: [
