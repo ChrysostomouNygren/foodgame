@@ -1,3 +1,4 @@
+import 'package:drag_drop/pages/recipe_page.dart';
 import 'package:flutter/material.dart';
 
 class Recipes extends StatelessWidget {
@@ -7,17 +8,16 @@ class Recipes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('Recipes comes here'),
-        // TextButton(
-        //   onPressed: () {
-        //     Navigator.push(context, MaterialPageRoute(builder: (context) {
-        //       return const ExampleDragAndDrop();
-        //     }));
-        //   },
-        //   child: const Text('Play'),
-        // ),
+        child: TextButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const Recipe();
+            }));
+          },
+          child: const Text('Recipe componant'),
+        ),
       ),
     );
   }
