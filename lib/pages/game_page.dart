@@ -276,8 +276,6 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
                   textAlign: TextAlign.center,
                 ),
               ),
-              // Buttons instead?
-              // Play again & Recipes
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
