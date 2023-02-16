@@ -2,26 +2,25 @@ import 'package:flutter/material.dart';
 
 const List<Recipe> _recipes = [
   Recipe(
-    name: 'Spinach Pizza',
-    totalPriceCents: 1299,
-    uid: '1',
-    imageProvider: NetworkImage('https://flutter'
-        '.dev/docs/cookbook/img-files/effects/split-check/Food1.jpg'),
+    name: 'Oatmeal',
+    description: 'Simple breakfast, made quick and easy.',
+    uid: 1,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/5609/5609775.png'),
   ),
   Recipe(
-    name: 'Veggie Delight',
-    totalPriceCents: 799,
-    uid: '2',
-    imageProvider: NetworkImage('https://flutter'
-        '.dev/docs/cookbook/img-files/effects/split-check/Food2.jpg'),
-  ),
+      name: 'Veggie soup',
+      description: 'Rich and flavourful treat for the colder days.',
+      uid: 2,
+      imageProvider: NetworkImage(
+          'https://cdn-icons-png.flaticon.com/512/2388/2388080.png')),
   Recipe(
-    name: 'Chicken Parmesan',
-    totalPriceCents: 1499,
-    uid: '3',
-    imageProvider: NetworkImage('https://flutter'
-        '.dev/docs/cookbook/img-files/effects/split-check/Food3.jpg'),
-  ),
+      name: 'Greek salad',
+      description:
+          'Easy to make! You could either have it by it self or as a side dish.',
+      uid: 3,
+      imageProvider: NetworkImage(
+          'https://cdn-icons-png.flaticon.com/512/5100/5100241.png'))
 ];
 
 @immutable
@@ -33,8 +32,6 @@ class Recipes extends StatefulWidget {
 }
 
 class _RecipesState extends State<Recipes> {
-  // final GlobalKey _draggableKey = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,9 +45,9 @@ class _RecipesState extends State<Recipes> {
     return AppBar(
       iconTheme: const IconThemeData(color: Color.fromARGB(255, 0, 0, 0)),
       title: Text(
-        'recipes',
+        'Recipes',
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              fontSize: 36,
+              fontSize: 30,
               color: const Color.fromARGB(255, 0, 0, 0),
               fontWeight: FontWeight.bold,
             ),
@@ -100,7 +97,7 @@ class _RecipesState extends State<Recipes> {
   }) {
     return MenuListItem(
       name: item.name,
-      price: item.formattedTotalItemPrice,
+      description: item.description,
       photoProvider: item.imageProvider,
     );
   }
@@ -110,13 +107,13 @@ class MenuListItem extends StatelessWidget {
   const MenuListItem({
     super.key,
     this.name = '',
-    this.price = '',
+    this.description = '',
     required this.photoProvider,
     this.isDepressed = false,
   });
 
   final String name;
-  final String price;
+  final String description;
   final ImageProvider photoProvider;
   final bool isDepressed;
 
@@ -130,6 +127,16 @@ class MenuListItem extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
+            SizedBox(
+              width: 120,
+              height: 120,
+              child: Center(
+                child: Image(
+                  image: photoProvider,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
             const SizedBox(width: 30.0),
             Expanded(
               child: Column(
@@ -137,15 +144,15 @@ class MenuListItem extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontSize: 18.0,
-                        ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium
+                        ?.copyWith(fontSize: 25.0, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10.0),
                   Text(
-                    price,
+                    description,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
                           fontSize: 18.0,
                         ),
                   ),
@@ -162,17 +169,15 @@ class MenuListItem extends StatelessWidget {
 @immutable
 class Recipe {
   const Recipe({
-    required this.totalPriceCents,
+    required this.description,
     required this.name,
     required this.uid,
     required this.imageProvider,
   });
-  final int totalPriceCents;
+  final String description;
   final String name;
-  final String uid;
+  final int uid;
   final ImageProvider imageProvider;
-  String get formattedTotalItemPrice =>
-      '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
 }
 
 class Customer {
@@ -185,12 +190,6 @@ class Customer {
   final String name;
   final ImageProvider imageProvider;
   final List<Recipe> items;
-
-  String get formattedTotalItemPrice {
-    final totalPriceCents =
-        items.fold<int>(0, (prev, item) => prev + item.totalPriceCents);
-    return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
-  }
 }
 
 
