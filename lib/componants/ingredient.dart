@@ -5,8 +5,14 @@ class IngredientItem extends StatelessWidget {
   const IngredientItem({
     super.key,
     this.ingredient = '',
+    required this.added,
   });
   final String ingredient;
+  final bool added;
+
+// ***********************************************************
+// checkboxes pls
+// ***********************************************************
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +46,7 @@ Widget _buildMenuItem({
 }) {
   return IngredientItem(
     ingredient: item.ingredient,
+    added: item.added,
   );
 }
 
