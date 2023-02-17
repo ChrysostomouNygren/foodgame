@@ -13,11 +13,8 @@ class CancelBtn extends StatelessWidget {
       child: SizedBox(
         height: 40,
         width: 40,
-        // ********************
-        // change the cancel symbol
-        // ********************
         child: Image.network(
-            'https://cdn-icons-png.flaticon.com/512/4303/4303935.png'),
+            'https://cdn-icons-png.flaticon.com/512/9428/9428870.png'),
       ),
     );
   }
