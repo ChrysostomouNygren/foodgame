@@ -9,11 +9,11 @@ class BackBtn extends StatelessWidget {
     return TextButton(
       onPressed: () {
         // vvv homepage vvv
-        // Navigator.push(context, MaterialPageRoute(builder: (context) {
-        //   return const Home();
-        // }));
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return const Home();
+        }));
         // vvv previous page vvv
-        Navigator.of(context).pop();
+        // Navigator.of(context).pop();
       },
       child: SizedBox(
         height: 40,

@@ -1,3 +1,4 @@
+import 'package:drag_drop/componants/back_btn.dart';
 import 'package:flutter/material.dart';
 
 const List<Recipe> _recipes = [
@@ -43,14 +44,21 @@ class _RecipesState extends State<Recipes> {
 
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
-      iconTheme: const IconThemeData(color: Color.fromARGB(255, 0, 0, 0)),
-      title: Text(
-        'Recipes',
-        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              fontSize: 30,
-              color: const Color.fromARGB(255, 0, 0, 0),
-              fontWeight: FontWeight.bold,
-            ),
+      title: Row(
+        children: [
+          const BackBtn(),
+          const SizedBox(
+            width: 10,
+          ),
+          Text(
+            'Recipes',
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  fontSize: 30,
+                  color: const Color.fromARGB(255, 0, 0, 0),
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+        ],
       ),
       backgroundColor: const Color(0xFFF7F7F7),
       elevation: 5,
