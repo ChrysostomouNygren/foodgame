@@ -15,7 +15,7 @@ class Recipe extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.all(40.0),
-            child: BackBtn(),
+            child: Back2StartBtn(),
           ),
           Center(
             child: SizedBox(

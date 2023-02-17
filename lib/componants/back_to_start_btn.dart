@@ -1,8 +1,8 @@
 import 'package:drag_drop/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
-class BackBtn extends StatelessWidget {
-  const BackBtn({super.key});
+class Back2StartBtn extends StatelessWidget {
+  const Back2StartBtn({super.key});
 
   @override
   Widget build(BuildContext context) {

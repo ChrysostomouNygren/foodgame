@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         children: [
-          const Padding(padding: EdgeInsets.all(40.0), child: BackBtn()),
+          const Padding(padding: EdgeInsets.all(40.0), child: Back2StartBtn()),
           Center(
             child: Column(
               children: [

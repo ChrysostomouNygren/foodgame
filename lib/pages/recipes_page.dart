@@ -46,7 +46,7 @@ class _RecipesState extends State<Recipes> {
     return AppBar(
       title: Row(
         children: [
-          const BackBtn(),
+          const Back2StartBtn(),
           const SizedBox(
             width: 10,
           ),
