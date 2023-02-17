@@ -1,26 +1,44 @@
 import 'package:flutter/material.dart';
 import 'ingredient_list.dart';
 
-class IngredientItem extends StatelessWidget {
-  const IngredientItem({
+class IngredientItem extends StatefulWidget {
+  IngredientItem({
     super.key,
     this.ingredient = '',
     required this.added,
+    this.onChanged,
   });
   final String ingredient;
-  final bool added;
+  bool added;
+  Function(bool?)? onChanged;
 
-// ***********************************************************
-// checkboxes pls
-// ***********************************************************
+  @override
+  State<IngredientItem> createState() => _IngredientItemState();
+}
 
+class _IngredientItemState extends State<IngredientItem> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         child: DecoratedBox(
             decoration: const BoxDecoration(color: Colors.amber),
-            child: Text(ingredient)));
+            child: Row(
+              children: [
+                Checkbox(
+                  value: widget.added,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      widget.added = value!;
+                    });
+                  },
+                  activeColor: Colors.black,
+                ),
+                Text(widget.ingredient),
+              ],
+            )));
   }
+
+  void checkBoxChanged(bool? value, int index) {}
 }
 
 Widget _buildIngredientList() {
