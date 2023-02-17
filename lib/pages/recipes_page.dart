@@ -1,4 +1,5 @@
 import 'package:drag_drop/componants/back_to_start_btn.dart';
+import 'package:drag_drop/pages/recipe_page.dart';
 import 'package:flutter/material.dart';
 
 const List<Recipe> _recipes = [
@@ -86,8 +87,15 @@ class _RecipesState extends State<Recipes> {
       },
       itemBuilder: (context, index) {
         final item = _recipes[index];
-        return _buildMenuItem(
-          item: item,
+        return TextButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const RecipePage();
+            }));
+          },
+          child: _buildMenuItem(
+            item: item,
+          ),
         );
       },
     );

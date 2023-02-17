@@ -1,8 +1,8 @@
 import 'package:drag_drop/componants/back_to_start_btn.dart';
 import 'package:flutter/material.dart';
 
-class Recipe extends StatelessWidget {
-  const Recipe({
+class RecipePage extends StatelessWidget {
+  const RecipePage({
     Key? key,
   }) : super(key: key);
 
