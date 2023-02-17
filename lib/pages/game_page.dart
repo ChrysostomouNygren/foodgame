@@ -1,8 +1,11 @@
 import 'package:drag_drop/componants/cancel_btn.dart';
 import 'package:drag_drop/componants/failed_modal.dart';
 import 'package:drag_drop/componants/star_clipper.dart';
-import 'package:drag_drop/pages/recipes_page.dart';
+import 'package:drag_drop/pages/recipes_page.dart' hide Customer;
 import 'package:flutter/material.dart';
+import '../componants/bin_tile.dart';
+import '../componants/item.dart';
+import '../componants/customer.dart';
 
 const List<Item> _itemsConst = [
   // ignore: prefer_const_constructors
@@ -377,72 +380,6 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   }
 }
 
-class CustomerCart extends StatelessWidget {
-  const CustomerCart({
-    super.key,
-    required this.customer,
-    this.highlighted = false,
-    this.hasItems = false,
-  });
-
-  final Customer customer;
-  final bool highlighted;
-  final bool hasItems;
-
-  @override
-  Widget build(BuildContext context) {
-    return Transform.scale(
-      scale: highlighted ? 1.075 : 1.0,
-      child: Material(
-        elevation: highlighted ? 8.0 : 4.0,
-        borderRadius: BorderRadius.circular(22.0),
-        color: highlighted
-            ? const Color.fromARGB(255, 88, 162, 136)
-            : Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 12.0,
-            vertical: 24.0,
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                width: 65,
-                height: 65,
-                // vvv stack so the widgets stack on top of eachother vvv
-                child: Stack(
-                  children: [
-                    Image(
-                      image: customer.imageProvider,
-                      fit: BoxFit.cover,
-                    ),
-                    Container(
-                      width: 30,
-                      height: 30,
-                      decoration: const BoxDecoration(
-                          color: Colors.amber, shape: BoxShape.circle),
-                      child: Center(
-                        child: Text(
-                          '${customer.items.length}',
-                          style: const TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              const SizedBox(height: 10.0),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class MenuListItem extends StatelessWidget {
   const MenuListItem({
     super.key,
@@ -528,33 +465,4 @@ class DraggingListItem extends StatelessWidget {
       ),
     );
   }
-}
-
-// typing:
-@immutable
-class Item {
-  const Item({
-    required this.name,
-    required this.healthy,
-    required this.uid,
-    required this.imageProvider,
-  });
-  final String name;
-  final bool healthy;
-  final int uid;
-  final ImageProvider imageProvider;
-}
-
-class Customer {
-  Customer({
-    required this.name,
-    required this.imageProvider,
-    required this.healthy,
-    List<Item>? items,
-  }) : items = items ?? [];
-
-  final String name;
-  final ImageProvider imageProvider;
-  final bool healthy;
-  List<Item> items;
 }
