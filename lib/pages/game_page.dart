@@ -2,7 +2,6 @@ import 'package:drag_drop/componants/cancel_btn.dart';
 import 'package:drag_drop/pages/recipes_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import '../componants/back_btn.dart';
 
 const List<Item> _itemsConst = [
   // ignore: prefer_const_constructors
