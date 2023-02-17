@@ -44,21 +44,14 @@ class _RecipesState extends State<Recipes> {
 
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
-      title: Row(
-        children: [
-          const Back2StartBtn(),
-          const SizedBox(
-            width: 10,
-          ),
-          Text(
-            'Recipes',
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontSize: 30,
-                  color: const Color.fromARGB(255, 0, 0, 0),
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
-        ],
+      leading: const Back2StartBtn(),
+      title: Text(
+        'Recipes',
+        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+              fontSize: 30,
+              color: const Color.fromARGB(255, 0, 0, 0),
+              fontWeight: FontWeight.bold,
+            ),
       ),
       backgroundColor: const Color.fromARGB(255, 247, 247, 247),
       elevation: 5,
