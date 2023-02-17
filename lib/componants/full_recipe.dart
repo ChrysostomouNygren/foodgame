@@ -11,7 +11,7 @@ class FullRecipe {
     required this.imageProvider,
   });
   final String name;
-  final List<Ingredient> ingredients;
+  final List<IngredientItem> ingredients;
   final List<Instruction> instructions;
   final int uid;
   final ImageProvider imageProvider;
