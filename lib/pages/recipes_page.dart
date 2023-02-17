@@ -61,19 +61,7 @@ class _RecipesState extends State<Recipes> {
   }
 
   Widget _buildContent() {
-    return Stack(
-      children: [
-        SafeArea(
-          child: Column(
-            children: [
-              Expanded(
-                child: _buildMenuList(),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
+    return _buildMenuList();
   }
 
   Widget _buildMenuList() {
