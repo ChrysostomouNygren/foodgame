@@ -1,3 +1,4 @@
+import 'package:drag_drop/componants/cancel_btn.dart';
 import 'package:drag_drop/pages/recipes_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -377,7 +378,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
       iconTheme: const IconThemeData(color: Color.fromARGB(166, 247, 247, 247)),
-      leading: const BackBtn(),
+      leading: const CancelBtn(),
       title: Text(
         'Pick the healthy food',
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
