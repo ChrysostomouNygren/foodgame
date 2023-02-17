@@ -1,6 +1,7 @@
 import 'package:drag_drop/pages/recipes_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import '../componants/back_btn.dart';
 
 const List<Item> _itemsConst = [
   // ignore: prefer_const_constructors
@@ -318,8 +319,6 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
                           fontSize: 15,
                         )),
                     onPressed: () {
-                      // Navigate to recipe page
-                      // Navigator.pop(context);
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
                         return const Recipes();
@@ -378,9 +377,9 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
       iconTheme: const IconThemeData(color: Color.fromARGB(166, 247, 247, 247)),
-      centerTitle: true,
+      leading: const BackBtn(),
       title: Text(
-        'Sort out the healthy food',
+        'Pick the healthy food',
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
               fontSize: 30,
               color: const Color.fromARGB(255, 3, 39, 52),
