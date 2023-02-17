@@ -66,6 +66,9 @@ Future<String?> cancelModal(context) {
                     ],
                   ),
                 ),
+                const SizedBox(
+                  width: 20,
+                ),
                 TextButton(
                   style: TextButton.styleFrom(
                       foregroundColor: Colors.black,
@@ -80,12 +83,9 @@ Future<String?> cancelModal(context) {
                   },
                   child: Column(
                     children: [
-                      // ********************
-                      // change the cancel symbol
-                      // ********************
                       Image.network(
-                        'https://cdn-icons-png.flaticon.com/512/2550/2550386.png',
-                        height: 50,
+                        'https://cdn-icons-png.flaticon.com/512/258/258348.png',
+                        height: 45,
                         fit: BoxFit.fill,
                       ),
                       const SizedBox(
