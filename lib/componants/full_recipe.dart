@@ -12,7 +12,7 @@ class FullRecipe {
   });
   final String name;
   final List<IngredientItem> ingredients;
-  final List<Instruction> instructions;
+  final List<Instructions> instructions;
   final int uid;
   final ImageProvider imageProvider;
 }

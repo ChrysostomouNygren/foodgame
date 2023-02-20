@@ -14,3 +14,12 @@ List<IngredientItem> oatmeal = [
     added: false,
   )
 ];
+
+// add ingredients
+List<IngredientItem> veggieSoup = [
+  IngredientItem(ingredient: '', added: false),
+  IngredientItem(ingredient: '', added: false),
+  IngredientItem(ingredient: '', added: false),
+  IngredientItem(ingredient: '', added: false),
+  IngredientItem(ingredient: '', added: false),
+];
