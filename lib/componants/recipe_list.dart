@@ -2,8 +2,8 @@ import 'package:drag_drop/componants/ingredient.dart';
 import 'package:flutter/material.dart';
 import 'ingredient_list.dart';
 
-class RecipeStep extends StatefulWidget {
-  RecipeStep({
+class RecipeIngredients extends StatefulWidget {
+  RecipeIngredients({
     super.key,
     this.step = '',
     required this.added,
@@ -14,10 +14,10 @@ class RecipeStep extends StatefulWidget {
   Function(bool?)? onChanged;
 
   @override
-  State<RecipeStep> createState() => _RecipeStepState();
+  State<RecipeIngredients> createState() => _RecipeIngredientState();
 }
 
-class _RecipeStepState extends State<RecipeStep> {
+class _RecipeIngredientState extends State<RecipeIngredients> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -34,7 +34,6 @@ class _RecipeStepState extends State<RecipeStep> {
                   },
                   activeColor: Colors.black,
                 ),
-                Text(widget.step),
               ],
             )));
   }
@@ -45,14 +44,14 @@ class _RecipeStepState extends State<RecipeStep> {
 Widget _buildIngredientList() {
   return ListView.separated(
     padding: const EdgeInsets.all(100.0),
-    itemCount: oatmeal.length,
+    itemCount: oatmealIngredients.length,
     separatorBuilder: (context, index) {
       return const SizedBox(
         height: 12.0,
       );
     },
     itemBuilder: (context, index) {
-      final item = oatmeal[index];
+      final item = oatmealIngredients[index];
       return _buildMenuItem(item: item);
     },
   );
@@ -67,6 +66,6 @@ Widget _buildMenuItem({
   );
 }
 
-Widget buildOatmeal() {
+Widget buildOatmealIngredients() {
   return _buildIngredientList();
 }

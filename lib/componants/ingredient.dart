@@ -43,15 +43,16 @@ class _IngredientItemState extends State<IngredientItem> {
 
 Widget _buildIngredientList() {
   return ListView.separated(
+    shrinkWrap: true,
     padding: const EdgeInsets.all(100.0),
-    itemCount: oatmeal.length,
+    itemCount: oatmealIngredients.length,
     separatorBuilder: (context, index) {
       return const SizedBox(
         height: 12.0,
       );
     },
     itemBuilder: (context, index) {
-      final item = oatmeal[index];
+      final item = oatmealIngredients[index];
       return _buildMenuItem(
         item: item,
       );

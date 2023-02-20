@@ -1,6 +1,8 @@
 class Instructions {
-  const Instructions({
-    required this.step,
+  Instructions({
+    required this.instruction,
+    required this.addedStep,
   });
-  final String step;
+  final String instruction;
+  bool addedStep;
 }

@@ -1,6 +1,6 @@
 import 'package:drag_drop/componants/ingredient.dart';
 
-List<IngredientItem> oatmeal = [
+List<IngredientItem> oatmealIngredients = [
   IngredientItem(
     ingredient: '2 dl Water',
     added: false,
