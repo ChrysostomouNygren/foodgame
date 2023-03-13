@@ -8,18 +8,43 @@ class Oatmeal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // ignore: prefer_const_literals_to_create_immutables
-      children: [
+      children: <Widget>[
         const SizedBox(height: 90.0),
-        const Image(
-          image: NetworkImage(
-            'https://cdn-icons-png.flaticon.com/512/5609/5609775.png',
+        Expanded(
+          child: Image(
+            image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/512/5609/5609775.png',
+            ),
+            height: 100,
+            width: 100,
           ),
-          height: 100,
-          width: 100,
         ),
-        buildOatmealIngredients(),
-        buildOatmealInstructions()
+        Expanded(flex: 2, child: buildOatmealIngredients()),
+        Expanded(flex: 2, child: buildOatmealInstructions())
+      ],
+    );
+  }
+}
+
+class VeggieSoup extends StatelessWidget {
+  const VeggieSoup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        const SizedBox(height: 90.0),
+        Expanded(
+          child: Image(
+            image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/512/2388/2388080.png',
+            ),
+            height: 100,
+            width: 100,
+          ),
+        ),
+        Expanded(flex: 2, child: buildVeggieSoupIngredients()),
+        Expanded(flex: 2, child: buildVeggieSoupInstructions())
       ],
     );
   }

@@ -41,7 +41,7 @@ class _IngredientItemState extends State<IngredientItem> {
   void checkBoxChanged(bool? value, int index) {}
 }
 
-Widget _buildIngredientList() {
+Widget _buildOatmealIngredientList() {
   return ListView.separated(
     shrinkWrap: true,
     padding: const EdgeInsets.all(100.0),
@@ -60,6 +60,22 @@ Widget _buildIngredientList() {
   );
 }
 
+Widget _buildVegetableIngredientList() {
+  return ListView.separated(
+    shrinkWrap: true,
+    padding: const EdgeInsets.all(100.0),
+    itemCount: veggieSoupIngredients.length,
+    separatorBuilder: (context, index) {
+      return const SizedBox(
+        height: 12.0,
+      );
+    },
+    itemBuilder: (context, index) {
+      final item = veggieSoupIngredients[index];
+    },
+  );
+}
+
 Widget _buildMenuItem({
   required IngredientItem item,
 }) {
@@ -70,5 +86,9 @@ Widget _buildMenuItem({
 }
 
 Widget buildOatmeal() {
-  return _buildIngredientList();
+  return _buildOatmealIngredientList();
+}
+
+Widget buildVeggieSoup() {
+  return _buildVegetableIngredientList();
 }

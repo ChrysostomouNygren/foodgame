@@ -78,7 +78,10 @@ class _RecipesState extends State<Recipes> {
         return TextButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const RecipePage();
+              print(index);
+              return RecipePage(
+                id: index,
+              );
             }));
           },
           child: _buildMenuItem(

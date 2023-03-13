@@ -1,20 +1,30 @@
 import 'package:drag_drop/componants/back_btn.dart';
 import 'package:drag_drop/componants/recipe_picture.dart';
-import 'package:drag_drop/componants/steps.dart';
 import 'package:flutter/material.dart';
-import '../componants/ingredient.dart';
 
 class RecipePage extends StatelessWidget {
-  const RecipePage({
-    Key? key,
-  }) : super(key: key);
+  const RecipePage({Key? key, required this.id}) : super(key: key);
+
+  final int id;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: const Oatmeal(),
+      body: _renderRecipe(id),
     );
+  }
+}
+
+_renderRecipe(id) {
+  if (id == 0) {
+    return const Oatmeal();
+  } else if (id == 1) {
+    return const VeggieSoup();
+  } else if (id == 2) {
+    return const Text('greek salad');
+  } else {
+    return const Text('error');
   }
 }
 

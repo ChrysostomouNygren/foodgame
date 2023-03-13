@@ -12,6 +12,22 @@ List<Instructions> oatmealSteps = [
       addedStep: false)
 ];
 
+List<Instructions> veggieSoupSteps = [
+  Instructions(
+      instruction: 'Peel and wash all the vegetables.', addedStep: false),
+  Instructions(
+      instruction: 'Cut all the vegetables into even-sized pieces.',
+      addedStep: false),
+  Instructions(
+      instruction: 'Fry everything lightly in a pot with the oil.',
+      addedStep: false),
+  Instructions(
+      instruction:
+          'Pour the water and add the broth cubes. Let it boil til the veggies are soft',
+      addedStep: false),
+  Instructions(instruction: 'Taste with salt and pepper', addedStep: false),
+];
+
 class RecipeSteps extends StatefulWidget {
   RecipeSteps({super.key, this.instruction = '', required this.addedStep});
   final String instruction;
@@ -44,7 +60,7 @@ class _RecipeStepState extends State<RecipeSteps> {
   }
 }
 
-Widget _buildOeatmealStepList() {
+Widget _buildOatmealStepList() {
   return ListView.separated(
     shrinkWrap: true,
     itemBuilder: (context, index) {
@@ -60,6 +76,21 @@ Widget _buildOeatmealStepList() {
   );
 }
 
+Widget _buildVeggieSoupStepList() {
+  return ListView.separated(
+      shrinkWrap: true,
+      itemBuilder: (context, index) {
+        final item = veggieSoupSteps[index];
+        return _buildMenuStep(item: item);
+      },
+      separatorBuilder: (context, index) {
+        return const SizedBox(
+          height: 12.0,
+        );
+      },
+      itemCount: veggieSoupSteps.length);
+}
+
 Widget _buildMenuStep({
   required Instructions item,
 }) {
@@ -70,5 +101,9 @@ Widget _buildMenuStep({
 }
 
 Widget buildOatmealInstructions() {
-  return _buildOeatmealStepList();
+  return _buildOatmealStepList();
+}
+
+Widget buildVeggieSoupInstructions() {
+  return _buildVeggieSoupStepList();
 }
