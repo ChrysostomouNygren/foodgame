@@ -40,6 +40,22 @@ const List<Item> _itemsConst = [
     imageProvider:
         NetworkImage('https://cdn-icons-png.flaticon.com/512/883/883760.png'),
   ),
+  // ignore: prefer_const_constructors
+  Item(
+    name: 'Broccoli',
+    healthy: true,
+    uid: 5,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/2347/2347045.png'),
+  ),
+  // ignore: prefer_const_constructors
+  Item(
+    name: 'Ice Cream',
+    healthy: false,
+    uid: 6,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/938/938063.png'),
+  ),
 ];
 
 // Can't be const due to changes in the list
@@ -75,6 +91,22 @@ List<Item> _items = [
     uid: 4,
     imageProvider:
         NetworkImage('https://cdn-icons-png.flaticon.com/512/883/883760.png'),
+  ),
+  // ignore: prefer_const_constructors
+  Item(
+    name: 'Broccoli',
+    healthy: true,
+    uid: 5,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/2347/2347045.png'),
+  ),
+  // ignore: prefer_const_constructors
+  Item(
+    name: 'Ice Cream',
+    healthy: false,
+    uid: 6,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/938/938063.png'),
   ),
 ];
 
@@ -256,15 +288,11 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     return Scaffold(
         appBar: _buildAppBar(),
         body: Container(
-          // Background img:
           decoration: const BoxDecoration(
             image: DecorationImage(
-              // vvv rotate? vvv
               image: NetworkImage(
                   "https://st2.depositphotos.com/1187563/9421/i/950/depositphotos_94218180-stock-photo-wired-fence-pattern.jpg"),
-              // vv fills the screen vv
               fit: BoxFit.cover,
-              //  vv sets opacity vv
               opacity: 0.2,
             ),
           ),
@@ -308,20 +336,18 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   }
 
   Widget _buildMenuList() {
-    return ListView.separated(
-      padding: const EdgeInsets.all(100.0),
-      itemCount: _items.length,
-      separatorBuilder: (context, index) {
-        return const SizedBox(
-          height: 12.0,
-        );
-      },
-      itemBuilder: (context, index) {
+    return GridView.count(
+      crossAxisCount: 2,
+      children: List.generate(_items.length, (index) {
         final item = _items[index];
-        return _buildMenuItem(
-          item: item,
-        );
-      },
+        return TextButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return _buildMenuItem(item: item);
+              }));
+            },
+            child: _buildMenuItem(item: item));
+      }),
     );
   }
 
