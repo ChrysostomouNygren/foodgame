@@ -23,42 +23,10 @@ List<Instructions> veggieSoupSteps = [
       addedStep: false),
   Instructions(
       instruction:
-          'Pour the water and add the broth cubes. Let it boil til the veggies are soft',
+          'Pour the water and add the broth cubes, let it boil til the veggies are soft.',
       addedStep: false),
   Instructions(instruction: 'Taste with salt and pepper', addedStep: false),
 ];
-
-class RecipeSteps extends StatefulWidget {
-  RecipeSteps({super.key, this.instruction = '', required this.addedStep});
-  final String instruction;
-  bool addedStep;
-
-  @override
-  State<RecipeSteps> createState() => _RecipeStepState();
-}
-
-class _RecipeStepState extends State<RecipeSteps> {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: DecoratedBox(
-        decoration: const BoxDecoration(color: Colors.amber),
-        child: Row(children: [
-          Checkbox(
-            value: widget.addedStep,
-            onChanged: (bool? value) {
-              setState(() {
-                widget.addedStep = value!;
-              });
-            },
-            activeColor: Colors.black,
-          ),
-          Text(widget.instruction)
-        ]),
-      ),
-    );
-  }
-}
 
 Widget _buildOatmealStepList() {
   return ListView.separated(
@@ -85,7 +53,7 @@ Widget _buildVeggieSoupStepList() {
       },
       separatorBuilder: (context, index) {
         return const SizedBox(
-          height: 12.0,
+          height: 5.0,
         );
       },
       itemCount: veggieSoupSteps.length);

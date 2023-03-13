@@ -20,22 +20,20 @@ class _IngredientItemState extends State<IngredientItem> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        child: DecoratedBox(
-            decoration: const BoxDecoration(color: Colors.amber),
-            child: Row(
-              children: [
-                Checkbox(
-                  value: widget.added,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      widget.added = value!;
-                    });
-                  },
-                  activeColor: Colors.black,
-                ),
-                Text(widget.ingredient),
-              ],
-            )));
+        child: Row(
+      children: [
+        Checkbox(
+          value: widget.added,
+          onChanged: (bool? value) {
+            setState(() {
+              widget.added = value!;
+            });
+          },
+          activeColor: Colors.black,
+        ),
+        Flexible(child: Text(widget.ingredient)),
+      ],
+    ));
   }
 
   void checkBoxChanged(bool? value, int index) {}

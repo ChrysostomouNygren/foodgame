@@ -42,34 +42,24 @@ class _RecipeIngredientState extends State<RecipeIngredients> {
 }
 
 Widget _buildOatmealIngredientList() {
-  return ListView.separated(
-    padding: const EdgeInsets.all(100.0),
-    itemCount: oatmealIngredients.length,
-    separatorBuilder: (context, index) {
-      return const SizedBox(
-        height: 12.0,
-      );
-    },
-    itemBuilder: (context, index) {
+  return GridView.count(
+    crossAxisCount: 2,
+    childAspectRatio: 4,
+    children: List.generate(oatmealIngredients.length, (index) {
       final item = oatmealIngredients[index];
       return _buildMenuItem(item: item);
-    },
+    }),
   );
 }
 
 Widget _buildVeggieSoupIngredientList() {
-  return ListView.separated(
-    padding: const EdgeInsets.all(100.0),
-    itemCount: veggieSoupIngredients.length,
-    separatorBuilder: (context, index) {
-      return const SizedBox(
-        height: 12.0,
-      );
-    },
-    itemBuilder: (context, index) {
+  return GridView.count(
+    crossAxisCount: 2,
+    childAspectRatio: 4,
+    children: List.generate(veggieSoupIngredients.length, (index) {
       final item = veggieSoupIngredients[index];
       return _buildMenuItem(item: item);
-    },
+    }),
   );
 }
 
