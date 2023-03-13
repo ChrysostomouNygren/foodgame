@@ -33,13 +33,13 @@ const List<Item> _itemsConst = [
         NetworkImage('https://cdn-icons-png.flaticon.com/512/3595/3595458.png'),
   ),
   // ignore: prefer_const_constructors
-  // Item(
-  //   name: 'Carrot',
-  //   healthy: true,
-  //   uid: 4,
-  //   const imageProvider:
-  //       NetworkImage('https://cdn-icons-png.flaticon.com/512/883/883760.png'),
-  // ),
+  Item(
+    name: 'Carrot',
+    healthy: true,
+    uid: 4,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/883/883760.png'),
+  ),
 ];
 
 // Can't be const due to changes in the list
@@ -69,13 +69,13 @@ List<Item> _items = [
         'https://cdn-icons-png.flaticon.com/512/3595/3595458.png'),
   ),
   // ignore: prefer_const_constructors
-  // Item(
-  //   name: 'Carrot',
-  //   healthy: true,
-  //   uid: 4,
-  //   const imageProvider:
-  //       NetworkImage('https://cdn-icons-png.flaticon.com/512/883/883760.png'),
-  // ),
+  Item(
+    name: 'Carrot',
+    healthy: true,
+    uid: 4,
+    imageProvider:
+        NetworkImage('https://cdn-icons-png.flaticon.com/512/883/883760.png'),
+  ),
 ];
 
 @immutable
@@ -385,49 +385,38 @@ class MenuListItem extends StatelessWidget {
     super.key,
     this.name = '',
     required this.photoProvider,
-    this.isDepressed = false,
+    this.isPressed = false,
   });
 
   final String name;
   final ImageProvider photoProvider;
-  final bool isDepressed;
+  final bool isPressed;
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 12.0,
-      borderRadius: BorderRadius.circular(20),
+      color: Colors.transparent,
       child: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Column(
-          // vvv ??? vvv
-          // mainAxisSize: MainAxisSize.max,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12.0),
-              child: SizedBox(
-                // width: 120,
-                // height: 120,
-                child: Center(
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 100),
-                    curve: Curves.easeInOut,
-                    height: isDepressed ? 115 : 120,
-                    width: isDepressed ? 115 : 120,
-                    // width: 50,
-                    child: Column(
-                      children: [
-                        Image(
-                          image: photoProvider,
-                          // fit: BoxFit.cover,
-                        ),
-                      ],
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(12.0),
+          child: SizedBox(
+            child: Center(
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 100),
+                curve: Curves.easeInOut,
+                height: isPressed ? 115 : 120,
+                width: isPressed ? 115 : 120,
+                child: Column(
+                  children: [
+                    Image(
+                      image: photoProvider,
                     ),
-                  ),
+                  ],
                 ),
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

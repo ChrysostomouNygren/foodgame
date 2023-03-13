@@ -1,4 +1,5 @@
 import 'package:drag_drop/componants/back_btn.dart';
+import 'package:drag_drop/componants/recipe_picture.dart';
 import 'package:drag_drop/componants/steps.dart';
 import 'package:flutter/material.dart';
 import '../componants/ingredient.dart';
@@ -12,12 +13,7 @@ class RecipePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(children: [buildOatmeal(), buildOatmealInstructions()]),
-        ),
-      ),
-      // body: buildOatmeal(),
+      body: const Oatmeal(),
     );
   }
 }
