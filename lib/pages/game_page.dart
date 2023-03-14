@@ -1,7 +1,7 @@
 import 'package:drag_drop/componants/cancel_btn.dart';
 import 'package:drag_drop/componants/failed_modal.dart';
 import 'package:drag_drop/componants/star_clipper.dart';
-import 'package:drag_drop/pages/recipes_page.dart' hide Customer;
+import 'package:drag_drop/pages/recipes_page.dart';
 import 'package:flutter/material.dart';
 import '../componants/bin_tile.dart';
 import '../componants/item.dart';
@@ -111,16 +111,16 @@ List<Item> _items = [
 ];
 
 @immutable
-class ExampleDragAndDrop extends StatefulWidget {
-  const ExampleDragAndDrop({super.key});
+class SortingDragAndDrop extends StatefulWidget {
+  const SortingDragAndDrop({super.key});
 
   @override
-  State<ExampleDragAndDrop> createState() => _ExampleDragAndDropState();
+  State<SortingDragAndDrop> createState() => _SortingDragAndDropState();
 }
 
-class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
+class _SortingDragAndDropState extends State<SortingDragAndDrop>
     with TickerProviderStateMixin {
-  final List<Sorting> _people = [
+  final List<Sorting> _sortingButtons = [
     Sorting(
       type: 'Add',
       imageProvider: const NetworkImage(
@@ -137,7 +137,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
 
   final GlobalKey _draggableKey = GlobalKey();
 
-  void _itemDroppedOnCustomerCart({
+  void _itemDroppedOnSortingButton({
     required Item item,
     required Sorting type,
   }) {
@@ -162,7 +162,6 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     });
   }
 
-// succesfull dialog modal
   Future<String?> succesfullDialogModal() {
     return showDialog<String>(
       context: context,
@@ -220,8 +219,8 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
                       Navigator.pop(context);
                       setState(() {
                         _items.addAll(_itemsConst);
-                        for (var pers in _people) {
-                          pers.items.clear();
+                        for (var btn in _sortingButtons) {
+                          btn.items.clear();
                         }
                       });
                     },
@@ -255,8 +254,8 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
                       }));
                       setState(() {
                         _items.addAll(_itemsConst);
-                        for (var pers in _people) {
-                          pers.items.clear();
+                        for (var btn in _sortingButtons) {
+                          btn.items.clear();
                         }
                       });
                     },
@@ -327,7 +326,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
               Expanded(
                 child: _buildMenuList(),
               ),
-              _buildPeopleRow(),
+              _buildSortingRow(),
             ],
           ),
         ),
@@ -368,19 +367,19 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     );
   }
 
-  Widget _buildPeopleRow() {
+  Widget _buildSortingRow() {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 8.0,
         vertical: 20.0,
       ),
       child: Row(
-        children: _people.map(_buildPersonWithDropZone).toList(),
+        children: _sortingButtons.map(_buildBtnWithDropZone).toList(),
       ),
     );
   }
 
-  Widget _buildPersonWithDropZone(Sorting type) {
+  Widget _buildBtnWithDropZone(Sorting type) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -395,7 +394,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
             );
           },
           onAccept: (item) {
-            _itemDroppedOnCustomerCart(
+            _itemDroppedOnSortingButton(
               item: item,
               type: type,
             );
