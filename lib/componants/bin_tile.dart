@@ -44,7 +44,7 @@ class SortingTile extends StatelessWidget {
                       width: 30,
                       height: 30,
                       decoration: const BoxDecoration(
-                          color: Color.fromRGBO(201, 226, 231, 1),
+                          color: Color.fromRGBO(141, 185, 194, 1),
                           shape: BoxShape.circle),
                       child: Center(
                         child: Text(
