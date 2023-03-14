@@ -39,10 +39,28 @@ Widget _buildVeggieSoupIngredientList() {
   );
 }
 
+Widget _buildGreekSaladIngredientList() {
+  return Container(
+    decoration: const BoxDecoration(color: Color.fromRGBO(201, 226, 231, 1)),
+    child: GridView.count(
+      crossAxisCount: 2,
+      childAspectRatio: 5,
+      children: List.generate(greekSaladIngredients.length, (index) {
+        final item = greekSaladIngredients[index];
+        return _buildIngredient(item: item);
+      }),
+    ),
+  );
+}
+
 Widget buildOatmealIngredients() {
   return _buildOatmealIngredientList();
 }
 
 Widget buildVeggieSoupIngredients() {
   return _buildVeggieSoupIngredientList();
+}
+
+Widget buildGreekSaladIngredients() {
+  return _buildGreekSaladIngredientList();
 }

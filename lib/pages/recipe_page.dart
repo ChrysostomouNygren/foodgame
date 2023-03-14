@@ -22,7 +22,7 @@ _renderRecipe(id) {
   } else if (id == 1) {
     return const VeggieSoup();
   } else if (id == 2) {
-    return const Text('greek salad');
+    return const GreekSalad();
   } else {
     return const Text('error');
   }

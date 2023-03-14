@@ -48,10 +48,32 @@ Widget _buildVeggieSoupStepList() {
   );
 }
 
+Widget _buildGreekSaladStepList() {
+  return Container(
+    decoration: const BoxDecoration(color: Color.fromRGBO(141, 185, 194, 1)),
+    child: ListView.separated(
+        shrinkWrap: true,
+        itemBuilder: ((context, index) {
+          final item = greekSaladSteps[index];
+          return _buildInstruction(item: item);
+        }),
+        separatorBuilder: (context, index) {
+          return const SizedBox(
+            height: 1,
+          );
+        },
+        itemCount: greekSaladSteps.length),
+  );
+}
+
 Widget buildOatmealInstructions() {
   return _buildOatmealStepList();
 }
 
 Widget buildVeggieSoupInstructions() {
   return _buildVeggieSoupStepList();
+}
+
+Widget buildGreekSaladInstructions() {
+  return _buildGreekSaladStepList();
 }

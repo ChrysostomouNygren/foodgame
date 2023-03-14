@@ -32,3 +32,22 @@ List<Instructions> veggieSoupSteps = [
       addedStep: false),
   Instructions(instruction: 'Taste with salt and pepper', addedStep: false),
 ];
+
+List<Instructions> greekSaladSteps = [
+  Instructions(instruction: 'Peel and slice the onion.', addedStep: false),
+  Instructions(instruction: 'Dice cucumber and tomatoes.', addedStep: false),
+  Instructions(
+      instruction: 'Break the cheese into smaller pieces.', addedStep: false),
+  Instructions(
+      instruction: 'Mix all the vegetables carefully in a bowl.',
+      addedStep: false),
+  Instructions(
+      instruction: 'Mix the oil and vinegar into a dressing.',
+      addedStep: false),
+  Instructions(
+      instruction: 'Pick the leaves of the oregano.', addedStep: false),
+  Instructions(
+      instruction:
+          'Drizzle over the dressing and top with oregano and black pepper.',
+      addedStep: false),
+];

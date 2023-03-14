@@ -37,3 +37,13 @@ List<Ingredients> veggieSoupIngredients = [
 ];
 
 // add ingredients for greekSalatIngredients:
+List<Ingredients> greekSaladIngredients = [
+  Ingredients(ingredient: '1 Red onion', addedStep: false),
+  Ingredients(ingredient: '1 Cucumber', addedStep: false),
+  Ingredients(ingredient: '4 Tomatoes', addedStep: false),
+  Ingredients(ingredient: '150g Feta cheese', addedStep: false),
+  Ingredients(ingredient: '0,5 Pot of fresh oregano', addedStep: false),
+  Ingredients(ingredient: '1,5 dl Kalamata olives', addedStep: false),
+  Ingredients(ingredient: '1 tbsp Red wine vineger', addedStep: false),
+  Ingredients(ingredient: 'A pinch of black pepper', addedStep: false),
+];
