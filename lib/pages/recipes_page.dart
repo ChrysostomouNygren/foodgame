@@ -78,7 +78,6 @@ class _RecipesState extends State<Recipes> {
         return TextButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              print(index);
               return RecipePage(
                 id: index,
               );
@@ -109,13 +108,13 @@ class MenuListItem extends StatelessWidget {
     this.name = '',
     this.description = '',
     required this.photoProvider,
-    this.isDepressed = false,
+    this.isPressed = false,
   });
 
   final String name;
   final String description;
   final ImageProvider photoProvider;
-  final bool isDepressed;
+  final bool isPressed;
 
   @override
   Widget build(BuildContext context) {

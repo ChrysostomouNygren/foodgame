@@ -34,7 +34,6 @@ class SortingTile extends StatelessWidget {
               SizedBox(
                 width: 65,
                 height: 65,
-                // vvv stack so the widgets stack on top of eachother vvv
                 child: Stack(
                   children: [
                     Image(
