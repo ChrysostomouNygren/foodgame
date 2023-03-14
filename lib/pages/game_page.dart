@@ -58,7 +58,6 @@ const List<Item> _itemsConst = [
   ),
 ];
 
-// Can't be const due to changes in the list
 List<Item> _items = [
   // ignore: prefer_const_constructors
   Item(

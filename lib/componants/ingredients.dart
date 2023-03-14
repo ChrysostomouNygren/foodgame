@@ -36,7 +36,6 @@ List<Ingredients> veggieSoupIngredients = [
   Ingredients(ingredient: 'Salt and pepper', addedStep: false),
 ];
 
-// add ingredients for greekSalatIngredients:
 List<Ingredients> greekSaladIngredients = [
   Ingredients(ingredient: '1 Red onion', addedStep: false),
   Ingredients(ingredient: '1 Cucumber', addedStep: false),

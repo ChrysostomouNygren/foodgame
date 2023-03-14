@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// dialog box when food goes into the wrong bin
 Future<String?> failedDialogModal(context) {
   return showDialog<String>(
     context: context,

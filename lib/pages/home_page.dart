@@ -1,4 +1,3 @@
-import 'package:drag_drop/componants/back_to_start_btn.dart';
 import 'package:drag_drop/pages/game_page.dart';
 import 'package:drag_drop/pages/recipes_page.dart';
 import 'package:flutter/material.dart';

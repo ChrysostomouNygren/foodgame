@@ -1,12 +1,8 @@
-import 'package:drag_drop/componants/cancel_btn.dart';
-import 'package:drag_drop/pages/recipes_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class StarClipper extends CustomClipper<Path> {
   StarClipper(this.numberOfPoints);
-
-  /// The number of points of the star
   final int numberOfPoints;
 
   @override

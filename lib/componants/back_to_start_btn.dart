@@ -8,12 +8,9 @@ class Back2StartBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        // vvv homepage vvv
         Navigator.push(context, MaterialPageRoute(builder: (context) {
           return const Home();
         }));
-        // vvv previous page vvv
-        // Navigator.of(context).pop();
       },
       child: SizedBox(
         height: 40,
