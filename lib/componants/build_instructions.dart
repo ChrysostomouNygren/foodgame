@@ -11,69 +11,32 @@ Widget _buildInstruction({
   );
 }
 
-Widget _buildOatmealStepList() {
-  return Container(
-    decoration: const BoxDecoration(color: Color.fromRGBO(141, 185, 194, 1)),
-    child: ListView.separated(
-      shrinkWrap: true,
-      itemBuilder: (context, index) {
-        final item = oatmealSteps[index];
-        return _buildInstruction(item: item);
-      },
-      separatorBuilder: (context, index) {
-        return const SizedBox(
-          height: 1,
-        );
-      },
-      itemCount: oatmealSteps.length,
-    ),
-  );
-}
-
-Widget _buildVeggieSoupStepList() {
-  return Container(
-    decoration: const BoxDecoration(color: Color.fromRGBO(141, 185, 194, 1)),
-    child: ListView.separated(
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          final item = veggieSoupSteps[index];
-          return _buildInstruction(item: item);
-        },
-        separatorBuilder: (context, index) {
-          return const SizedBox(
-            height: 1,
-          );
-        },
-        itemCount: veggieSoupSteps.length),
-  );
-}
-
-Widget _buildGreekSaladStepList() {
+Widget _buildInstructionList(meal) {
   return Container(
     decoration: const BoxDecoration(color: Color.fromRGBO(141, 185, 194, 1)),
     child: ListView.separated(
         shrinkWrap: true,
         itemBuilder: ((context, index) {
-          final item = greekSaladSteps[index];
+          final item = meal[index];
           return _buildInstruction(item: item);
         }),
         separatorBuilder: (context, index) {
           return const SizedBox(
-            height: 1,
+            height: 5,
           );
         },
-        itemCount: greekSaladSteps.length),
+        itemCount: meal.length),
   );
 }
 
 Widget buildOatmealInstructions() {
-  return _buildOatmealStepList();
+  return _buildInstructionList(oatmealSteps);
 }
 
 Widget buildVeggieSoupInstructions() {
-  return _buildVeggieSoupStepList();
+  return _buildInstructionList(veggieSoupSteps);
 }
 
 Widget buildGreekSaladInstructions() {
-  return _buildGreekSaladStepList();
+  return _buildInstructionList(greekSaladSteps);
 }
