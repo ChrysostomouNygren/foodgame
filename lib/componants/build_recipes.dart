@@ -1,5 +1,5 @@
-import 'package:drag_drop/componants/recipe_list.dart';
-import 'package:drag_drop/componants/steps.dart';
+import 'package:drag_drop/componants/build_ingredient.dart';
+import 'package:drag_drop/componants/build_instructions.dart';
 import 'package:flutter/material.dart';
 
 class Oatmeal extends StatelessWidget {
@@ -20,6 +20,9 @@ class Oatmeal extends StatelessWidget {
           ),
         ),
         Expanded(flex: 1, child: buildOatmealIngredients()),
+        const SizedBox(
+          height: 5,
+        ),
         Expanded(flex: 1, child: buildOatmealInstructions())
       ],
     );
@@ -44,6 +47,9 @@ class VeggieSoup extends StatelessWidget {
           ),
         ),
         Expanded(flex: 2, child: buildVeggieSoupIngredients()),
+        const SizedBox(
+          height: 5,
+        ),
         Expanded(flex: 2, child: buildVeggieSoupInstructions())
       ],
     );

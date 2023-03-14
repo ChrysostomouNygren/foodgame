@@ -1,5 +1,5 @@
 import 'package:drag_drop/componants/back_btn.dart';
-import 'package:drag_drop/componants/recipe_picture.dart';
+import 'package:drag_drop/componants/build_recipes.dart';
 import 'package:flutter/material.dart';
 
 class RecipePage extends StatelessWidget {
