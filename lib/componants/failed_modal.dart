@@ -19,8 +19,8 @@ Future<String?> failedDialogModal(context) {
                   height: 150,
                   width: 200,
                 ),
-                Image.network(
-                  'https://cdn-icons-png.flaticon.com/512/4303/4303935.png',
+                Image.asset(
+                  'assets/stop.png',
                   height: 120,
                   fit: BoxFit.fill,
                 )
@@ -48,8 +48,8 @@ Future<String?> failedDialogModal(context) {
               },
               child: Column(
                 children: [
-                  Image.network(
-                    'https://cdn-icons-png.flaticon.com/512/2550/2550386.png',
+                  Image.asset(
+                    'assets/play_again.png',
                     height: 50,
                     fit: BoxFit.fill,
                   ),

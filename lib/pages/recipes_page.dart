@@ -4,25 +4,21 @@ import 'package:flutter/material.dart';
 
 const List<Recipe> _recipes = [
   Recipe(
-    name: 'Oatmeal',
-    description: 'Simple breakfast, made quick and easy.',
-    uid: 1,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/5609/5609775.png'),
-  ),
+      name: 'Oatmeal',
+      description: 'Simple breakfast, made quick and easy.',
+      uid: 1,
+      imageProvider: AssetImage('assets/oatmeal.png')),
   Recipe(
       name: 'Veggie soup',
       description: 'Rich and flavourful treat for the colder days.',
       uid: 2,
-      imageProvider: NetworkImage(
-          'https://cdn-icons-png.flaticon.com/512/2388/2388080.png')),
+      imageProvider: AssetImage('assets/veggie_soup.png')),
   Recipe(
       name: 'Greek salad',
       description:
           'Easy to make! You could either have it by it self or as a side dish.',
       uid: 3,
-      imageProvider: NetworkImage(
-          'https://cdn-icons-png.flaticon.com/512/5100/5100241.png'))
+      imageProvider: AssetImage('assets/greek_salad.png'))
 ];
 
 @immutable

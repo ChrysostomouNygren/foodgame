@@ -10,14 +10,8 @@ class Oatmeal extends StatelessWidget {
     return Column(
       children: <Widget>[
         const SizedBox(height: 90.0),
-        const Expanded(
-          child: Image(
-            image: NetworkImage(
-              'https://cdn-icons-png.flaticon.com/512/5609/5609775.png',
-            ),
-            height: 200,
-            width: 200,
-          ),
+        Expanded(
+          child: Image.asset('assets/oatmeal.png'),
         ),
         const SizedBox(
           height: 90,
@@ -40,15 +34,7 @@ class VeggieSoup extends StatelessWidget {
     return Column(
       children: <Widget>[
         const SizedBox(height: 90.0),
-        const Expanded(
-          child: Image(
-            image: NetworkImage(
-              'https://cdn-icons-png.flaticon.com/512/2388/2388080.png',
-            ),
-            height: 200,
-            width: 200,
-          ),
-        ),
+        Expanded(child: Image.asset('assets/veggie_soup.png')),
         const SizedBox(
           height: 90,
         ),
@@ -72,13 +58,7 @@ class GreekSalad extends StatelessWidget {
         const SizedBox(
           height: 90.0,
         ),
-        const Expanded(
-            child: Image(
-          image: NetworkImage(
-              'https://cdn-icons-png.flaticon.com/512/5100/5100241.png'),
-          height: 200,
-          width: 200,
-        )),
+        Expanded(child: Image.asset('assets/greek_salad.png')),
         const SizedBox(
           height: 90,
         ),

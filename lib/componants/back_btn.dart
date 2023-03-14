@@ -12,8 +12,7 @@ class BackBtn extends StatelessWidget {
       child: SizedBox(
         height: 40,
         width: 40,
-        child: Image.network(
-            'https://cdn-icons-png.flaticon.com/512/8345/8345329.png'),
+        child: Image.asset('assets/back.png'),
       ),
     );
   }

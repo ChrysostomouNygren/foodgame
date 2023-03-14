@@ -33,11 +33,9 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        width: 180,
-                        height: 180,
-                        child: Image.network(
-                            'https://cdn-icons-png.flaticon.com/512/1182/1182756.png'),
-                      ),
+                          width: 180,
+                          height: 180,
+                          child: Image.asset('assets/play_btn.png')),
                       const SizedBox(
                         height: 20,
                       ),

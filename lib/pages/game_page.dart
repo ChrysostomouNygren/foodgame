@@ -13,48 +13,42 @@ const List<Item> _itemsConst = [
     name: 'Banana',
     healthy: true,
     uid: 1,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/2909/2909761.png'),
+    imageProvider: AssetImage('assets/bananas.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Crisps',
     healthy: false,
     uid: 2,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/3050/3050268.png'),
+    imageProvider: AssetImage('assets/crisps.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Pizza',
     healthy: false,
     uid: 3,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/3595/3595458.png'),
+    imageProvider: AssetImage('assets/pizza.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Carrot',
     healthy: true,
     uid: 4,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/883/883760.png'),
+    imageProvider: AssetImage('assets/carrot.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Broccoli',
     healthy: true,
     uid: 5,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/2347/2347045.png'),
+    imageProvider: AssetImage('assets/broccoli.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Ice Cream',
     healthy: false,
     uid: 6,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/938/938063.png'),
+    imageProvider: AssetImage('assets/ice_cream.png'),
   ),
 ];
 
@@ -64,48 +58,42 @@ List<Item> _items = [
     name: 'Banana',
     healthy: true,
     uid: 1,
-    imageProvider: const NetworkImage(
-        'https://cdn-icons-png.flaticon.com/512/2909/2909761.png'),
+    imageProvider: AssetImage('assets/bananas.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Crisps',
     healthy: false,
     uid: 2,
-    imageProvider: const NetworkImage(
-        'https://cdn-icons-png.flaticon.com/512/3050/3050268.png'),
+    imageProvider: AssetImage('assets/crisps.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Pizza',
     healthy: false,
     uid: 3,
-    imageProvider: const NetworkImage(
-        'https://cdn-icons-png.flaticon.com/512/3595/3595458.png'),
+    imageProvider: AssetImage('assets/pizza.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Carrot',
     healthy: true,
     uid: 4,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/883/883760.png'),
+    imageProvider: AssetImage('assets/carrot.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Broccoli',
     healthy: true,
     uid: 5,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/2347/2347045.png'),
+    imageProvider: AssetImage('assets/broccoli.png'),
   ),
   // ignore: prefer_const_constructors
   Item(
     name: 'Ice Cream',
     healthy: false,
     uid: 6,
-    imageProvider:
-        NetworkImage('https://cdn-icons-png.flaticon.com/512/938/938063.png'),
+    imageProvider: AssetImage('assets/ice_cream.png'),
   ),
 ];
 
@@ -122,14 +110,12 @@ class _DragAndDropGameState extends State<DragAndDropGame>
   final List<Sorting> _sortingButtons = [
     Sorting(
       type: 'Add',
-      imageProvider: const NetworkImage(
-          'https://cdn-icons-png.flaticon.com/512/819/819781.png'),
+      imageProvider: const AssetImage('assets/cart.png'),
       healthy: true,
     ),
     Sorting(
       type: 'Pass',
-      imageProvider: const NetworkImage(
-          'https://cdn-icons-png.flaticon.com/512/1587/1587618.png'),
+      imageProvider: const AssetImage('assets/trash.png'),
       healthy: false,
     ),
   ];
@@ -186,8 +172,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     ),
                   ),
                 ),
-                Image.network(
-                  'https://cdn-icons-png.flaticon.com/512/1705/1705348.png',
+                Image.asset(
+                  'assets/trophy.png',
                   height: 140,
                   fit: BoxFit.fill,
                 ),
@@ -225,8 +211,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     },
                     child: Column(
                       children: [
-                        Image.network(
-                          'https://cdn-icons-png.flaticon.com/512/2550/2550386.png',
+                        Image.asset(
+                          'assets/play_again.png',
                           height: 50,
                           fit: BoxFit.fill,
                         ),
@@ -260,8 +246,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     },
                     child: Column(
                       children: [
-                        Image.network(
-                          'https://cdn-icons-png.flaticon.com/512/2729/2729077.png',
+                        Image.asset(
+                          'assets/recipes.png',
                           height: 50,
                           fit: BoxFit.fill,
                         ),
@@ -288,8 +274,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage(
-                  "https://st2.depositphotos.com/1187563/9421/i/950/depositphotos_94218180-stock-photo-wired-fence-pattern.jpg"),
+              image: AssetImage('assets/background.jpg'),
               fit: BoxFit.cover,
               opacity: 0.2,
             ),
