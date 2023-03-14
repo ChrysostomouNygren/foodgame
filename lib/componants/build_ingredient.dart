@@ -11,42 +11,14 @@ Widget _buildIngredient({
   );
 }
 
-Widget _buildOatmealIngredientList() {
+Widget _buildIngredientList(meal) {
   return Container(
     decoration: const BoxDecoration(color: Color.fromRGBO(201, 226, 231, 1)),
     child: GridView.count(
       crossAxisCount: 2,
       childAspectRatio: 5,
-      children: List.generate(oatmealIngredients.length, (index) {
-        final item = oatmealIngredients[index];
-        return _buildIngredient(item: item);
-      }),
-    ),
-  );
-}
-
-Widget _buildVeggieSoupIngredientList() {
-  return Container(
-    decoration: const BoxDecoration(color: Color.fromRGBO(201, 226, 231, 1)),
-    child: GridView.count(
-      crossAxisCount: 2,
-      childAspectRatio: 5,
-      children: List.generate(veggieSoupIngredients.length, (index) {
-        final item = veggieSoupIngredients[index];
-        return _buildIngredient(item: item);
-      }),
-    ),
-  );
-}
-
-Widget _buildGreekSaladIngredientList() {
-  return Container(
-    decoration: const BoxDecoration(color: Color.fromRGBO(201, 226, 231, 1)),
-    child: GridView.count(
-      crossAxisCount: 2,
-      childAspectRatio: 5,
-      children: List.generate(greekSaladIngredients.length, (index) {
-        final item = greekSaladIngredients[index];
+      children: List.generate(meal.length, (index) {
+        final item = meal[index];
         return _buildIngredient(item: item);
       }),
     ),
@@ -54,13 +26,13 @@ Widget _buildGreekSaladIngredientList() {
 }
 
 Widget buildOatmealIngredients() {
-  return _buildOatmealIngredientList();
+  return _buildIngredientList(oatmealIngredients);
 }
 
 Widget buildVeggieSoupIngredients() {
-  return _buildVeggieSoupIngredientList();
+  return _buildIngredientList(veggieSoupIngredients);
 }
 
 Widget buildGreekSaladIngredients() {
-  return _buildGreekSaladIngredientList();
+  return _buildIngredientList(greekSaladIngredients);
 }
