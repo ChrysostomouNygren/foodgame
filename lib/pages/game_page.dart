@@ -111,14 +111,14 @@ List<Item> _items = [
 ];
 
 @immutable
-class SortingDragAndDrop extends StatefulWidget {
-  const SortingDragAndDrop({super.key});
+class DragAndDropGame extends StatefulWidget {
+  const DragAndDropGame({super.key});
 
   @override
-  State<SortingDragAndDrop> createState() => _SortingDragAndDropState();
+  State<DragAndDropGame> createState() => _DragAndDropGameState();
 }
 
-class _SortingDragAndDropState extends State<SortingDragAndDrop>
+class _DragAndDropGameState extends State<DragAndDropGame>
     with TickerProviderStateMixin {
   final List<Sorting> _sortingButtons = [
     Sorting(
