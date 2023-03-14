@@ -15,8 +15,8 @@ class Oatmeal extends StatelessWidget {
             image: NetworkImage(
               'https://cdn-icons-png.flaticon.com/512/5609/5609775.png',
             ),
-            height: 100,
-            width: 100,
+            height: 200,
+            width: 200,
           ),
         ),
         const SizedBox(
@@ -45,18 +45,18 @@ class VeggieSoup extends StatelessWidget {
             image: NetworkImage(
               'https://cdn-icons-png.flaticon.com/512/2388/2388080.png',
             ),
-            height: 100,
-            width: 100,
+            height: 200,
+            width: 200,
           ),
         ),
         const SizedBox(
           height: 90,
         ),
-        Expanded(flex: 2, child: buildVeggieSoupIngredients()),
+        Expanded(flex: 1, child: buildVeggieSoupIngredients()),
         const SizedBox(
           height: 5,
         ),
-        Expanded(flex: 2, child: buildVeggieSoupInstructions())
+        Expanded(flex: 1, child: buildVeggieSoupInstructions())
       ],
     );
   }
