@@ -5,7 +5,7 @@ import 'package:drag_drop/pages/recipes_page.dart' hide Customer;
 import 'package:flutter/material.dart';
 import '../componants/bin_tile.dart';
 import '../componants/item.dart';
-import '../componants/customer.dart';
+import '../componants/sorting.dart';
 
 const List<Item> _itemsConst = [
   // ignore: prefer_const_constructors
@@ -120,15 +120,15 @@ class ExampleDragAndDrop extends StatefulWidget {
 
 class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     with TickerProviderStateMixin {
-  final List<Customer> _people = [
-    Customer(
-      name: 'Add',
+  final List<Sorting> _people = [
+    Sorting(
+      type: 'Add',
       imageProvider: const NetworkImage(
           'https://cdn-icons-png.flaticon.com/512/819/819781.png'),
       healthy: true,
     ),
-    Customer(
-      name: 'Pass',
+    Sorting(
+      type: 'Pass',
       imageProvider: const NetworkImage(
           'https://cdn-icons-png.flaticon.com/512/1587/1587618.png'),
       healthy: false,
@@ -139,24 +139,24 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
 
   void _itemDroppedOnCustomerCart({
     required Item item,
-    required Customer customer,
+    required Sorting type,
   }) {
     setState(() {
-      if (item.healthy && customer.healthy) {
-        customer.items.add(item);
+      if (item.healthy && type.healthy) {
+        type.items.add(item);
         _items.removeWhere((produce) => produce.uid == item.uid);
         if (_items.isEmpty) {
           succesfullDialogModal();
         }
-      } else if (!item.healthy && !customer.healthy) {
-        customer.items.add(item);
+      } else if (!item.healthy && !type.healthy) {
+        type.items.add(item);
         _items.removeWhere((produce) => produce.uid == item.uid);
         if (_items.isEmpty) {
           succesfullDialogModal();
         }
-      } else if (!item.healthy && customer.healthy) {
+      } else if (!item.healthy && type.healthy) {
         failedDialogModal(context);
-      } else if (item.healthy && !customer.healthy) {
+      } else if (item.healthy && !type.healthy) {
         failedDialogModal(context);
       }
     });
@@ -380,7 +380,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     );
   }
 
-  Widget _buildPersonWithDropZone(Customer customer) {
+  Widget _buildPersonWithDropZone(Sorting type) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -388,16 +388,16 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
         ),
         child: DragTarget<Item>(
           builder: (context, candidateItems, rejectedItems) {
-            return CustomerCart(
-              hasItems: customer.items.isNotEmpty,
+            return SortingTile(
+              hasItems: type.items.isNotEmpty,
               highlighted: candidateItems.isNotEmpty,
-              customer: customer,
+              type: type,
             );
           },
           onAccept: (item) {
             _itemDroppedOnCustomerCart(
               item: item,
-              customer: customer,
+              type: type,
             );
           },
         ),

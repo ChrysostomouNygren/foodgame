@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'customer.dart';
+import 'sorting.dart';
 
-class CustomerCart extends StatelessWidget {
-  const CustomerCart({
+class SortingTile extends StatelessWidget {
+  const SortingTile({
     super.key,
-    required this.customer,
+    required this.type,
     this.highlighted = false,
     this.hasItems = false,
   });
 
-  final Customer customer;
+  final Sorting type;
   final bool highlighted;
   final bool hasItems;
 
@@ -38,7 +38,7 @@ class CustomerCart extends StatelessWidget {
                 child: Stack(
                   children: [
                     Image(
-                      image: customer.imageProvider,
+                      image: type.imageProvider,
                       fit: BoxFit.cover,
                     ),
                     Container(
@@ -48,7 +48,7 @@ class CustomerCart extends StatelessWidget {
                           color: Colors.amber, shape: BoxShape.circle),
                       child: Center(
                         child: Text(
-                          '${customer.items.length}',
+                          '${type.items.length}',
                           style: const TextStyle(
                             fontSize: 20,
                           ),
