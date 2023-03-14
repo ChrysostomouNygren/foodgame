@@ -36,3 +36,7 @@ Widget buildVeggieSoupIngredients() {
 Widget buildGreekSaladIngredients() {
   return _buildIngredientList(greekSaladIngredients);
 }
+
+Widget buildBroccoliSoupIngredients() {
+  return _buildIngredientList(broccoliSoupIngredients);
+}

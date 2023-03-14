@@ -51,3 +51,22 @@ List<Instructions> greekSaladSteps = [
           'Drizzle over the dressing and top with oregano and black pepper.',
       addedStep: false),
 ];
+
+List<Instructions> broccoliSoupSteps = [
+  Instructions(
+      instruction: 'Peel and cut the onion and potatoes.', addedStep: false),
+  Instructions(instruction: 'Dice up the broccoli.', addedStep: false),
+  Instructions(
+      instruction: 'Bring the stock to a boil, add all vegetables.',
+      addedStep: false),
+  Instructions(
+      instruction: 'Boil for 10 minutes, or til the veggies are soft.',
+      addedStep: false),
+  Instructions(
+      instruction: 'Mix the soup with a immersion blender or food processor.',
+      addedStep: false),
+  Instructions(
+      instruction:
+          'Add cooking cream to the soup, season with salt and pepper.',
+      addedStep: false),
+];

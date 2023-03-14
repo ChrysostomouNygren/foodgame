@@ -46,3 +46,12 @@ List<Ingredients> greekSaladIngredients = [
   Ingredients(ingredient: '1 tbsp Red wine vineger', addedStep: false),
   Ingredients(ingredient: 'A pinch of black pepper', addedStep: false),
 ];
+
+List<Ingredients> broccoliSoupIngredients = [
+  Ingredients(ingredient: '1 Onion', addedStep: false),
+  Ingredients(ingredient: '3 Potatoes', addedStep: false),
+  Ingredients(ingredient: '250 g Broccoli', addedStep: false),
+  Ingredients(ingredient: '9 dl Vegetable stock', addedStep: false),
+  Ingredients(ingredient: '2 dl Cooking cream', addedStep: false),
+  Ingredients(ingredient: 'Salt and pepper', addedStep: false),
+];

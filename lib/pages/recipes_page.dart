@@ -18,7 +18,12 @@ const List<Recipe> _recipes = [
       description:
           'Easy to make! You could either have it by it self or as a side dish.',
       uid: 3,
-      imageProvider: AssetImage('assets/greek_salad.png'))
+      imageProvider: AssetImage('assets/greek_salad.png')),
+  Recipe(
+      description: 'Quick and tasty soup for the green lover.',
+      name: 'Broccoli soup',
+      uid: 4,
+      imageProvider: AssetImage('assets/broccoli_soup.png'))
 ];
 
 @immutable

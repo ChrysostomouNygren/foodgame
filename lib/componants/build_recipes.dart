@@ -77,3 +77,33 @@ class GreekSalad extends StatelessWidget {
     );
   }
 }
+
+class BroccoliSoup extends StatelessWidget {
+  const BroccoliSoup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        const SizedBox(
+          height: 90.0,
+        ),
+        Expanded(child: Image.asset('assets/broccoli_soup.png')),
+        const SizedBox(
+          height: 90,
+        ),
+        Expanded(
+          flex: 1,
+          child: buildBroccoliSoupIngredients(),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        Expanded(
+          flex: 1,
+          child: buildBroccoliSoupInstructions(),
+        )
+      ],
+    );
+  }
+}

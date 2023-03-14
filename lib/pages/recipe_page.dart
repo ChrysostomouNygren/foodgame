@@ -25,6 +25,8 @@ _renderRecipe(id) {
     return const VeggieSoup();
   } else if (id == 2) {
     return const GreekSalad();
+  } else if (id == 3) {
+    return const BroccoliSoup();
   } else {
     return const Text('error');
   }

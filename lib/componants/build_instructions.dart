@@ -40,3 +40,7 @@ Widget buildVeggieSoupInstructions() {
 Widget buildGreekSaladInstructions() {
   return _buildInstructionList(greekSaladSteps);
 }
+
+Widget buildBroccoliSoupInstructions() {
+  return _buildInstructionList(broccoliSoupSteps);
+}
