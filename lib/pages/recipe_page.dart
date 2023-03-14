@@ -3,14 +3,16 @@ import 'package:drag_drop/componants/build_recipes.dart';
 import 'package:flutter/material.dart';
 
 class RecipePage extends StatelessWidget {
-  const RecipePage({Key? key, required this.id}) : super(key: key);
+  const RecipePage({Key? key, required this.id, required this.name})
+      : super(key: key);
 
   final int id;
+  final String name;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(),
+      appBar: _buildAppBar(name),
       body: _renderRecipe(id),
     );
   }
@@ -28,12 +30,12 @@ _renderRecipe(id) {
   }
 }
 
-PreferredSizeWidget _buildAppBar() {
+PreferredSizeWidget _buildAppBar(name) {
   return AppBar(
     iconTheme: const IconThemeData(color: Color.fromARGB(166, 247, 247, 247)),
     leading: const BackBtn(),
-    title: const Text('Recipe name',
-        style: TextStyle(
+    title: Text(name,
+        style: const TextStyle(
           fontSize: 30,
           color: Color.fromARGB(255, 3, 39, 52),
           fontWeight: FontWeight.bold,
