@@ -1,4 +1,3 @@
-import 'package:drag_drop/components/cancel_btn.dart';
 import 'package:drag_drop/components/failed_modal.dart';
 import 'package:drag_drop/components/star_clipper.dart';
 import 'package:drag_drop/pages/home_page.dart';
