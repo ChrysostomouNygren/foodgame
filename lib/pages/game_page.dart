@@ -8,92 +8,92 @@ import '../components/item.dart';
 import '../components/sorting.dart';
 
 const List<Item> _itemsConst = [
-  // ignore: prefer_const_constructors
   Item(
     name: 'Banana',
     healthy: true,
     uid: 1,
     imageProvider: AssetImage('assets/bananas.png'),
   ),
-  // ignore: prefer_const_constructors
   Item(
     name: 'Crisps',
     healthy: false,
     uid: 2,
     imageProvider: AssetImage('assets/crisps.png'),
   ),
-  // ignore: prefer_const_constructors
   Item(
     name: 'Pizza',
     healthy: false,
     uid: 3,
     imageProvider: AssetImage('assets/pizza.png'),
   ),
-  // ignore: prefer_const_constructors
   Item(
     name: 'Carrot',
     healthy: true,
     uid: 4,
     imageProvider: AssetImage('assets/carrot.png'),
   ),
-  // ignore: prefer_const_constructors
   Item(
     name: 'Broccoli',
     healthy: true,
     uid: 5,
     imageProvider: AssetImage('assets/broccoli.png'),
   ),
-  // ignore: prefer_const_constructors
   Item(
     name: 'Ice Cream',
     healthy: false,
     uid: 6,
     imageProvider: AssetImage('assets/ice_cream.png'),
+  ),
+  Item(
+    name: 'Cheesecake',
+    healthy: false,
+    uid: 7,
+    imageProvider: AssetImage('assets/cheesecake.png'),
   ),
 ];
 
 List<Item> _items = [
-  // ignore: prefer_const_constructors
-  Item(
+  const Item(
     name: 'Banana',
     healthy: true,
     uid: 1,
     imageProvider: AssetImage('assets/bananas.png'),
   ),
-  // ignore: prefer_const_constructors
-  Item(
+  const Item(
     name: 'Crisps',
     healthy: false,
     uid: 2,
     imageProvider: AssetImage('assets/crisps.png'),
   ),
-  // ignore: prefer_const_constructors
-  Item(
+  const Item(
     name: 'Pizza',
     healthy: false,
     uid: 3,
     imageProvider: AssetImage('assets/pizza.png'),
   ),
-  // ignore: prefer_const_constructors
-  Item(
+  const Item(
     name: 'Carrot',
     healthy: true,
     uid: 4,
     imageProvider: AssetImage('assets/carrot.png'),
   ),
-  // ignore: prefer_const_constructors
-  Item(
+  const Item(
     name: 'Broccoli',
     healthy: true,
     uid: 5,
     imageProvider: AssetImage('assets/broccoli.png'),
   ),
-  // ignore: prefer_const_constructors
-  Item(
+  const Item(
     name: 'Ice Cream',
     healthy: false,
     uid: 6,
     imageProvider: AssetImage('assets/ice_cream.png'),
+  ),
+  const Item(
+    name: 'Cheesecake',
+    healthy: false,
+    uid: 7,
+    imageProvider: AssetImage('assets/cheesecake.png'),
   ),
 ];
 
@@ -101,6 +101,7 @@ List<Item> _items = [
 class DragAndDropGame extends StatefulWidget {
   DragAndDropGame({super.key}) {
     _items.shuffle();
+    _items.length = 6;
   }
 
   @override
@@ -456,7 +457,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
               }));
             },
             child: _buildMenuItem(item: item));
-      }),
+      }, growable: false),
     );
   }
 
