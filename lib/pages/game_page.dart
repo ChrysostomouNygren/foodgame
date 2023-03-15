@@ -121,10 +121,10 @@ List<Item> _items = [
       uid: 12,
       imageProvider: AssetImage('assets/corn.png')),
   const Item(
-      name: 'Fish',
+      name: 'Walnuts',
       healthy: true,
       uid: 13,
-      imageProvider: AssetImage('assets/fish.png')),
+      imageProvider: AssetImage('assets/walnut.png')),
   const Item(
       name: 'Fried chicken',
       healthy: false,
@@ -170,11 +170,6 @@ List<Item> _items = [
       healthy: false,
       uid: 22,
       imageProvider: AssetImage('assets/toilet_paper.png')),
-  const Item(
-      name: 'Walnuts',
-      healthy: true,
-      uid: 23,
-      imageProvider: AssetImage('assets/walnut.png')),
 ];
 
 @immutable
