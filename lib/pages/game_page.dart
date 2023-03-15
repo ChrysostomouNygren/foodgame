@@ -95,6 +95,86 @@ List<Item> _items = [
     uid: 7,
     imageProvider: AssetImage('assets/cheesecake.png'),
   ),
+  const Item(
+      name: 'Almond',
+      healthy: true,
+      uid: 8,
+      imageProvider: AssetImage('assets/almonds.png')),
+  const Item(
+      name: 'Avocado',
+      healthy: true,
+      uid: 9,
+      imageProvider: AssetImage('assets/avocado.png')),
+  const Item(
+      name: 'Hamburger',
+      healthy: false,
+      uid: 10,
+      imageProvider: AssetImage('assets/burger.png')),
+  const Item(
+      name: 'Cauliflower',
+      healthy: true,
+      uid: 11,
+      imageProvider: AssetImage('assets/cauliflower.png')),
+  const Item(
+      name: 'Corn',
+      healthy: true,
+      uid: 12,
+      imageProvider: AssetImage('assets/corn.png')),
+  const Item(
+      name: 'Fish',
+      healthy: true,
+      uid: 13,
+      imageProvider: AssetImage('assets/fish.png')),
+  const Item(
+      name: 'Fried chicken',
+      healthy: false,
+      uid: 14,
+      imageProvider: AssetImage('assets/fried_chicken.png')),
+  const Item(
+      name: 'Fries',
+      healthy: false,
+      uid: 15,
+      imageProvider: AssetImage('assets/fries.png')),
+  const Item(
+      name: 'Ketchup',
+      healthy: false,
+      uid: 16,
+      imageProvider: AssetImage('assets/ketchup.png')),
+  const Item(
+      name: 'Lemon',
+      healthy: true,
+      uid: 17,
+      imageProvider: AssetImage('assets/lemon.png')),
+  const Item(
+      name: 'Lentils',
+      healthy: true,
+      uid: 18,
+      imageProvider: AssetImage('assets/lentils.png')),
+  const Item(
+      name: 'Mashed potatoes',
+      healthy: false,
+      uid: 19,
+      imageProvider: AssetImage('assets/mashed_potatoes.png')),
+  const Item(
+      name: 'Salmon',
+      healthy: true,
+      uid: 20,
+      imageProvider: AssetImage('assets/salmon.png')),
+  const Item(
+      name: 'Sweet potatoes',
+      healthy: true,
+      uid: 21,
+      imageProvider: AssetImage('assets/sweet_potatoes.png')),
+  const Item(
+      name: 'Toilet paper',
+      healthy: false,
+      uid: 22,
+      imageProvider: AssetImage('assets/toilet_paper.png')),
+  const Item(
+      name: 'Walnuts',
+      healthy: true,
+      uid: 23,
+      imageProvider: AssetImage('assets/walnut.png')),
 ];
 
 @immutable
