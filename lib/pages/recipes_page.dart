@@ -1,4 +1,4 @@
-import 'package:drag_drop/componants/back_to_start_btn.dart';
+import 'package:drag_drop/components/back_to_start_btn.dart';
 import 'package:drag_drop/pages/recipe_page.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +23,12 @@ const List<Recipe> _recipes = [
       description: 'Quick and tasty soup for the green lover.',
       name: 'Broccoli soup',
       uid: 4,
-      imageProvider: AssetImage('assets/broccoli_soup.png'))
+      imageProvider: AssetImage('assets/broccoli_soup.png')),
+  Recipe(
+      description: 'A yummy snack to keep around! No white sugars,',
+      name: 'Date snacks',
+      uid: 5,
+      imageProvider: AssetImage('assets/date_snacks.png'))
 ];
 
 @immutable
@@ -67,7 +72,7 @@ class _RecipesState extends State<Recipes> {
 
   Widget _buildMenuList() {
     return ListView.separated(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(20.0),
       itemCount: _recipes.length,
       separatorBuilder: (context, index) {
         return const SizedBox(

@@ -1,5 +1,5 @@
-import 'package:drag_drop/componants/instruction_state.dart';
-import 'package:drag_drop/componants/instructions.dart';
+import 'package:drag_drop/components/instruction_state.dart';
+import 'package:drag_drop/components/instructions.dart';
 import 'package:flutter/material.dart';
 
 Widget _buildInstruction({
@@ -30,17 +30,21 @@ Widget _buildInstructionList(meal) {
 }
 
 Widget buildOatmealInstructions() {
-  return _buildInstructionList(oatmealSteps);
+  return _buildInstructionList(oatmealInstructions);
 }
 
 Widget buildVeggieSoupInstructions() {
-  return _buildInstructionList(veggieSoupSteps);
+  return _buildInstructionList(veggieSoupInstructions);
 }
 
 Widget buildGreekSaladInstructions() {
-  return _buildInstructionList(greekSaladSteps);
+  return _buildInstructionList(greekSaladInstructions);
 }
 
 Widget buildBroccoliSoupInstructions() {
-  return _buildInstructionList(broccoliSoupSteps);
+  return _buildInstructionList(broccoliSoupInstructions);
+}
+
+Widget buildDateSnacksInstructions() {
+  return _buildInstructionList(dateSnacksInstructions);
 }

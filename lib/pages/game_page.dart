@@ -1,11 +1,11 @@
-import 'package:drag_drop/componants/cancel_btn.dart';
-import 'package:drag_drop/componants/failed_modal.dart';
-import 'package:drag_drop/componants/star_clipper.dart';
+import 'package:drag_drop/components/cancel_btn.dart';
+import 'package:drag_drop/components/failed_modal.dart';
+import 'package:drag_drop/components/star_clipper.dart';
 import 'package:drag_drop/pages/recipes_page.dart';
 import 'package:flutter/material.dart';
-import '../componants/bin_tile.dart';
-import '../componants/item.dart';
-import '../componants/sorting.dart';
+import '../components/bin_tile.dart';
+import '../components/item.dart';
+import '../components/sorting.dart';
 
 const List<Item> _itemsConst = [
   // ignore: prefer_const_constructors

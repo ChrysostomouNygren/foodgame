@@ -1,4 +1,4 @@
-import 'package:drag_drop/componants/ingredient_state.dart';
+import 'package:drag_drop/components/ingredient_state.dart';
 import 'package:flutter/material.dart';
 import 'ingredients.dart';
 
@@ -39,4 +39,8 @@ Widget buildGreekSaladIngredients() {
 
 Widget buildBroccoliSoupIngredients() {
   return _buildIngredientList(broccoliSoupIngredients);
+}
+
+Widget buildDateSnacksIngredients() {
+  return _buildIngredientList(dateSnacksIngredients);
 }

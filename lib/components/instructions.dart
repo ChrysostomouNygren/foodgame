@@ -7,7 +7,7 @@ class Instructions {
   bool addedStep;
 }
 
-List<Instructions> oatmealSteps = [
+List<Instructions> oatmealInstructions = [
   Instructions(instruction: 'Mix water, oatmeal and salt.', addedStep: false),
   Instructions(
       instruction: 'Bring to the boil and simmer for a couple of minutes.',
@@ -17,7 +17,7 @@ List<Instructions> oatmealSteps = [
       addedStep: false)
 ];
 
-List<Instructions> veggieSoupSteps = [
+List<Instructions> veggieSoupInstructions = [
   Instructions(
       instruction: 'Peel and wash all the vegetables.', addedStep: false),
   Instructions(
@@ -33,7 +33,7 @@ List<Instructions> veggieSoupSteps = [
   Instructions(instruction: 'Taste with salt and pepper', addedStep: false),
 ];
 
-List<Instructions> greekSaladSteps = [
+List<Instructions> greekSaladInstructions = [
   Instructions(instruction: 'Peel and slice the onion.', addedStep: false),
   Instructions(instruction: 'Dice cucumber and tomatoes.', addedStep: false),
   Instructions(
@@ -52,7 +52,7 @@ List<Instructions> greekSaladSteps = [
       addedStep: false),
 ];
 
-List<Instructions> broccoliSoupSteps = [
+List<Instructions> broccoliSoupInstructions = [
   Instructions(
       instruction: 'Peel and cut the onion and potatoes.', addedStep: false),
   Instructions(instruction: 'Dice up the broccoli.', addedStep: false),
@@ -69,4 +69,23 @@ List<Instructions> broccoliSoupSteps = [
       instruction:
           'Add cooking cream to the soup, season with salt and pepper.',
       addedStep: false),
+];
+
+List<Instructions> dateSnacksInstructions = [
+  Instructions(
+      instruction: 'Melt the butter in a small pot. Let it cool.',
+      addedStep: false),
+  Instructions(
+      instruction: 'Cut the dates and remove the pits.', addedStep: false),
+  Instructions(
+      instruction:
+          'Put all ingredients apart from the coconut in a food processor.',
+      addedStep: false),
+  Instructions(instruction: 'Mix into a smooth paste.', addedStep: false),
+  Instructions(
+      instruction: 'Roll the paste into balls in ur palms, arout 12 pieces.',
+      addedStep: false),
+  Instructions(
+      instruction: 'Add the coconut flakes into a plate.', addedStep: false),
+  Instructions(instruction: 'Roll the balls in the coconut.', addedStep: false)
 ];

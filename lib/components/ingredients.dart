@@ -55,3 +55,13 @@ List<Ingredients> broccoliSoupIngredients = [
   Ingredients(ingredient: '2 dl Cooking cream', addedStep: false),
   Ingredients(ingredient: 'Salt and pepper', addedStep: false),
 ];
+
+List<Ingredients> dateSnacksIngredients = [
+  Ingredients(ingredient: '50 g Butter', addedStep: false),
+  Ingredients(ingredient: '200 g Dates', addedStep: false),
+  Ingredients(ingredient: '2,5 dl Oatmeal', addedStep: false),
+  Ingredients(ingredient: '2 tbsp Cacao', addedStep: false),
+  Ingredients(ingredient: '2 tbsp Cold coffee', addedStep: false),
+  Ingredients(ingredient: '1 tsp Vanilla sugar', addedStep: false),
+  Ingredients(ingredient: '1 dl Coconut flakes', addedStep: false),
+];

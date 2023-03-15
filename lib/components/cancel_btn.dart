@@ -1,4 +1,4 @@
-import 'package:drag_drop/componants/cancel_modal.dart';
+import 'package:drag_drop/components/cancel_modal.dart';
 import 'package:flutter/material.dart';
 
 class CancelBtn extends StatelessWidget {

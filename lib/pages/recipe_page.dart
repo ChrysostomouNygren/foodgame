@@ -1,5 +1,5 @@
-import 'package:drag_drop/componants/back_btn.dart';
-import 'package:drag_drop/componants/build_recipes.dart';
+import 'package:drag_drop/components/back_btn.dart';
+import 'package:drag_drop/components/build_recipes.dart';
 import 'package:flutter/material.dart';
 
 class RecipePage extends StatelessWidget {
@@ -27,6 +27,8 @@ _renderRecipe(id) {
     return const GreekSalad();
   } else if (id == 3) {
     return const BroccoliSoup();
+  } else if (id == 4) {
+    return const DateSnacks();
   } else {
     return const Text('error');
   }
