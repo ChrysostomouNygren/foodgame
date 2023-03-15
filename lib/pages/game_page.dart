@@ -99,7 +99,9 @@ List<Item> _items = [
 
 @immutable
 class DragAndDropGame extends StatefulWidget {
-  const DragAndDropGame({super.key});
+  DragAndDropGame({super.key}) {
+    _items.shuffle();
+  }
 
   @override
   State<DragAndDropGame> createState() => _DragAndDropGameState();
@@ -323,6 +325,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
       crossAxisCount: 2,
       children: List.generate(_items.length, (index) {
         final item = _items[index];
+
         return TextButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {

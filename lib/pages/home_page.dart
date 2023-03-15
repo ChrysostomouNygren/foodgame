@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const DragAndDropGame();
+                      return DragAndDropGame();
                     }));
                   },
                   child: Column(
