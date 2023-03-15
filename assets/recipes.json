@@ -1,0 +1,59 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "name": "Oatmeal",
+      "description": "Simple breakfast, made quick and easy.",
+      "img": "assets/oatmeal.png",
+      "ingredients": [
+        { "ingredient": "2 dl Water", "added": false },
+        { "ingredient": "1 dl Oatmeal", "added": false },
+        { "ingredient": "A pinch of salt", "added": false }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Veggie soup",
+      "description": "Rich and flavourful treat for the colder days.",
+      "img": "assets/veggie_soup.png",
+      "ingredients": [
+        { "ingredient": "2 dl Water", "added": false },
+        { "ingredient": "1 dl Oatmeal", "added": false },
+        { "ingredient": "A pinch of salt", "added": false }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Greek Salad",
+      "description": "Easy to make! You could either have it by it self or as a side dish.",
+      "img": "assets/greek_salad.png",
+      "ingredients": [
+        { "ingredient": "2 dl Water", "added": false },
+        { "ingredient": "1 dl Oatmeal", "added": false },
+        { "ingredient": "A pinch of salt", "added": false }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Broccoli Soup",
+      "description": "Quick and tasty soup for the green lover.",
+      "img": "assets/broccoli_soup.png",
+      "ingredients": [
+        { "ingredient": "2 dl Water", "added": false },
+        { "ingredient": "1 dl Oatmeal", "added": false },
+        { "ingredient": "A pinch of salt", "added": false }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Date snacks",
+      "description": "A yummy snack to keep around! No white sugars.",
+      "img": "assets/date_snacks.png",
+      "ingredients": [
+        { "ingredient": "2 dl Water", "added": false },
+        { "ingredient": "1 dl Oatmeal", "added": false },
+        { "ingredient": "A pinch of salt", "added": false }
+      ]
+    }
+  ]
+}
