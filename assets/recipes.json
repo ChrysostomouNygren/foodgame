@@ -9,6 +9,11 @@
         { "ingredient": "2 dl Water", "added": false },
         { "ingredient": "1 dl Oatmeal", "added": false },
         { "ingredient": "A pinch of salt", "added": false }
+      ],
+      "instructions": [
+        {"instruction": "Mix water, oatmeal and salt.", "done": false},
+        {"instruction": "Bring to the boil and simmer for a couple of minutes.", "done": false},
+        {"instruction": "Serve with milk and condiment of your choice.", "done": false}
       ]
     },
     {
@@ -20,6 +25,11 @@
         { "ingredient": "2 dl Water", "added": false },
         { "ingredient": "1 dl Oatmeal", "added": false },
         { "ingredient": "A pinch of salt", "added": false }
+      ],
+      "instructions": [
+        {"instruction": "Mix water, oatmeal and salt.", "done": false},
+        {"instruction": "Bring to the boil and simmer for a couple of minutes.", "done": false},
+        {"instruction": "Serve with milk and condiment of your choice.", "done": false}
       ]
     },
     {
@@ -31,6 +41,11 @@
         { "ingredient": "2 dl Water", "added": false },
         { "ingredient": "1 dl Oatmeal", "added": false },
         { "ingredient": "A pinch of salt", "added": false }
+      ],
+      "instructions": [
+        {"instruction": "Mix water, oatmeal and salt.", "done": false},
+        {"instruction": "Bring to the boil and simmer for a couple of minutes.", "done": false},
+        {"instruction": "Serve with milk and condiment of your choice.", "done": false}
       ]
     },
     {
@@ -42,6 +57,11 @@
         { "ingredient": "2 dl Water", "added": false },
         { "ingredient": "1 dl Oatmeal", "added": false },
         { "ingredient": "A pinch of salt", "added": false }
+      ],
+      "instructions": [
+        {"instruction": "Mix water, oatmeal and salt.", "done": false},
+        {"instruction": "Bring to the boil and simmer for a couple of minutes.", "done": false},
+        {"instruction": "Serve with milk and condiment of your choice.", "done": false}
       ]
     },
     {
@@ -53,6 +73,11 @@
         { "ingredient": "2 dl Water", "added": false },
         { "ingredient": "1 dl Oatmeal", "added": false },
         { "ingredient": "A pinch of salt", "added": false }
+      ],
+      "instructions": [
+        {"instruction": "Mix water, oatmeal and salt.", "done": false},
+        {"instruction": "Bring to the boil and simmer for a couple of minutes.", "done": false},
+        {"instruction": "Serve with milk and condiment of your choice.", "done": false}
       ]
     }
   ]

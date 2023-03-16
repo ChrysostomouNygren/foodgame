@@ -1,36 +1,123 @@
 import 'package:drag_drop/components/back_btn.dart';
-import 'package:drag_drop/components/build_recipes.dart';
 import 'package:flutter/material.dart';
 
-class RecipePage extends StatelessWidget {
-  const RecipePage({Key? key, required this.id, required this.name})
+class RecipePage extends StatefulWidget {
+  const RecipePage(
+      {Key? key,
+      required this.id,
+      required this.name,
+      required this.img,
+      required this.ingredients,
+      required this.instructions})
       : super(key: key);
 
   final int id;
   final String name;
+  final String img;
+  final List ingredients;
+  final List instructions;
 
+  @override
+  State<RecipePage> createState() => _RecipePageState();
+}
+
+class _RecipePageState extends State<RecipePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(name),
-      body: _renderRecipe(id),
-    );
-  }
-}
-
-_renderRecipe(id) {
-  if (id == 0) {
-    return const Oatmeal();
-  } else if (id == 1) {
-    return const VeggieSoup();
-  } else if (id == 2) {
-    return const GreekSalad();
-  } else if (id == 3) {
-    return const BroccoliSoup();
-  } else if (id == 4) {
-    return const DateSnacks();
-  } else {
-    return const Text('error');
+        appBar: _buildAppBar(widget.name),
+        body: Center(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 80,
+              ),
+              Image.asset(
+                widget.img,
+                height: 200,
+                width: 200,
+              ),
+              const SizedBox(
+                height: 80,
+              ),
+              Expanded(
+                  child: Container(
+                color: const Color.fromRGBO(251, 241, 152, 0.2),
+                child: ListView.separated(
+                    itemBuilder: (context, index) {
+                      return Row(
+                        children: [
+                          Theme(
+                            data: Theme.of(context).copyWith(
+                                unselectedWidgetColor:
+                                    const Color.fromARGB(255, 3, 39, 52)),
+                            child: Checkbox(
+                              value: widget.ingredients[index]['added'],
+                              onChanged: (bool? value) {
+                                setState(() {
+                                  widget.ingredients[index]['added'] = value!;
+                                });
+                              },
+                              activeColor: const Color.fromARGB(255, 3, 39, 52),
+                              checkColor: Colors.white,
+                            ),
+                          ),
+                          Flexible(
+                              child: Text(
+                            widget.ingredients[index]['ingredient'],
+                            style: const TextStyle(fontSize: 18),
+                          )),
+                        ],
+                      );
+                    },
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                        height: 5,
+                      );
+                    },
+                    itemCount: widget.ingredients.length),
+              )),
+              Expanded(
+                  child: Container(
+                color: const Color.fromRGBO(251, 241, 152, 0.2),
+                child: ListView.separated(
+                    itemBuilder: ((context, index) {
+                      return Row(
+                        children: [
+                          Theme(
+                            data: Theme.of(context).copyWith(
+                                unselectedWidgetColor:
+                                    const Color.fromARGB(255, 3, 39, 52)),
+                            child: Checkbox(
+                              value: widget.instructions[index]['done'],
+                              onChanged: (bool? value) {
+                                setState(() {
+                                  widget.instructions[index]['done'] = value!;
+                                });
+                              },
+                              activeColor: const Color.fromARGB(255, 3, 39, 52),
+                              checkColor: Colors.white,
+                            ),
+                          ),
+                          Flexible(
+                            child: Text(
+                              widget.instructions[index]['instruction'],
+                              style: const TextStyle(fontSize: 18),
+                            ),
+                          )
+                        ],
+                      );
+                    }),
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                        height: 5,
+                      );
+                    },
+                    itemCount: widget.instructions.length),
+              ))
+            ],
+          ),
+        ));
   }
 }
 

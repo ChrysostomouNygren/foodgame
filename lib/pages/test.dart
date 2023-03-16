@@ -11,6 +11,8 @@ class Testiluring extends StatefulWidget {
 
 class _TestiluringState extends State<Testiluring> {
   List _recipesPls = [];
+  List _ingredienser = [];
+  List _instruktioner = [];
 
   Future<void> readJsonRecipe() async {
     final String response = await rootBundle.loadString('assets/recipes.json');
@@ -20,29 +22,11 @@ class _TestiluringState extends State<Testiluring> {
     });
   }
 
-  Widget _buildIngredients(index) {
-    List ingredienser = _recipesPls[index]['ingredients'];
-    // vv tar emot rätt index vv
-    print(index);
-    // vv tar emot rätt lista av ingredienser vv
-    print(ingredienser);
-
-    return ListView.builder(
-        itemCount: ingredienser.length,
-        itemBuilder: ((context, index) {
-          return Row(
-            children: [
-              Checkbox(
-                  value: ingredienser[index]['done'],
-                  onChanged: (bool? value) {
-                    setState(() {
-                      ingredienser[index]['done'] = value!;
-                    });
-                  }),
-              Text(ingredienser[index]['ingredient']),
-            ],
-          );
-        }));
+  void _buildRecipe(index) {
+    setState(() {
+      _ingredienser = _recipesPls[index]['ingredients'];
+      _instruktioner = _recipesPls[index]['instructions'];
+    });
   }
 
   @override
@@ -77,12 +61,50 @@ class _TestiluringState extends State<Testiluring> {
                               title: Text(_recipesPls[index]['name']),
                               subtitle: Text(_recipesPls[index]['description']),
                               onTap: () {
-                                _buildIngredients(index);
+                                _buildRecipe(index);
                               },
                             ),
                           );
                         }))
                 : Container(),
+            _ingredienser.isNotEmpty
+                ? Expanded(
+                    child: ListView.builder(
+                        itemCount: _ingredienser.length,
+                        itemBuilder: ((context, index) {
+                          return Row(
+                            children: [
+                              Checkbox(
+                                  value: _ingredienser[index]['added'],
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      _ingredienser[index]['added'] = value!;
+                                    });
+                                  }),
+                              Text(_ingredienser[index]['ingredient']),
+                            ],
+                          );
+                        })))
+                : Container(),
+            _instruktioner.isNotEmpty
+                ? Expanded(
+                    child: ListView.builder(
+                        itemCount: _instruktioner.length,
+                        itemBuilder: ((context, index) {
+                          return Row(
+                            children: [
+                              Checkbox(
+                                  value: _instruktioner[index]['done'],
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      _instruktioner[index]['done'] = value!;
+                                    });
+                                  }),
+                              Text(_instruktioner[index]['instruction']),
+                            ],
+                          );
+                        })))
+                : Container()
           ],
         ));
   }
