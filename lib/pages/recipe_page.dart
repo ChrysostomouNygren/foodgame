@@ -22,6 +22,8 @@ class RecipePage extends StatefulWidget {
 }
 
 class _RecipePageState extends State<RecipePage> {
+  final ScrollController _ingredientsController = ScrollController();
+  final ScrollController _instructionsController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,23 +36,36 @@ class _RecipePageState extends State<RecipePage> {
               ),
               Image.asset(
                 widget.img,
-                height: 200,
-                width: 200,
+                height: 180,
+                width: 180,
               ),
               const SizedBox(
                 height: 80,
               ),
+              const Divider(
+                color: Colors.black,
+              ),
               Expanded(
-                  child: Container(
-                color: const Color.fromRGBO(251, 241, 152, 0.2),
-                child: ListView.separated(
-                    itemBuilder: (context, index) {
+                  child: Material(
+                elevation: 10,
+                child: Container(
+                    // color: const Color.fromRGBO(251, 241, 152, 0.2),
+                    child: Scrollbar(
+                  thumbVisibility: true,
+                  controller: _ingredientsController,
+                  thickness: 10,
+                  child: GridView.count(
+                    controller: _ingredientsController,
+                    childAspectRatio: 4,
+                    crossAxisCount: 2,
+                    shrinkWrap: true,
+                    children: List.generate(widget.ingredients.length, (index) {
                       return Row(
                         children: [
                           Theme(
                             data: Theme.of(context).copyWith(
                                 unselectedWidgetColor:
-                                    const Color.fromARGB(255, 3, 39, 52)),
+                                    Color.fromARGB(255, 3, 39, 52)),
                             child: Checkbox(
                               value: widget.ingredients[index]['added'],
                               onChanged: (bool? value) {
@@ -58,63 +73,73 @@ class _RecipePageState extends State<RecipePage> {
                                   widget.ingredients[index]['added'] = value!;
                                 });
                               },
-                              activeColor: const Color.fromARGB(255, 3, 39, 52),
                               checkColor: Colors.white,
+                              activeColor: const Color.fromARGB(255, 3, 39, 52),
                             ),
                           ),
                           Flexible(
                               child: Text(
                             widget.ingredients[index]['ingredient'],
                             style: const TextStyle(fontSize: 18),
-                          )),
-                        ],
-                      );
-                    },
-                    separatorBuilder: (context, index) {
-                      return const SizedBox(
-                        height: 5,
-                      );
-                    },
-                    itemCount: widget.ingredients.length),
-              )),
-              Expanded(
-                  child: Container(
-                color: const Color.fromRGBO(251, 241, 152, 0.2),
-                child: ListView.separated(
-                    itemBuilder: ((context, index) {
-                      return Row(
-                        children: [
-                          Theme(
-                            data: Theme.of(context).copyWith(
-                                unselectedWidgetColor:
-                                    const Color.fromARGB(255, 3, 39, 52)),
-                            child: Checkbox(
-                              value: widget.instructions[index]['done'],
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  widget.instructions[index]['done'] = value!;
-                                });
-                              },
-                              activeColor: const Color.fromARGB(255, 3, 39, 52),
-                              checkColor: Colors.white,
-                            ),
-                          ),
-                          Flexible(
-                            child: Text(
-                              widget.instructions[index]['instruction'],
-                              style: const TextStyle(fontSize: 18),
-                            ),
-                          )
+                          ))
                         ],
                       );
                     }),
-                    separatorBuilder: (context, index) {
-                      return const SizedBox(
-                        height: 5,
-                      );
-                    },
-                    itemCount: widget.instructions.length),
-              ))
+                  ),
+                )),
+              )),
+              const Divider(
+                color: Colors.black,
+              ),
+              Expanded(
+                  child: Material(
+                elevation: 10,
+                child: Container(
+                  // color: const Color.fromRGBO(251, 241, 152, 0.2),
+                  child: Scrollbar(
+                    thumbVisibility: true,
+                    controller: _instructionsController,
+                    thickness: 10,
+                    child: ListView.separated(
+                        controller: _instructionsController,
+                        itemBuilder: ((context, index) {
+                          return Row(
+                            children: [
+                              Theme(
+                                data: Theme.of(context).copyWith(
+                                    unselectedWidgetColor:
+                                        const Color.fromARGB(255, 3, 39, 52)),
+                                child: Checkbox(
+                                  value: widget.instructions[index]['done'],
+                                  onChanged: (bool? value) {
+                                    setState(() {
+                                      widget.instructions[index]['done'] =
+                                          value!;
+                                    });
+                                  },
+                                  activeColor:
+                                      const Color.fromARGB(255, 3, 39, 52),
+                                  checkColor: Colors.white,
+                                ),
+                              ),
+                              Flexible(
+                                child: Text(
+                                  widget.instructions[index]['instruction'],
+                                  style: const TextStyle(fontSize: 18),
+                                ),
+                              )
+                            ],
+                          );
+                        }),
+                        separatorBuilder: (context, index) {
+                          return const SizedBox(
+                            height: 5,
+                          );
+                        },
+                        itemCount: widget.instructions.length),
+                  ),
+                ),
+              )),
             ],
           ),
         ));

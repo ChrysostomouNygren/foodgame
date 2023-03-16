@@ -69,79 +69,83 @@ class _RecipesState extends State<Recipes> {
         ? Column(
             children: [
               Expanded(
-                  child: ListView.separated(
-                      padding: const EdgeInsets.all(20.0),
-                      itemCount: _recipesPls.length,
-                      separatorBuilder: (context, index) {
-                        return const SizedBox(
-                          height: 12.0,
-                        );
-                      },
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return RecipePage(
-                                id: index,
-                                name: _recipesPls[index]['name'],
-                                img: _recipesPls[index]['img'],
-                                ingredients: _recipesPls[index]['ingredients'],
-                                instructions: _recipesPls[index]
-                                    ['instructions'],
-                              );
-                            }));
-                          },
-                          child: Material(
-                            elevation: 12.0,
-                            borderRadius: BorderRadius.circular(20),
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Center(
-                                      child: Image.asset(
-                                          _recipesPls[index]['img']),
-                                    ),
+                  child: Scrollbar(
+                thumbVisibility: true,
+                // controller: _recipeController,
+                thickness: 15,
+                child: ListView.separated(
+                    padding: const EdgeInsets.all(20.0),
+                    itemCount: _recipesPls.length,
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                        height: 12.0,
+                      );
+                    },
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return RecipePage(
+                              id: index,
+                              name: _recipesPls[index]['name'],
+                              img: _recipesPls[index]['img'],
+                              ingredients: _recipesPls[index]['ingredients'],
+                              instructions: _recipesPls[index]['instructions'],
+                            );
+                          }));
+                        },
+                        child: Material(
+                          elevation: 12.0,
+                          borderRadius: BorderRadius.circular(20),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                SizedBox(
+                                  width: 120,
+                                  height: 120,
+                                  child: Center(
+                                    child:
+                                        Image.asset(_recipesPls[index]['img']),
                                   ),
-                                  const SizedBox(width: 30.0),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          _recipesPls[index]['name'],
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .titleMedium
-                                              ?.copyWith(
-                                                  fontSize: 25.0,
-                                                  fontWeight: FontWeight.bold),
-                                        ),
-                                        const SizedBox(height: 10.0),
-                                        Text(
-                                          _recipesPls[index]['description'],
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .titleMedium
-                                              ?.copyWith(
-                                                fontSize: 18.0,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
+                                ),
+                                const SizedBox(width: 30.0),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        _recipesPls[index]['name'],
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleMedium
+                                            ?.copyWith(
+                                                fontSize: 25.0,
+                                                fontWeight: FontWeight.bold),
+                                      ),
+                                      const SizedBox(height: 10.0),
+                                      Text(
+                                        _recipesPls[index]['description'],
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleMedium
+                                            ?.copyWith(
+                                              fontSize: 18.0,
+                                            ),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
-                        );
-                      })),
+                        ),
+                      );
+                    }),
+              )),
             ],
           )
         : Container();
