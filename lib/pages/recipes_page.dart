@@ -71,7 +71,6 @@ class _RecipesState extends State<Recipes> {
               Expanded(
                   child: Scrollbar(
                 thumbVisibility: true,
-                // controller: _recipeController,
                 thickness: 15,
                 child: ListView.separated(
                     padding: const EdgeInsets.all(20.0),
