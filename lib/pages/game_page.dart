@@ -203,16 +203,17 @@ class _DragAndDropGameState extends State<DragAndDropGame>
   final GlobalKey _draggableKey = GlobalKey();
 
   List _gameItems = [];
+  List _constGameItems = [];
   Future<void> readJsonItems() async {
     final String response =
         await rootBundle.loadString('assets/game_items.json');
     final data = await json.decode(response);
     setState(() {
       _gameItems = data['items'];
+      _constGameItems = data['items'];
     });
     _gameItems.shuffle();
     _gameItems.length = 6;
-    print(_gameItems);
   }
 
   @override
@@ -302,11 +303,11 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     onPressed: () {
                       Navigator.pop(context);
                       setState(() {
-                        // _items.addAll(_itemsConst);
                         for (var btn in _sortingButtons) {
                           btn.items.clear();
                         }
                       });
+                      readJsonItems();
                     },
                     child: Column(
                       children: [
@@ -337,11 +338,11 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                         return const Recipes();
                       }));
                       setState(() {
-                        // _items.addAll(_itemsConst);
                         for (var btn in _sortingButtons) {
                           btn.items.clear();
                         }
                       });
+                      readJsonItems();
                     },
                     child: Column(
                       children: [
@@ -443,8 +444,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                         )),
                     onPressed: () {
                       setState(() {
-                        // _items.clear();
-                        // _items.addAll(_itemsConst);
+                        _gameItems.clear();
                         for (var btn in _sortingButtons) {
                           btn.items.clear();
                         }
@@ -453,6 +453,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                           MaterialPageRoute(builder: (context) {
                         return const Home();
                       }));
+                      readJsonItems();
                     },
                     child: Column(
                       children: [
@@ -541,40 +542,19 @@ class _DragAndDropGameState extends State<DragAndDropGame>
   }
 
   Widget _buildMenuList() {
-    return _gameItems.isNotEmpty
-        ? GridView.count(
-            crossAxisCount: 2,
-            shrinkWrap: true,
-            children: List.generate(_gameItems.length, (index) {
-              print(_gameItems[index]);
-
-              return TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return _buildMenuItem(item: _gameItems[index]);
-                    }));
-                  },
-                  child: _buildMenuItem(item: _gameItems[index]));
-              // Image.asset(_gameItems[index]['img']);
-            }),
-          )
-        : Text('_gameItems är tom bruh');
-
-    // GridView.count(
-    //   crossAxisCount: 2,
-    //   children: List.generate(_items.length, (index) {
-    //     final item = _items[index];
-
-    //     return TextButton(
-    //         onPressed: () {
-    //           Navigator.push(context, MaterialPageRoute(builder: (context) {
-    //             return _buildMenuItem(item: item);
-    //           }));
-    //         },
-    //         child: _buildMenuItem(item: item));
-    //   }, growable: false),
-    // );
+    return GridView.count(
+      crossAxisCount: 2,
+      shrinkWrap: true,
+      children: List.generate(_gameItems.length, (index) {
+        return TextButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return _buildMenuItem(item: _gameItems[index]);
+              }));
+            },
+            child: _buildMenuItem(item: _gameItems[index]));
+      }),
+    );
   }
 
   Widget _buildMenuItem({
