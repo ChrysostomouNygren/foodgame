@@ -28,19 +28,20 @@ class _HomeState extends State<Home> {
           Center(
             child: Column(
               children: [
-                TextButton(
-                  onPressed: () {
+                GestureDetector(
+                  onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return DragAndDropGame();
+                      return const DragAndDropGame();
                     }));
                   },
                   child: Column(
                     children: [
                       SizedBox(
-                          width: 180,
-                          height: 180,
-                          child: Image.asset('assets/images/play_btn.png')),
+                        width: 180,
+                        height: 180,
+                        child: Image.asset('assets/images/play_btn.png'),
+                      ),
                       const SizedBox(
                         height: 20,
                       ),
@@ -50,10 +51,10 @@ class _HomeState extends State<Home> {
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
-                      ),
+                      )
                     ],
                   ),
-                ),
+                )
               ],
             ),
           ),
