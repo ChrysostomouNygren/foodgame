@@ -49,7 +49,6 @@ class _RecipePageState extends State<RecipePage> {
                   child: Material(
                 elevation: 10,
                 child: Container(
-                    // color: const Color.fromRGBO(251, 241, 152, 0.2),
                     child: Scrollbar(
                   thumbVisibility: true,
                   controller: _ingredientsController,
@@ -65,7 +64,7 @@ class _RecipePageState extends State<RecipePage> {
                           Theme(
                             data: Theme.of(context).copyWith(
                                 unselectedWidgetColor:
-                                    Color.fromARGB(255, 3, 39, 52)),
+                                    const Color.fromARGB(255, 3, 39, 52)),
                             child: Checkbox(
                               value: widget.ingredients[index]['added'],
                               onChanged: (bool? value) {
@@ -94,50 +93,46 @@ class _RecipePageState extends State<RecipePage> {
               Expanded(
                   child: Material(
                 elevation: 10,
-                child: Container(
-                  // color: const Color.fromRGBO(251, 241, 152, 0.2),
-                  child: Scrollbar(
-                    thumbVisibility: true,
-                    controller: _instructionsController,
-                    thickness: 10,
-                    child: ListView.separated(
-                        controller: _instructionsController,
-                        itemBuilder: ((context, index) {
-                          return Row(
-                            children: [
-                              Theme(
-                                data: Theme.of(context).copyWith(
-                                    unselectedWidgetColor:
-                                        const Color.fromARGB(255, 3, 39, 52)),
-                                child: Checkbox(
-                                  value: widget.instructions[index]['done'],
-                                  onChanged: (bool? value) {
-                                    setState(() {
-                                      widget.instructions[index]['done'] =
-                                          value!;
-                                    });
-                                  },
-                                  activeColor:
-                                      const Color.fromARGB(255, 3, 39, 52),
-                                  checkColor: Colors.white,
-                                ),
+                child: Scrollbar(
+                  thumbVisibility: true,
+                  controller: _instructionsController,
+                  thickness: 10,
+                  child: ListView.separated(
+                      controller: _instructionsController,
+                      itemBuilder: ((context, index) {
+                        return Row(
+                          children: [
+                            Theme(
+                              data: Theme.of(context).copyWith(
+                                  unselectedWidgetColor:
+                                      const Color.fromARGB(255, 3, 39, 52)),
+                              child: Checkbox(
+                                value: widget.instructions[index]['done'],
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    widget.instructions[index]['done'] = value!;
+                                  });
+                                },
+                                activeColor:
+                                    const Color.fromARGB(255, 3, 39, 52),
+                                checkColor: Colors.white,
                               ),
-                              Flexible(
-                                child: Text(
-                                  widget.instructions[index]['instruction'],
-                                  style: const TextStyle(fontSize: 18),
-                                ),
-                              )
-                            ],
-                          );
-                        }),
-                        separatorBuilder: (context, index) {
-                          return const SizedBox(
-                            height: 5,
-                          );
-                        },
-                        itemCount: widget.instructions.length),
-                  ),
+                            ),
+                            Flexible(
+                              child: Text(
+                                widget.instructions[index]['instruction'],
+                                style: const TextStyle(fontSize: 18),
+                              ),
+                            )
+                          ],
+                        );
+                      }),
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(
+                          height: 5,
+                        );
+                      },
+                      itemCount: widget.instructions.length),
                 ),
               )),
             ],
