@@ -3,180 +3,182 @@ import 'package:drag_drop/components/star_clipper.dart';
 import 'package:drag_drop/pages/home_page.dart';
 import 'package:drag_drop/pages/recipes_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../components/bin_tile.dart';
 import '../components/item.dart';
 import '../components/sorting.dart';
+import 'dart:convert';
 
-const List<Item> _itemsConst = [
-  Item(
-    name: 'Banana',
-    healthy: true,
-    uid: 1,
-    imageProvider: AssetImage('assets/bananas.png'),
-  ),
-  Item(
-    name: 'Crisps',
-    healthy: false,
-    uid: 2,
-    imageProvider: AssetImage('assets/crisps.png'),
-  ),
-  Item(
-    name: 'Pizza',
-    healthy: false,
-    uid: 3,
-    imageProvider: AssetImage('assets/pizza.png'),
-  ),
-  Item(
-    name: 'Carrot',
-    healthy: true,
-    uid: 4,
-    imageProvider: AssetImage('assets/carrot.png'),
-  ),
-  Item(
-    name: 'Broccoli',
-    healthy: true,
-    uid: 5,
-    imageProvider: AssetImage('assets/broccoli.png'),
-  ),
-  Item(
-    name: 'Ice Cream',
-    healthy: false,
-    uid: 6,
-    imageProvider: AssetImage('assets/ice_cream.png'),
-  ),
-  Item(
-    name: 'Cheesecake',
-    healthy: false,
-    uid: 7,
-    imageProvider: AssetImage('assets/cheesecake.png'),
-  ),
-];
+// const List<Item> _itemsConst = [
+//   Item(
+//     name: 'Banana',
+//     healthy: true,
+//     uid: 1,
+//     imageProvider: AssetImage('assets/bananas.png'),
+//   ),
+//   Item(
+//     name: 'Crisps',
+//     healthy: false,
+//     uid: 2,
+//     imageProvider: AssetImage('assets/crisps.png'),
+//   ),
+//   Item(
+//     name: 'Pizza',
+//     healthy: false,
+//     uid: 3,
+//     imageProvider: AssetImage('assets/pizza.png'),
+//   ),
+//   Item(
+//     name: 'Carrot',
+//     healthy: true,
+//     uid: 4,
+//     imageProvider: AssetImage('assets/carrot.png'),
+//   ),
+//   Item(
+//     name: 'Broccoli',
+//     healthy: true,
+//     uid: 5,
+//     imageProvider: AssetImage('assets/broccoli.png'),
+//   ),
+//   Item(
+//     name: 'Ice Cream',
+//     healthy: false,
+//     uid: 6,
+//     imageProvider: AssetImage('assets/ice_cream.png'),
+//   ),
+//   Item(
+//     name: 'Cheesecake',
+//     healthy: false,
+//     uid: 7,
+//     imageProvider: AssetImage('assets/cheesecake.png'),
+//   ),
+// ];
 
-List<Item> _items = [
-  const Item(
-    name: 'Banana',
-    healthy: true,
-    uid: 1,
-    imageProvider: AssetImage('assets/bananas.png'),
-  ),
-  const Item(
-    name: 'Crisps',
-    healthy: false,
-    uid: 2,
-    imageProvider: AssetImage('assets/crisps.png'),
-  ),
-  const Item(
-    name: 'Pizza',
-    healthy: false,
-    uid: 3,
-    imageProvider: AssetImage('assets/pizza.png'),
-  ),
-  const Item(
-    name: 'Carrot',
-    healthy: true,
-    uid: 4,
-    imageProvider: AssetImage('assets/carrot.png'),
-  ),
-  const Item(
-    name: 'Broccoli',
-    healthy: true,
-    uid: 5,
-    imageProvider: AssetImage('assets/broccoli.png'),
-  ),
-  const Item(
-    name: 'Ice Cream',
-    healthy: false,
-    uid: 6,
-    imageProvider: AssetImage('assets/ice_cream.png'),
-  ),
-  const Item(
-    name: 'Cheesecake',
-    healthy: false,
-    uid: 7,
-    imageProvider: AssetImage('assets/cheesecake.png'),
-  ),
-  const Item(
-      name: 'Almond',
-      healthy: true,
-      uid: 8,
-      imageProvider: AssetImage('assets/almonds.png')),
-  const Item(
-      name: 'Avocado',
-      healthy: true,
-      uid: 9,
-      imageProvider: AssetImage('assets/avocado.png')),
-  const Item(
-      name: 'Hamburger',
-      healthy: false,
-      uid: 10,
-      imageProvider: AssetImage('assets/burger.png')),
-  const Item(
-      name: 'Cauliflower',
-      healthy: true,
-      uid: 11,
-      imageProvider: AssetImage('assets/cauliflower.png')),
-  const Item(
-      name: 'Corn',
-      healthy: true,
-      uid: 12,
-      imageProvider: AssetImage('assets/corn.png')),
-  const Item(
-      name: 'Walnuts',
-      healthy: true,
-      uid: 13,
-      imageProvider: AssetImage('assets/walnut.png')),
-  const Item(
-      name: 'Fried chicken',
-      healthy: false,
-      uid: 14,
-      imageProvider: AssetImage('assets/fried_chicken.png')),
-  const Item(
-      name: 'Fries',
-      healthy: false,
-      uid: 15,
-      imageProvider: AssetImage('assets/fries.png')),
-  const Item(
-      name: 'Ketchup',
-      healthy: false,
-      uid: 16,
-      imageProvider: AssetImage('assets/ketchup.png')),
-  const Item(
-      name: 'Lemon',
-      healthy: true,
-      uid: 17,
-      imageProvider: AssetImage('assets/lemon.png')),
-  const Item(
-      name: 'Lentils',
-      healthy: true,
-      uid: 18,
-      imageProvider: AssetImage('assets/lentils.png')),
-  const Item(
-      name: 'Mashed potatoes',
-      healthy: false,
-      uid: 19,
-      imageProvider: AssetImage('assets/mashed_potatoes.png')),
-  const Item(
-      name: 'Salmon',
-      healthy: true,
-      uid: 20,
-      imageProvider: AssetImage('assets/salmon.png')),
-  const Item(
-      name: 'Sweet potatoes',
-      healthy: true,
-      uid: 21,
-      imageProvider: AssetImage('assets/sweet_potatoes.png')),
-  const Item(
-      name: 'Toilet paper',
-      healthy: false,
-      uid: 22,
-      imageProvider: AssetImage('assets/toilet_paper.png')),
-];
+// List<Item> _items = [
+//   const Item(
+//     name: 'Banana',
+//     healthy: true,
+//     uid: 1,
+//     imageProvider: AssetImage('assets/bananas.png'),
+//   ),
+//   const Item(
+//     name: 'Crisps',
+//     healthy: false,
+//     uid: 2,
+//     imageProvider: AssetImage('assets/crisps.png'),
+//   ),
+//   const Item(
+//     name: 'Pizza',
+//     healthy: false,
+//     uid: 3,
+//     imageProvider: AssetImage('assets/pizza.png'),
+//   ),
+//   const Item(
+//     name: 'Carrot',
+//     healthy: true,
+//     uid: 4,
+//     imageProvider: AssetImage('assets/carrot.png'),
+//   ),
+//   const Item(
+//     name: 'Broccoli',
+//     healthy: true,
+//     uid: 5,
+//     imageProvider: AssetImage('assets/broccoli.png'),
+//   ),
+//   const Item(
+//     name: 'Ice Cream',
+//     healthy: false,
+//     uid: 6,
+//     imageProvider: AssetImage('assets/ice_cream.png'),
+//   ),
+//   const Item(
+//     name: 'Cheesecake',
+//     healthy: false,
+//     uid: 7,
+//     imageProvider: AssetImage('assets/cheesecake.png'),
+//   ),
+//   const Item(
+//       name: 'Almond',
+//       healthy: true,
+//       uid: 8,
+//       imageProvider: AssetImage('assets/almonds.png')),
+//   const Item(
+//       name: 'Avocado',
+//       healthy: true,
+//       uid: 9,
+//       imageProvider: AssetImage('assets/avocado.png')),
+//   const Item(
+//       name: 'Hamburger',
+//       healthy: false,
+//       uid: 10,
+//       imageProvider: AssetImage('assets/burger.png')),
+//   const Item(
+//       name: 'Cauliflower',
+//       healthy: true,
+//       uid: 11,
+//       imageProvider: AssetImage('assets/cauliflower.png')),
+//   const Item(
+//       name: 'Corn',
+//       healthy: true,
+//       uid: 12,
+//       imageProvider: AssetImage('assets/corn.png')),
+//   const Item(
+//       name: 'Walnuts',
+//       healthy: true,
+//       uid: 13,
+//       imageProvider: AssetImage('assets/walnut.png')),
+//   const Item(
+//       name: 'Fried chicken',
+//       healthy: false,
+//       uid: 14,
+//       imageProvider: AssetImage('assets/fried_chicken.png')),
+//   const Item(
+//       name: 'Fries',
+//       healthy: false,
+//       uid: 15,
+//       imageProvider: AssetImage('assets/fries.png')),
+//   const Item(
+//       name: 'Ketchup',
+//       healthy: false,
+//       uid: 16,
+//       imageProvider: AssetImage('assets/ketchup.png')),
+//   const Item(
+//       name: 'Lemon',
+//       healthy: true,
+//       uid: 17,
+//       imageProvider: AssetImage('assets/lemon.png')),
+//   const Item(
+//       name: 'Lentils',
+//       healthy: true,
+//       uid: 18,
+//       imageProvider: AssetImage('assets/lentils.png')),
+//   const Item(
+//       name: 'Mashed potatoes',
+//       healthy: false,
+//       uid: 19,
+//       imageProvider: AssetImage('assets/mashed_potatoes.png')),
+//   const Item(
+//       name: 'Salmon',
+//       healthy: true,
+//       uid: 20,
+//       imageProvider: AssetImage('assets/salmon.png')),
+//   const Item(
+//       name: 'Sweet potatoes',
+//       healthy: true,
+//       uid: 21,
+//       imageProvider: AssetImage('assets/sweet_potatoes.png')),
+//   const Item(
+//       name: 'Toilet paper',
+//       healthy: false,
+//       uid: 22,
+//       imageProvider: AssetImage('assets/toilet_paper.png')),
+// ];
 
 @immutable
 class DragAndDropGame extends StatefulWidget {
   DragAndDropGame({super.key}) {
-    _items.shuffle();
-    _items.length = 6;
+    // _items.shuffle();
+    // _items.length = 6;
   }
 
   @override
@@ -200,26 +202,45 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   final GlobalKey _draggableKey = GlobalKey();
 
+  List _gameItems = [];
+  Future<void> readJsonItems() async {
+    final String response =
+        await rootBundle.loadString('assets/game_items.json');
+    final data = await json.decode(response);
+    setState(() {
+      _gameItems = data['items'];
+    });
+    _gameItems.shuffle();
+    _gameItems.length = 6;
+    print(_gameItems);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    readJsonItems();
+  }
+
   void _itemDroppedOnSortingButton({
-    required Item item,
+    required item,
     required Sorting type,
   }) {
     setState(() {
-      if (item.healthy && type.healthy) {
+      if (item['healthy'] && type.healthy) {
         type.items.add(item);
-        _items.removeWhere((produce) => produce.uid == item.uid);
-        if (_items.isEmpty) {
+        _gameItems.removeWhere((produce) => produce['id'] == item['id']);
+        if (_gameItems.isEmpty) {
           succesfullDialogModal();
         }
-      } else if (!item.healthy && !type.healthy) {
+      } else if (!item['healthy'] && !type.healthy) {
         type.items.add(item);
-        _items.removeWhere((produce) => produce.uid == item.uid);
-        if (_items.isEmpty) {
+        _gameItems.removeWhere((produce) => produce['id'] == item['id']);
+        if (_gameItems.isEmpty) {
           succesfullDialogModal();
         }
-      } else if (!item.healthy && type.healthy) {
+      } else if (!item['healthy'] && type.healthy) {
         failedDialogModal(context);
-      } else if (item.healthy && !type.healthy) {
+      } else if (item['healthy'] && !type.healthy) {
         failedDialogModal(context);
       }
     });
@@ -281,7 +302,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     onPressed: () {
                       Navigator.pop(context);
                       setState(() {
-                        _items.addAll(_itemsConst);
+                        // _items.addAll(_itemsConst);
                         for (var btn in _sortingButtons) {
                           btn.items.clear();
                         }
@@ -316,7 +337,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                         return const Recipes();
                       }));
                       setState(() {
-                        _items.addAll(_itemsConst);
+                        // _items.addAll(_itemsConst);
                         for (var btn in _sortingButtons) {
                           btn.items.clear();
                         }
@@ -422,8 +443,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                         )),
                     onPressed: () {
                       setState(() {
-                        _items.clear();
-                        _items.addAll(_itemsConst);
+                        // _items.clear();
+                        // _items.addAll(_itemsConst);
                         for (var btn in _sortingButtons) {
                           btn.items.clear();
                         }
@@ -520,35 +541,55 @@ class _DragAndDropGameState extends State<DragAndDropGame>
   }
 
   Widget _buildMenuList() {
-    return GridView.count(
-      crossAxisCount: 2,
-      children: List.generate(_items.length, (index) {
-        final item = _items[index];
+    return _gameItems.isNotEmpty
+        ? GridView.count(
+            crossAxisCount: 2,
+            shrinkWrap: true,
+            children: List.generate(_gameItems.length, (index) {
+              print(_gameItems[index]);
 
-        return TextButton(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return _buildMenuItem(item: item);
-              }));
-            },
-            child: _buildMenuItem(item: item));
-      }, growable: false),
-    );
+              return TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return _buildMenuItem(item: _gameItems[index]);
+                    }));
+                  },
+                  child: _buildMenuItem(item: _gameItems[index]));
+              // Image.asset(_gameItems[index]['img']);
+            }),
+          )
+        : Text('_gameItems är tom bruh');
+
+    // GridView.count(
+    //   crossAxisCount: 2,
+    //   children: List.generate(_items.length, (index) {
+    //     final item = _items[index];
+
+    //     return TextButton(
+    //         onPressed: () {
+    //           Navigator.push(context, MaterialPageRoute(builder: (context) {
+    //             return _buildMenuItem(item: item);
+    //           }));
+    //         },
+    //         child: _buildMenuItem(item: item));
+    //   }, growable: false),
+    // );
   }
 
   Widget _buildMenuItem({
-    required Item item,
+    required item,
   }) {
-    return LongPressDraggable<Item>(
+    return LongPressDraggable(
       data: item,
       dragAnchorStrategy: pointerDragAnchorStrategy,
       feedback: DraggingListItem(
         dragKey: _draggableKey,
-        photoProvider: item.imageProvider,
+        img: item['img'],
       ),
       child: MenuListItem(
-        name: item.name,
-        photoProvider: item.imageProvider,
+        name: item['name'],
+        img: item['img'],
       ),
     );
   }
@@ -571,7 +612,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         padding: const EdgeInsets.symmetric(
           horizontal: 6.0,
         ),
-        child: DragTarget<Item>(
+        child: DragTarget(
           builder: (context, candidateItems, rejectedItems) {
             return SortingTile(
               hasItems: type.items.isNotEmpty,
@@ -595,12 +636,12 @@ class MenuListItem extends StatelessWidget {
   const MenuListItem({
     super.key,
     this.name = '',
-    required this.photoProvider,
+    required this.img,
     this.isPressed = false,
   });
 
   final String name;
-  final ImageProvider photoProvider;
+  final String img;
   final bool isPressed;
 
   @override
@@ -621,7 +662,7 @@ class MenuListItem extends StatelessWidget {
                 child: Column(
                   children: [
                     Image(
-                      image: photoProvider,
+                      image: AssetImage(img),
                     ),
                   ],
                 ),
@@ -638,11 +679,11 @@ class DraggingListItem extends StatelessWidget {
   const DraggingListItem({
     super.key,
     required this.dragKey,
-    required this.photoProvider,
+    required this.img,
   });
 
   final GlobalKey dragKey;
-  final ImageProvider photoProvider;
+  final String img;
 
   @override
   Widget build(BuildContext context) {
@@ -657,7 +698,7 @@ class DraggingListItem extends StatelessWidget {
           child: Opacity(
             opacity: 0.85,
             child: Image(
-              image: photoProvider,
+              image: AssetImage(img),
               fit: BoxFit.cover,
             ),
           ),

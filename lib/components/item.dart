@@ -1,14 +1,11 @@
-import 'package:flutter/material.dart';
-
 class Item {
-  const Item({
-    required this.name,
-    required this.healthy,
-    required this.uid,
-    required this.imageProvider,
-  });
+  const Item(
+      {required this.name,
+      required this.healthy,
+      required this.id,
+      required this.img});
   final String name;
   final bool healthy;
-  final int uid;
-  final ImageProvider imageProvider;
+  final int id;
+  final String img;
 }
