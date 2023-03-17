@@ -14,8 +14,6 @@ class Recipes extends StatefulWidget {
 
 class _RecipesState extends State<Recipes> {
   List _recipesPls = [];
-  List _ingredienser = [];
-  List _instruktioner = [];
 
   Future<void> readJsonRecipe() async {
     final String response = await rootBundle.loadString('assets/recipes.json');
@@ -29,13 +27,6 @@ class _RecipesState extends State<Recipes> {
   void initState() {
     super.initState();
     readJsonRecipe();
-  }
-
-  void _buildRecipe(index) {
-    setState(() {
-      _ingredienser = _recipesPls[index]['ingredients'];
-      _instruktioner = _recipesPls[index]['instructions'];
-    });
   }
 
   @override
