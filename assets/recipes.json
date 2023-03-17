@@ -11,9 +11,18 @@
         { "ingredient": "A pinch of salt", "added": false }
       ],
       "instructions": [
-        {"instruction": "Mix water, oatmeal and salt in a pot.", "done": false},
-        {"instruction": "Bring to the boil and let it simmer for a couple of minutes.", "done": false},
-        {"instruction": "Serve with milk and condiment of your choice.", "done": false}
+        {
+          "instruction": "Mix water, oatmeal and salt in a pot.",
+          "done": false
+        },
+        {
+          "instruction": "Bring to the boil and let it simmer for a couple of minutes.",
+          "done": false
+        },
+        {
+          "instruction": "Optional: Serve with milk and condiment of your choice.",
+          "done": false
+        }
       ]
     },
 
@@ -36,11 +45,20 @@
         { "ingredient": "Salt and pepper", "added": false }
       ],
       "instructions": [
-        {"instruction": "Peel and wash all the vegetables.", "done": false},
-        {"instruction": "Cut all the vegetables into even-sized pieces.", "done": false},
-        {"instruction": "Fry everything lightly in a pot with the oil.", "done": false},
-        {"instruction": "Add the water and the broth cubes, let it boil til the veggies are soft.", "done": false},
-        {"instruction": "Taste with salt and pepper.", "done": false}
+        { "instruction": "Peel and wash all the vegetables.", "done": false },
+        {
+          "instruction": "Cut all the vegetables into even-sized pieces.",
+          "done": false
+        },
+        {
+          "instruction": "Fry everything lightly in a pot with the oil.",
+          "done": false
+        },
+        {
+          "instruction": "Add the water and the broth cubes, let it boil til the veggies are soft.",
+          "done": false
+        },
+        { "instruction": "Taste with salt and pepper.", "done": false }
       ]
     },
     {
@@ -59,13 +77,25 @@
         { "ingredient": "A pinch of black pepper", "added": false }
       ],
       "instructions": [
-        {"instruction": "Peel and slice the onion.", "done": false},
-        {"instruction": "Dice the cucumber and the tomatoes.", "done": false},
-        {"instruction": "Break the cheese into smaller pieces.", "done": false},
-        {"instruction": "Mix all the vegetables carefully in a bowl.", "done": false},
-        {"instruction": "Mix the oil and vinegar into a dressing.", "done": false},
-        {"instruction": "Pick the leaves of the oregano.", "done": false},
-        {"instruction": "Drizzle the dressing over the salad and top with the oregano leaves and black pepper.", "done": false}
+        { "instruction": "Peel and slice the onion.", "done": false },
+        { "instruction": "Dice the cucumber and the tomatoes.", "done": false },
+        {
+          "instruction": "Break the cheese into smaller pieces.",
+          "done": false
+        },
+        {
+          "instruction": "Mix all the vegetables carefully in a bowl.",
+          "done": false
+        },
+        {
+          "instruction": "Mix the oil and vinegar into a dressing.",
+          "done": false
+        },
+        { "instruction": "Pick the leaves of the oregano.", "done": false },
+        {
+          "instruction": "Drizzle the dressing over the salad and top with the oregano leaves and black pepper.",
+          "done": false
+        }
       ]
     },
     {
@@ -82,12 +112,27 @@
         { "ingredient": "Salt and pepper", "added": false }
       ],
       "instructions": [
-        {"instruction": "Peel and cut the onion and potatoes.", "done": false},
-        {"instruction": "Dice up the broccoli.", "done": false},
-        {"instruction": "Bring the stock to a boil, add all vegetables.", "done": false},
-        {"instruction": "Let it boil for 10 minutes, or til the veggies are soft.", "done": false},
-        {"instruction": "Mix the soup with a immersion blender or food processor.", "done": false},
-        {"instruction": "Add cooking cream to the soup, season with salt and pepper.", "done": false}
+        {
+          "instruction": "Peel and cut the onion and potatoes.",
+          "done": false
+        },
+        { "instruction": "Dice up the broccoli.", "done": false },
+        {
+          "instruction": "Bring the stock to a boil, add all vegetables.",
+          "done": false
+        },
+        {
+          "instruction": "Let it boil for 10 minutes, or til the veggies are soft.",
+          "done": false
+        },
+        {
+          "instruction": "Mix the soup with a immersion blender or food processor.",
+          "done": false
+        },
+        {
+          "instruction": "Add cooking cream to the soup, season with salt and pepper.",
+          "done": false
+        }
       ]
     },
     {
@@ -105,13 +150,84 @@
         { "ingredient": "1 dl Coconut flakes", "added": false }
       ],
       "instructions": [
-        {"instruction": "Melt the butter in a small pot. Let it cool.", "done": false},
-        {"instruction": "Cut the dates in half and remove the pits.", "done": false},
-        {"instruction": "Put all ingredients, apart from the coconut, in a food processor.", "done": false},
-        {"instruction": "Mix into a smooth paste.", "done": false},
-        {"instruction": "Roll the paste into balls in the palm of your hands, about 12 pieces.", "done": false},
-        {"instruction": "Add the coconut flakes onto a plate.", "done": false},
-        {"instruction": "Roll the balls in the coconut flakes.", "done": false}
+        {
+          "instruction": "Melt the butter in a small pot. Let it cool.",
+          "done": false
+        },
+        {
+          "instruction": "Cut the dates in half and remove the pits.",
+          "done": false
+        },
+        {
+          "instruction": "Put all ingredients, apart from the coconut, in a food processor.",
+          "done": false
+        },
+        { "instruction": "Mix into a smooth paste.", "done": false },
+        {
+          "instruction": "Roll the paste into balls in the palm of your hands, about 12 pieces.",
+          "done": false
+        },
+        {
+          "instruction": "Add the coconut flakes onto a plate.",
+          "done": false
+        },
+        {
+          "instruction": "Roll the balls in the coconut flakes.",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Lemon salmon",
+      "description": "A fool proof and minimal prepping dish for the whole family.",
+      "img": "assets/recipe_images/lemon_salmon.png",
+      "ingredients": [
+        { "ingredient": "500g Salmon fillets", "added": false },
+        { "ingredient": "2 Lemons", "added": false },
+        { "ingredient": "1 tsp Kosher salt", "added": false },
+        { "ingredient": "3 tbsp Butter", "added": false },
+        { "ingredient": "0,5 tsp Garlic powder", "added": false },
+        { "ingredient": "Optional: Chopped parsley", "added": false }
+      ],
+      "instructions": [
+        { "instruction": "Preheat oven to 190°C/375°F.", "done": false },
+        {
+          "instruction": "Zest one of the lemons, then thinly slice both lemons into rounds.",
+          "done": false
+        },
+        {
+          "instruction": "Place a long strip of aluminum foil on a baking sheet. Lay half the lemon slices in the center of the aluminum foil, to create a bed for the salmon.",
+          "done": false
+        },
+        {
+          "instruction": "Lay the salmon on the lemon slices. Sprinkle the salt and lemon zest onto the salmon.",
+          "done": false
+        },
+        {
+          "instruction": "Melt the butter for 30 seconds in a microwave, and then stir the garlic powder into the butter.",
+          "done": false
+        },
+        {
+          "instruction": "Using a spoon or a pastry brush, top the salmon with the garlic butter. Then arrange the rest of the lemon slices on top of the salmon.",
+          "done": false
+        },
+        {
+          "instruction": "Fold the aluminum foil together, completely enclosing the salmon. Use a second piece of foil if your first piece isn't large enough.",
+          "done": false
+        },
+        {
+          "instruction": "Bake for 20-25 minutes, until the salmon is fully cooked through. The salmon should flake apart and be opaque in the center.",
+          "done": false
+        },
+        {
+          "instruction": "Remove the salmon from the oven and carefully open the foil.",
+          "done": false
+        },
+        {
+          "instruction": "Serve the salmon with optional chopped herbs.",
+          "done": false
+        }
       ]
     }
   ]
