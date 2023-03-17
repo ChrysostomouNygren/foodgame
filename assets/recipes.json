@@ -1,7 +1,7 @@
 {
   "recipes": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Oatmeal",
       "description": "Simple breakfast, made quick and easy.",
       "img": "assets/recipe_images/oatmeal.png",
@@ -16,9 +16,9 @@
         {"instruction": "Serve with milk and condiment of your choice.", "done": false}
       ]
     },
-    
+
     {
-      "id": "2",
+      "id": 2,
       "name": "Veggie soup",
       "description": "Rich and flavourful treat for the colder days.",
       "img": "assets/recipe_images/veggie_soup.png",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Greek Salad",
       "description": "Easy to make! You could either have it by it self or as a side dish.",
       "img": "assets/recipe_images/greek_salad.png",
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Broccoli Soup",
       "description": "Quick and tasty soup for the green lover.",
       "img": "assets/recipe_images/broccoli_soup.png",
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "Date snacks",
       "description": "A yummy snack to keep around, with no white sugar.",
       "img": "assets/recipe_images/date_snacks.png",
