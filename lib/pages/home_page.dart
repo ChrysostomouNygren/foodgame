@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
                       SizedBox(
                           width: 180,
                           height: 180,
-                          child: Image.asset('assets/play_btn.png')),
+                          child: Image.asset('assets/images/play_btn.png')),
                       const SizedBox(
                         height: 20,
                       ),

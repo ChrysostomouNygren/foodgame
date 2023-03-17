@@ -20,7 +20,7 @@ Future<String?> failedDialogModal(context) {
                   width: 200,
                 ),
                 Image.asset(
-                  'assets/stop.png',
+                  'assets/images/stop.png',
                   height: 120,
                   fit: BoxFit.fill,
                 )
@@ -49,7 +49,7 @@ Future<String?> failedDialogModal(context) {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/play_again.png',
+                    'assets/images/play_again.png',
                     height: 50,
                     fit: BoxFit.fill,
                   ),

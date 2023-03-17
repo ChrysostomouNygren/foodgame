@@ -12,7 +12,7 @@ class BackBtn extends StatelessWidget {
       child: SizedBox(
         height: 40,
         width: 40,
-        child: Image.asset('assets/back.png'),
+        child: Image.asset('assets/images/back.png'),
       ),
     );
   }

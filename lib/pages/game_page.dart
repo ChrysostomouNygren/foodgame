@@ -10,7 +10,7 @@ import 'dart:convert';
 
 @immutable
 class DragAndDropGame extends StatefulWidget {
-  DragAndDropGame({super.key});
+  const DragAndDropGame({super.key});
 
   @override
   State<DragAndDropGame> createState() => _DragAndDropGameState();
@@ -21,12 +21,12 @@ class _DragAndDropGameState extends State<DragAndDropGame>
   final List<Sorting> _sortingButtons = [
     Sorting(
       type: 'Add',
-      imageProvider: const AssetImage('assets/cart.png'),
+      imageProvider: const AssetImage('assets/images/cart.png'),
       healthy: true,
     ),
     Sorting(
       type: 'Pass',
-      imageProvider: const AssetImage('assets/trash.png'),
+      imageProvider: const AssetImage('assets/images/trash.png'),
       healthy: false,
     ),
   ];
@@ -102,7 +102,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                   ),
                 ),
                 Image.asset(
-                  'assets/trophy.png',
+                  'assets/images/trophy.png',
                   height: 140,
                   fit: BoxFit.fill,
                 ),
@@ -141,7 +141,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     child: Column(
                       children: [
                         Image.asset(
-                          'assets/play_again.png',
+                          'assets/images/play_again.png',
                           height: 50,
                           fit: BoxFit.fill,
                         ),
@@ -176,7 +176,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     child: Column(
                       children: [
                         Image.asset(
-                          'assets/recipes.png',
+                          'assets/images/recipes.png',
                           height: 50,
                           fit: BoxFit.fill,
                         ),
@@ -217,7 +217,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     width: 200,
                   ),
                   Image.asset(
-                    'assets/stop.png',
+                    'assets/images/stop.png',
                     height: 120,
                     fit: BoxFit.fill,
                   )
@@ -251,7 +251,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     child: Column(
                       children: [
                         Image.asset(
-                          'assets/play_again.png',
+                          'assets/images/play_again.png',
                           height: 50,
                           fit: BoxFit.fill,
                         ),
@@ -287,7 +287,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     child: Column(
                       children: [
                         Image.asset(
-                          'assets/cancel.png',
+                          'assets/images/cancel.png',
                           height: 45,
                           fit: BoxFit.fill,
                         ),
@@ -314,7 +314,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/background.jpg'),
+              image: AssetImage('assets/images/background.jpg'),
               fit: BoxFit.cover,
               opacity: 0.2,
             ),
@@ -331,7 +331,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         child: SizedBox(
           height: 40,
           width: 40,
-          child: Image.asset('assets/close.png'),
+          child: Image.asset('assets/images/close.png'),
         ));
   }
 
