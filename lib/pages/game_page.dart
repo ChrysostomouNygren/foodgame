@@ -60,23 +60,23 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         type.items.add(item);
         _gameItems.removeWhere((produce) => produce['id'] == item['id']);
         if (_gameItems.isEmpty) {
-          succesfullDialogModal();
+          succesfullModal();
         }
       } else if (!item['healthy'] && !type.healthy) {
         type.items.add(item);
         _gameItems.removeWhere((produce) => produce['id'] == item['id']);
         if (_gameItems.isEmpty) {
-          succesfullDialogModal();
+          succesfullModal();
         }
       } else if (!item['healthy'] && type.healthy) {
-        failedDialogModal(context);
+        failedModal(context);
       } else if (item['healthy'] && !type.healthy) {
-        failedDialogModal(context);
+        failedModal(context);
       }
     });
   }
 
-  Future<String?> succesfullDialogModal() {
+  Future<String?> succesfullModal() {
     return showDialog<String>(
       context: context,
       builder: (BuildContext context) => Dialog(
@@ -360,7 +360,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
           child: Column(
             children: [
               Expanded(
-                child: _buildMenuList(),
+                child: _buildGameGrid(),
               ),
               _buildSortingRow(),
             ],
@@ -370,7 +370,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
     );
   }
 
-  Widget _buildMenuList() {
+  Widget _buildGameGrid() {
     return GridView.count(
       crossAxisCount: 2,
       shrinkWrap: true,
@@ -378,25 +378,25 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         return TextButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return _buildMenuItem(item: _gameItems[index]);
+                return _buildGameItem(item: _gameItems[index]);
               }));
             },
-            child: _buildMenuItem(item: _gameItems[index]));
+            child: _buildGameItem(item: _gameItems[index]));
       }),
     );
   }
 
-  Widget _buildMenuItem({
+  Widget _buildGameItem({
     required item,
   }) {
     return LongPressDraggable(
       data: item,
       dragAnchorStrategy: pointerDragAnchorStrategy,
-      feedback: DraggingListItem(
+      feedback: DraggingGameItem(
         dragKey: _draggableKey,
         img: item['img'],
       ),
-      child: MenuListItem(
+      child: GameItem(
         name: item['name'],
         img: item['img'],
       ),
@@ -441,8 +441,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
   }
 }
 
-class MenuListItem extends StatelessWidget {
-  const MenuListItem({
+class GameItem extends StatelessWidget {
+  const GameItem({
     super.key,
     this.name = '',
     required this.img,
@@ -484,8 +484,8 @@ class MenuListItem extends StatelessWidget {
   }
 }
 
-class DraggingListItem extends StatelessWidget {
-  const DraggingListItem({
+class DraggingGameItem extends StatelessWidget {
+  const DraggingGameItem({
     super.key,
     required this.dragKey,
     required this.img,

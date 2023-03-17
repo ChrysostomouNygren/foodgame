@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Future<String?> failedDialogModal(context) {
+Future<String?> failedModal(context) {
   return showDialog<String>(
     context: context,
     builder: (BuildContext context) => Dialog(
