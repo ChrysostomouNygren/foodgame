@@ -375,13 +375,14 @@ class _DragAndDropGameState extends State<DragAndDropGame>
       crossAxisCount: 2,
       shrinkWrap: true,
       children: List.generate(_gameItems.length, (index) {
-        return TextButton(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return _buildGameItem(item: _gameItems[index]);
-              }));
-            },
-            child: _buildGameItem(item: _gameItems[index]));
+        return GestureDetector(
+          onLongPress: () {
+            Navigator.push(context, MaterialPageRoute(builder: ((context) {
+              return _buildGameItem(item: _gameItems[index]);
+            })));
+          },
+          child: _buildGameItem(item: _gameItems[index]),
+        );
       }),
     );
   }
