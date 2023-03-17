@@ -11,8 +11,8 @@
         { "ingredient": "A pinch of salt", "added": false }
       ],
       "instructions": [
-        {"instruction": "Mix water, oatmeal and salt.", "done": false},
-        {"instruction": "Bring to the boil and simmer for a couple of minutes.", "done": false},
+        {"instruction": "Mix water, oatmeal and salt in a pot.", "done": false},
+        {"instruction": "Bring to the boil and let it simmer for a couple of minutes.", "done": false},
         {"instruction": "Serve with milk and condiment of your choice.", "done": false}
       ]
     },
@@ -38,7 +38,7 @@
         {"instruction": "Peel and wash all the vegetables.", "done": false},
         {"instruction": "Cut all the vegetables into even-sized pieces.", "done": false},
         {"instruction": "Fry everything lightly in a pot with the oil.", "done": false},
-        {"instruction": "'Pour the water and add the broth cubes, let it boil til the veggies are soft.'", "done": false},
+        {"instruction": "Add the water and the broth cubes, let it boil til the veggies are soft.", "done": false},
         {"instruction": "Taste with salt and pepper.", "done": false}
       ]
     },
@@ -59,12 +59,12 @@
       ],
       "instructions": [
         {"instruction": "Peel and slice the onion.", "done": false},
-        {"instruction": "Dice cucumber and tomatoes.", "done": false},
+        {"instruction": "Dice the cucumber and the tomatoes.", "done": false},
         {"instruction": "Break the cheese into smaller pieces.", "done": false},
         {"instruction": "Mix all the vegetables carefully in a bowl.", "done": false},
         {"instruction": "Mix the oil and vinegar into a dressing.", "done": false},
         {"instruction": "Pick the leaves of the oregano.", "done": false},
-        {"instruction": "Drizzle over the dressing and top with oregano and black pepper.", "done": false}
+        {"instruction": "Drizzle the dressing over the salad and top with the oregano leaves and black pepper.", "done": false}
       ]
     },
     {
@@ -82,9 +82,9 @@
       ],
       "instructions": [
         {"instruction": "Peel and cut the onion and potatoes.", "done": false},
-        {"instruction": "Dice up the broccoli", "done": false},
+        {"instruction": "Dice up the broccoli.", "done": false},
         {"instruction": "Bring the stock to a boil, add all vegetables.", "done": false},
-        {"instruction": "Boil for 10 minutes, or til the veggies are soft.", "done": false},
+        {"instruction": "Let it boil for 10 minutes, or til the veggies are soft.", "done": false},
         {"instruction": "Mix the soup with a immersion blender or food processor.", "done": false},
         {"instruction": "Add cooking cream to the soup, season with salt and pepper.", "done": false}
       ]
@@ -92,7 +92,7 @@
     {
       "id": "5",
       "name": "Date snacks",
-      "description": "A yummy snack to keep around! No white sugars.",
+      "description": "A yummy snack to keep around, with no white sugar.",
       "img": "assets/recipe_images/date_snacks.png",
       "ingredients": [
         { "ingredient": "50 g Butter", "added": false },
@@ -104,9 +104,9 @@
         { "ingredient": "1 dl Coconut flakes", "added": false }
       ],
       "instructions": [
-        {"instruction": "Melt the butter ub a small pot. Let it cool.", "done": false},
-        {"instruction": "Cut the dates and remove the pits.", "done": false},
-        {"instruction": "Put all ingredients apart from the coconut in a food processor.", "done": false},
+        {"instruction": "Melt the butter in a small pot. Let it cool.", "done": false},
+        {"instruction": "Cut the dates in half and remove the pits.", "done": false},
+        {"instruction": "Put all ingredients, apart from the coconut, in a food processor.", "done": false},
         {"instruction": "Mix into a smooth paste.", "done": false},
         {"instruction": "Roll the paste into balls in the palm of your hands, about 12 pieces.", "done": false},
         {"instruction": "Add the coconut flakes onto a plate.", "done": false},
