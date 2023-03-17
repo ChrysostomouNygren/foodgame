@@ -1,0 +1,91 @@
+{
+  "items": [
+    { "id": 1, "name": "Banana", "healthy": true, "img": "assets/bananas.png" },
+    { "id": 2, "name": "Crisps", "healthy": false, "img": "assets/crisps.png" },
+    { "id": 3, "name": "Pizza", "healthy": false, "img": "assets/pizza.png" },
+    { "id": 4, "name": "Carrot", "healthy": true, "img": "assets/carrot.png" },
+    {
+      "id": 5,
+      "name": "Broccoli",
+      "healthy": true,
+      "img": "assets/broccoli.png"
+    },
+    {
+      "id": 6,
+      "name": "Ice Cream",
+      "healthy": false,
+      "img": "assets/ice_cream.png"
+    },
+    {
+      "id": 7,
+      "name": "Cheesecake",
+      "healthy": false,
+      "img": "assets/cheesecake.png"
+    },
+    { "id": 8, "name": "Almond", "healthy": true, "img": "assets/almonds.png" },
+    {
+      "id": 9,
+      "name": "Avocado",
+      "healthy": true,
+      "img": "assets/avocado.png"
+    },
+    {
+      "id": 10,
+      "name": "Hamburger",
+      "healthy": false,
+      "img": "assets/burger.png"
+    },
+    {
+      "id": 11,
+      "name": "Cauliflower",
+      "healthy": true,
+      "img": "assets/cauliflower.png"
+    },
+    { "id": 12, "name": "Corn", "healthy": true, "img": "assets/corn.png" },
+    {
+      "id": 13,
+      "name": "Walnuts",
+      "healthy": true,
+      "img": "assets/walnut.png"
+    },
+    {
+      "id": 14,
+      "name": "Fried chicken",
+      "healthy": false,
+      "img": "assets/fried_chicken.png"
+    },
+    { "id": 15, "name": "Fries", "healthy": false, "img": "assets/fries.png" },
+    {
+      "id": 16,
+      "name": "Ketchup",
+      "healthy": false,
+      "img": "assets/ketchup.png"
+    },
+    { "id": 17, "name": "Lemon", "healthy": true, "img": "assets/lemon.png" },
+    {
+      "id": 18,
+      "name": "Lentils",
+      "healthy": true,
+      "img": "assets/lentils.png"
+    },
+    {
+      "id": 19,
+      "name": "Mashed potatoes",
+      "healthy": false,
+      "img": "assets/mashed_potatoes.png"
+    },
+    { "id": 20, "name": "Salmon", "healthy": true, "img": "assets/salmon.png" },
+    {
+      "id": 21,
+      "name": "Sweet potatoes",
+      "healthy": true,
+      "img": "assets/sweet_potatoes.png"
+    },
+    {
+      "id": 22,
+      "name": "Toilet paper",
+      "healthy": false,
+      "img": "assets/toilet_paper.png"
+    }
+  ]
+}
