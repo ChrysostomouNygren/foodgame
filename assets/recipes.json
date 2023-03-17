@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Oatmeal",
       "description": "Simple breakfast, made quick and easy.",
-      "img": "assets/oatmeal.png",
+      "img": "assets/recipe_images/oatmeal.png",
       "ingredients": [
         { "ingredient": "2 dl Water", "added": false },
         { "ingredient": "1 dl Oatmeal", "added": false },
@@ -20,7 +20,7 @@
       "id": "2",
       "name": "Veggie soup",
       "description": "Rich and flavourful treat for the colder days.",
-      "img": "assets/veggie_soup.png",
+      "img": "assets/recipe_images/veggie_soup.png",
       "ingredients": [
         { "ingredient": "Vegetable oil", "added": false },
         { "ingredient": "2 Carrots", "added": false },
@@ -46,7 +46,7 @@
       "id": "3",
       "name": "Greek Salad",
       "description": "Easy to make! You could either have it by it self or as a side dish.",
-      "img": "assets/greek_salad.png",
+      "img": "assets/recipe_images/greek_salad.png",
       "ingredients": [
         { "ingredient": "1 Red onion", "added": false },
         { "ingredient": "1 Cucumber", "added": false },
@@ -71,7 +71,7 @@
       "id": "4",
       "name": "Broccoli Soup",
       "description": "Quick and tasty soup for the green lover.",
-      "img": "assets/broccoli_soup.png",
+      "img": "assets/recipe_images/broccoli_soup.png",
       "ingredients": [
         { "ingredient": "1 Yellow onion", "added": false },
         { "ingredient": "3 Potatoes", "added": false },
@@ -93,7 +93,7 @@
       "id": "5",
       "name": "Date snacks",
       "description": "A yummy snack to keep around! No white sugars.",
-      "img": "assets/date_snacks.png",
+      "img": "assets/recipe_images/date_snacks.png",
       "ingredients": [
         { "ingredient": "50 g Butter", "added": false },
         { "ingredient": "200 g Dates", "added": false },
