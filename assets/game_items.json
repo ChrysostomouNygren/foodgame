@@ -131,6 +131,48 @@
       "name": "Toilet paper",
       "healthy": false,
       "img": "assets/game_images/toilet_paper.png"
+    },
+    {
+      "id": 23,
+      "name": "Watermelon",
+      "healthy": true,
+      "img": "assets/game_images/watermelon.png"
+    },
+    {
+      "id": 24,
+      "name": "Water",
+      "healthy": true,
+      "img": "assets/game_images/water-bottle.png"
+    },
+    {
+      "id": 25,
+      "name": "Alcohol",
+      "healthy": false,
+      "img": "assets/game_images/liquor.png"
+    },
+    {
+      "id": 26,
+      "name": "Cupcake",
+      "healthy": false,
+      "img": "assets/game_images/cupcake.png"
+    },
+    {
+      "id": 27,
+      "name": "Croissant",
+      "healthy": false,
+      "img": "assets/game_images/croissant.png"
+    },
+    {
+      "id": 28,
+      "name": "Coctail",
+      "healthy": false,
+      "img": "assets/game_images/coctail.png"
+    },
+    {
+      "id": 29,
+      "name": "Blueberries",
+      "healthy": true,
+      "img": "assets/game_images/blueberries.png"
     }
   ]
 }

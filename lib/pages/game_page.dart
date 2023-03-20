@@ -33,7 +33,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   final GlobalKey _draggableKey = GlobalKey();
 
-  int level = 1;
+  int level = 20;
   List _gameItems = [];
   Future<void> readJsonItems() async {
     final String response =
@@ -43,8 +43,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
       _gameItems = data['items'];
     });
     _gameItems.shuffle();
-    _gameItems.length = 6;
-    // level = level++;
+    _gameItems.length = level;
   }
 
   @override
@@ -375,7 +374,13 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   Widget _buildGameGrid() {
     return GridView.count(
-      crossAxisCount: 2,
+      crossAxisCount: level < 2
+          ? 1
+          : level < 7
+              ? 2
+              : level < 16
+                  ? 3
+                  : 4,
       shrinkWrap: true,
       children: List.generate(_gameItems.length, (index) {
         return GestureDetector(
