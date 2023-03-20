@@ -33,7 +33,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   final GlobalKey _draggableKey = GlobalKey();
 
-  int level = 24;
+  int level = 10;
   List _gameItems = [];
   Future<void> readJsonItems() async {
     final String response =
@@ -43,7 +43,26 @@ class _DragAndDropGameState extends State<DragAndDropGame>
       _gameItems = data['items'];
     });
     _gameItems.shuffle();
-    _gameItems.length = level;
+
+    if (level <= 2) {
+      _gameItems.length = level;
+    } else if (level == 3) {
+      _gameItems.length = 4;
+    } else if (level == 4) {
+      _gameItems.length = 6;
+    } else if (level == 5) {
+      _gameItems.length = 9;
+    } else if (level == 6) {
+      _gameItems.length = 12;
+    } else if (level == 7) {
+      _gameItems.length = 16;
+    } else if (level == 8) {
+      _gameItems.length = 20;
+    } else if (level == 9) {
+      _gameItems.length = 24;
+    } else if (level == 10) {
+      _gameItems.length = 40;
+    }
   }
 
   @override
@@ -351,7 +370,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
       ),
       backgroundColor: const Color.fromARGB(255, 247, 247, 247),
       elevation: 5,
-      toolbarHeight: 120,
+      toolbarHeight: 100,
     );
   }
 
@@ -374,13 +393,15 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   Widget _buildGameGrid() {
     return GridView.count(
-      crossAxisCount: level < 2
+      crossAxisCount: _gameItems.length < 2
           ? 1
-          : level < 7
+          : _gameItems.length < 7
               ? 2
-              : level < 16
+              : _gameItems.length < 13
                   ? 3
-                  : 4,
+                  : _gameItems.length < 25
+                      ? 4
+                      : 5,
       shrinkWrap: true,
       children: List.generate(_gameItems.length, (index) {
         return GestureDetector(

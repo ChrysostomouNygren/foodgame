@@ -153,6 +153,6 @@ PreferredSizeWidget _buildAppBar(name) {
         )),
     backgroundColor: const Color.fromARGB(255, 247, 247, 247),
     elevation: 5,
-    toolbarHeight: 120,
+    toolbarHeight: 100,
   );
 }
