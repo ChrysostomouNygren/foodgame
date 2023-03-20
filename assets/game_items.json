@@ -167,6 +167,102 @@
       "name": "Coctail",
       "healthy": false,
       "img": "assets/game_images/cocktail.png"
+    },
+    {
+      "id": 29,
+      "name": "Apple",
+      "healthy": true,
+      "img": "assets/game_images/apple.png"
+    },
+    {
+      "id": 30,
+      "name": "Blueberries",
+      "healthy": true,
+      "img": "assets/game_images/blueberries.png"
+    },
+    {
+      "id": 31,
+      "name": "Egg",
+      "healthy": true,
+      "img": "assets/game_images/boiled_egg.png"
+    },
+    {
+      "id": 32,
+      "name": "White bread",
+      "healthy": false,
+      "img": "assets/game_images/bread.png"
+    },
+    {
+      "id": 33,
+      "name": "Soda",
+      "healthy": false,
+      "img": "assets/game_images/can.png"
+    },
+    {
+      "id": 34,
+      "name": "Chicken",
+      "healthy": true,
+      "img": "assets/game_images/chicken_breast.png"
+    },
+    {
+      "id": 35,
+      "name": "Cookie",
+      "healthy": false,
+      "img": "assets/game_images/cookie.png"
+    },
+    {
+      "id": 36,
+      "name": "Ginger",
+      "healthy": true,
+      "img": "assets/game_images/ginger.png"
+    },
+    {
+      "id": 37,
+      "name": "Grape",
+      "healthy": true,
+      "img": "assets/game_images/grape.png"
+    },
+    {
+      "id": 38,
+      "name": "Lettuce",
+      "healthy": true,
+      "img": "assets/game_images/lettuce.png"
+    },
+    {
+      "id": 39,
+      "name": "Flavored milk",
+      "healthy": false,
+      "img": "assets/game_images/milk_bottle.png"
+    },
+    {
+      "id": 40,
+      "name": "Nuts",
+      "healthy": true,
+      "img": "assets/game_images/nuts.png"
+    },
+    {
+      "id": 41,
+      "name": "Orange",
+      "healthy": true,
+      "img": "assets/game_images/orange.png"
+    },
+    {
+      "id": 42,
+      "name": "Pie",
+      "healthy": false,
+      "img": "assets/game_images/pie.png"
+    },
+    {
+      "id": 43,
+      "name": "Rye bread",
+      "healthy": true,
+      "img": "assets/game_images/rye_bread.png"
+    },
+    {
+      "id": 44,
+      "name": "Tea",
+      "healthy": true,
+      "img": "assets/game_images/tea.png"
     }
   ]
 }
