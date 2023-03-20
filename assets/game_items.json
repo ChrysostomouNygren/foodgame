@@ -54,14 +54,14 @@
       "name": "Almond",
       "healthy": true,
       "img": "assets/game_images/almonds.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "They are rich in fiber and a very good source of important minerals such as phosphorus, iron, calcium, magnesium, selenium and zinc."
     },
     {
       "id": 9,
       "name": "Avocado",
       "healthy": true,
       "img": "assets/game_images/avocado.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "They contain vitamins A and E, avocatin B, alpha and beta carotene, biotin and vegetable and unsaturated fats."
     },
     {
       "id": 10,
@@ -75,21 +75,21 @@
       "name": "Cauliflower",
       "healthy": true,
       "img": "assets/game_images/cauliflower.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "They contain vitamin C and potassium, also the substance allicin! Allicin can reduce inflammation and also controls the aging process in the body."
     },
     {
       "id": 12,
       "name": "Corn",
       "healthy": true,
       "img": "assets/game_images/corn.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "It provides over 10% of your recommended daily intake of phosphorus, magnesium, potassium, vitamin C and the B vitamibns folate, thiamin and B12. It is also a good source of provitamin A, vitamin E, iron, manganese, selenium, sodium and zinc."
     },
     {
       "id": 13,
       "name": "Walnuts",
       "healthy": true,
       "img": "assets/game_images/walnut.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Just 100 grams contain 7,5 grams of omega 3. You also get a lot of vitamin B6, which is good for your metabolism and the formation of red blood cells."
     },
     {
       "id": 14,
@@ -110,70 +110,70 @@
       "name": "Ketchup",
       "healthy": false,
       "img": "assets/game_images/ketchup.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "This might come as a surprise, but ketchup contains A LOT of sugars!"
     },
     {
       "id": 17,
       "name": "Lemon",
       "healthy": true,
       "img": "assets/game_images/lemon.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "It contains citric acid, magnesium, bioflavonoids, vitamin C, pectin, calcium, potassium and limonene, which help the immunte system fight infections."
     },
     {
       "id": 18,
       "name": "Lentils",
       "healthy": true,
       "img": "assets/game_images/lentils.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "They contain good protein, are low in fat, complex carbohydrates and they are rich in fiber. They also contain vitamins such as folic acid, riboflavin, thiamin and niacin."
     },
     {
       "id": 19,
       "name": "Mashed potatoes",
       "healthy": false,
       "img": "assets/game_images/mashed_potatoes.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "If you mash your taters, 25% more sugars are released than if you just cut it."
     },
     {
       "id": 20,
       "name": "Salmon",
       "healthy": true,
       "img": "assets/game_images/salmon.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "It has high content of, among other things, selenium, B6, niacin, B12, phosphorus."
     },
     {
       "id": 21,
       "name": "Sweet potatoes",
       "healthy": true,
       "img": "assets/game_images/sweet_potatoes.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Contains 10 times more calcium than regular potatoes! Also rich in vitamin C, A and B6, as well as magnesium."
     },
     {
       "id": 22,
       "name": "Toilet paper",
       "healthy": false,
       "img": "assets/game_images/toilet_paper.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "...why would you want to eat this?! D:"
     },
     {
       "id": 23,
       "name": "Watermelon",
       "healthy": true,
       "img": "assets/game_images/watermelon.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Contains among other things, vitamin C, which is an important antioxidant, and vitamin B6, which contributes to your metabolism."
     },
     {
       "id": 24,
       "name": "Water",
       "healthy": true,
       "img": "assets/game_images/water_bottle.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "An adult consists of approximately 60% water! Namely water is a good solvent, whuch can be used by the body to transport salts, carohydrates and proteins to the right place."
     },
     {
       "id": 25,
       "name": "Alcohol",
       "healthy": false,
       "img": "assets/game_images/liquor.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "The body burns the alcohol first. For example, none of what you ate is burned until all the alcohol is burned. Since alcohol is toxic to the body, the liver works to get rid of it first of all. This in turn means that fat burning is reduced and the fat is stored."
     },
     {
       "id": 26,
@@ -187,42 +187,42 @@
       "name": "Croissant",
       "healthy": false,
       "img": "assets/game_images/croissant.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Butterrrrrrrrrr bomb"
     },
     {
       "id": 28,
       "name": "Coctail",
       "healthy": false,
       "img": "assets/game_images/cocktail.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "The body burns the alcohol first. For example, none of what you ate is burned until all the alcohol is burned. Since alcohol is toxic to the body, the liver works to get rid of it first of all. This in turn means that fat burning is reduced and the fat is stored."
     },
     {
       "id": 29,
       "name": "Apple",
       "healthy": true,
       "img": "assets/game_images/apple.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "They lower blood fats and blood pressure, and stabilize blood sugar. All of which reduce the risk of a number of serious diseases."
     },
     {
       "id": 30,
       "name": "Blueberries",
       "healthy": true,
       "img": "assets/game_images/blueberries.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "They are characterized by their high nutrition, fiber, vitamins and minerals, as wel as their high levels of many different bioactive substances. These bioactive substances protect against cardiovascular diseases."
     },
     {
       "id": 31,
       "name": "Egg",
       "healthy": true,
       "img": "assets/game_images/boiled_egg.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Contains high-quality protein! The egg white contains proteins and the yolk contains fats, cholesterol and carotenoids."
     },
     {
       "id": 32,
       "name": "White bread",
       "healthy": false,
       "img": "assets/game_images/bread.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Sugarbomb!"
     },
     {
       "id": 33,
@@ -236,7 +236,7 @@
       "name": "Chicken",
       "healthy": true,
       "img": "assets/game_images/chicken_breast.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Rich in proteins and vitamins."
     },
     {
       "id": 35,
@@ -250,42 +250,42 @@
       "name": "Ginger",
       "healthy": true,
       "img": "assets/game_images/ginger.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "This root contains a large amount of good vitamins, such as vitamin A, B, C and E."
     },
     {
       "id": 37,
       "name": "Grape",
       "healthy": true,
       "img": "assets/game_images/grape.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "They are rich in menerals such as iron and potassium and contain a lot of vitamin K and B1. Surprisingly, the grape seeds are just as healthy as the whole grape!"
     },
     {
       "id": 38,
       "name": "Lettuce",
       "healthy": true,
       "img": "assets/game_images/lettuce.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Choose varieties such as arugula, endive, mache and baby spinach instead of iceberg lettuce and green salad. These varieties are loaded with important vitamins and minerals such as vitamin C, iron, zinc, magnesium, selenium, potassium and calcium."
     },
     {
       "id": 39,
       "name": "Flavored milk",
       "healthy": false,
       "img": "assets/game_images/milk_bottle.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Regular milk can be healthy, but these flavoured kinds are just packed with sugars."
     },
     {
       "id": 40,
       "name": "Nuts",
       "healthy": true,
       "img": "assets/game_images/nuts.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "They are very rich in fats, both polyunsaturated and monounsaturated. They contain a lot of vitamin E which acts as an antiocidant. They also contain some proteins and minerals such as magnesium, iron, zinc and phosphorus."
     },
     {
       "id": 41,
       "name": "Orange",
       "healthy": true,
       "img": "assets/game_images/orange.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "They consist of vitamin C, flavonoids and beta-carotene, which together act as a powerful antiocidant that helps to cleanse the body and prevent cardiovascular diseases, degenerative diseases, cancer, etc."
     },
     {
       "id": 42,
@@ -299,14 +299,14 @@
       "name": "Rye bread",
       "healthy": true,
       "img": "assets/game_images/rye_bread.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Provides a more even blood sugar level, longer satiety, creates weight control, counteracts type 2 diabetes and is positive for the intestinal flora."
     },
     {
       "id": 44,
       "name": "Tea",
       "healthy": true,
       "img": "assets/game_images/tea.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Among other things, it is good for the heart and blood vessels and also contributes to improving concentration and learning ability. Green tea is packed with antiocidants and is said to be good agains cardiovascular disease, stress, gout, cancer and a number of other diseases and ailments."
     }
   ]
 }
