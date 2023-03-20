@@ -142,7 +142,7 @@
       "id": 24,
       "name": "Water",
       "healthy": true,
-      "img": "assets/game_images/water-bottle.png"
+      "img": "assets/game_images/water_bottle.png"
     },
     {
       "id": 25,
@@ -167,12 +167,6 @@
       "name": "Coctail",
       "healthy": false,
       "img": "assets/game_images/coctail.png"
-    },
-    {
-      "id": 29,
-      "name": "Blueberries",
-      "healthy": true,
-      "img": "assets/game_images/blueberries.png"
     }
   ]
 }

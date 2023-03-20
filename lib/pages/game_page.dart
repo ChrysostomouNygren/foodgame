@@ -33,7 +33,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   final GlobalKey _draggableKey = GlobalKey();
 
-  int level = 20;
+  int level = 24;
   List _gameItems = [];
   Future<void> readJsonItems() async {
     final String response =
