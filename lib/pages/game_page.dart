@@ -16,6 +16,8 @@ class DragAndDropGame extends StatefulWidget {
   State<DragAndDropGame> createState() => _DragAndDropGameState();
 }
 
+int level = 6;
+
 class _DragAndDropGameState extends State<DragAndDropGame>
     with TickerProviderStateMixin {
   final List<Sorting> _sortingButtons = [
@@ -33,7 +35,6 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   final GlobalKey _draggableKey = GlobalKey();
 
-  int level = 1;
   List _gameItems = [];
   Future<void> readJsonItems() async {
     final String response =
@@ -90,11 +91,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         }
       } else if (!item['healthy'] && type.healthy) {
         failedModal(context, item['name'], item['comment']);
-        print(item['name']);
-        print(item['comment']);
       } else if (item['healthy'] && !type.healthy) {
-        print(item['name']);
-        print(item['comment']);
         failedModal(context, item['name'], item['comment']);
       }
     });
@@ -554,8 +551,8 @@ class DraggingGameItem extends StatelessWidget {
         key: dragKey,
         borderRadius: BorderRadius.circular(12.0),
         child: SizedBox(
-          height: 150,
-          width: 150,
+          height: level < 7 ? 150 : 100,
+          width: level < 7 ? 150 : 100,
           child: Opacity(
             opacity: 0.85,
             child: Image(
