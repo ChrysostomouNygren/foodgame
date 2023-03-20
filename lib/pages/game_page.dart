@@ -33,7 +33,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   final GlobalKey _draggableKey = GlobalKey();
 
-  int level = 10;
+  int level = 1;
   List _gameItems = [];
   Future<void> readJsonItems() async {
     final String response =
@@ -121,61 +121,77 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     ),
                   ),
                 ),
-                Image.asset(
-                  'assets/images/trophy.png',
-                  height: 140,
-                  fit: BoxFit.fill,
-                ),
+                level < 10
+                    ? Image.asset(
+                        'assets/images/play_btn.png',
+                        height: 140,
+                        fit: BoxFit.fill,
+                      )
+                    : Image.asset(
+                        'assets/images/trophy.png',
+                        height: 140,
+                        fit: BoxFit.fill,
+                      ),
               ]),
               const SizedBox(height: 15),
               const Text(
                 'Congratulations!',
                 style: TextStyle(fontSize: 30),
               ),
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  'Would you like to try again, or view your recipies?',
-                  style: TextStyle(fontSize: 18),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+              level < 10
+                  ? const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                        'Would you like to try again, or view your recipies?',
+                        style: TextStyle(fontSize: 18),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  : const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                          'You have finished all the levels! Get inspired to cook more healthy by looking at your recipes!'),
+                    ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
-                    style: TextButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        textStyle: const TextStyle(
-                          fontSize: 15,
-                        )),
-                    onPressed: () {
-                      Navigator.pop(context);
-                      setState(() {
-                        for (var btn in _sortingButtons) {
-                          btn.items.clear();
-                        }
-                      });
-                      level = level + 1;
-                      readJsonItems();
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          'assets/images/play_again.png',
-                          height: 50,
-                          fit: BoxFit.fill,
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text('Play level ${level + 1}'),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 30,
-                  ),
+                  level < 10
+                      ? TextButton(
+                          style: TextButton.styleFrom(
+                              foregroundColor: Colors.black,
+                              textStyle: const TextStyle(
+                                fontSize: 15,
+                              )),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            setState(() {
+                              for (var btn in _sortingButtons) {
+                                btn.items.clear();
+                              }
+                            });
+                            level = level + 1;
+                            readJsonItems();
+                          },
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                'assets/images/play_again.png',
+                                height: 50,
+                                fit: BoxFit.fill,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text('Play level ${level + 1}'),
+                            ],
+                          ),
+                        )
+                      : const SizedBox.shrink(),
+                  level < 10
+                      ? const SizedBox(
+                          width: 30,
+                        )
+                      : const SizedBox.shrink(),
                   TextButton(
                     style: TextButton.styleFrom(
                         foregroundColor: Colors.black,
