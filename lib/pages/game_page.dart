@@ -33,6 +33,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   final GlobalKey _draggableKey = GlobalKey();
 
+  int level = 1;
   List _gameItems = [];
   Future<void> readJsonItems() async {
     final String response =
@@ -43,6 +44,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
     });
     _gameItems.shuffle();
     _gameItems.length = 6;
+    // level = level++;
   }
 
   @override
@@ -136,6 +138,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                           btn.items.clear();
                         }
                       });
+                      level = level + 1;
                       readJsonItems();
                     },
                     child: Column(
@@ -148,7 +151,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                         const SizedBox(
                           height: 10,
                         ),
-                        const Text('Play again'),
+                        Text('Play level ${level + 1}'),
                       ],
                     ),
                   ),
@@ -340,7 +343,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
       iconTheme: const IconThemeData(color: Color.fromARGB(166, 247, 247, 247)),
       leading: cancelBtn(),
       title: Text(
-        'Pick the healthy food',
+        'Level $level',
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
               fontSize: 30,
               color: const Color.fromARGB(255, 3, 39, 52),
