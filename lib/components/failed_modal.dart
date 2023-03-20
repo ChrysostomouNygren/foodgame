@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Future<String?> failedModal(context) {
+Future<String?> failedModal(context, name) {
   return showDialog<String>(
     context: context,
     builder: (BuildContext context) => Dialog(
@@ -27,10 +27,10 @@ Future<String?> failedModal(context) {
               ],
             ),
             const SizedBox(height: 15),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                "This food isn't going here",
+                "This is $name, it doesn't belong there",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
               ),
             ),

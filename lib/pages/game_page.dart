@@ -89,9 +89,12 @@ class _DragAndDropGameState extends State<DragAndDropGame>
           succesfullModal();
         }
       } else if (!item['healthy'] && type.healthy) {
-        failedModal(context);
+        failedModal(context, item['name']);
+        print(context);
+        print(item['name']);
       } else if (item['healthy'] && !type.healthy) {
-        failedModal(context);
+        print(item['name']);
+        failedModal(context, item['name']);
       }
     });
   }
