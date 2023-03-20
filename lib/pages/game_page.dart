@@ -89,12 +89,13 @@ class _DragAndDropGameState extends State<DragAndDropGame>
           succesfullModal();
         }
       } else if (!item['healthy'] && type.healthy) {
-        failedModal(context, item['name']);
-        print(context);
+        failedModal(context, item['name'], item['comment']);
         print(item['name']);
+        print(item['comment']);
       } else if (item['healthy'] && !type.healthy) {
         print(item['name']);
-        failedModal(context, item['name']);
+        print(item['comment']);
+        failedModal(context, item['name'], item['comment']);
       }
     });
   }
@@ -126,7 +127,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                 ),
                 level < 10
                     ? Image.asset(
-                        'assets/images/play_btn.png',
+                        'assets/images/star.png',
                         height: 140,
                         fit: BoxFit.fill,
                       )
@@ -494,11 +495,13 @@ class GameItem extends StatelessWidget {
   const GameItem({
     super.key,
     this.name = '',
+    this.comment = '',
     required this.img,
     this.isPressed = false,
   });
 
   final String name;
+  final String comment;
   final String img;
   final bool isPressed;
 

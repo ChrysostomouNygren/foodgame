@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Future<String?> failedModal(context, name) {
+Future<String?> failedModal(context, name, comment) {
   return showDialog<String>(
     context: context,
     builder: (BuildContext context) => Dialog(
@@ -34,6 +34,7 @@ Future<String?> failedModal(context, name) {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
               ),
             ),
+            Text('$comment'),
             const SizedBox(
               height: 20,
             ),
