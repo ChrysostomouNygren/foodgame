@@ -47,7 +47,7 @@
       "name": "Cheesecake",
       "healthy": false,
       "img": "assets/game_images/cheesecake.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Due to the large amount of sugar, cheesecake isn't healthy for you. Enjoy fruits instead!"
     },
     {
       "id": 8,
