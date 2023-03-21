@@ -16,7 +16,7 @@ class DragAndDropGame extends StatefulWidget {
   State<DragAndDropGame> createState() => _DragAndDropGameState();
 }
 
-int level = 10;
+int level = 1;
 
 class _DragAndDropGameState extends State<DragAndDropGame>
     with TickerProviderStateMixin {
@@ -410,13 +410,13 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   Widget _buildGameGrid() {
     return GridView.count(
-      crossAxisCount: _gameItems.length < 2
+      crossAxisCount: level < 2
           ? 1
-          : _gameItems.length < 7
+          : level < 5
               ? 2
-              : _gameItems.length < 13
+              : level < 7
                   ? 3
-                  : _gameItems.length < 25
+                  : level < 10
                       ? 4
                       : 5,
       shrinkWrap: true,
