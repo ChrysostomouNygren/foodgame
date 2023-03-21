@@ -28,13 +28,24 @@ Future<String?> failedModal(context, name, comment) {
             ),
             const SizedBox(height: 15),
             Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                "This is $name, it doesn't belong there",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              padding: const EdgeInsets.all(10.0),
+              child: Center(
+                child: Column(
+                  children: [
+                    const Text('Oh noes!'),
+                    Text(
+                      "$name",
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text('$comment'),
+                  ],
+                ),
               ),
             ),
-            Text('$comment'),
             const SizedBox(
               height: 20,
             ),

@@ -16,7 +16,7 @@ class DragAndDropGame extends StatefulWidget {
   State<DragAndDropGame> createState() => _DragAndDropGameState();
 }
 
-int level = 6;
+int level = 10;
 
 class _DragAndDropGameState extends State<DragAndDropGame>
     with TickerProviderStateMixin {
@@ -110,30 +110,30 @@ class _DragAndDropGameState extends State<DragAndDropGame>
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Stack(alignment: Alignment.center, children: [
-                SizedBox(
-                  height: 200,
-                  width: 200,
-                  child: ClipPath(
-                    clipper: StarClipper(14),
-                    child: Container(
-                      height: 150,
-                      color: const Color.fromARGB(255, 0, 255, 0),
-                    ),
-                  ),
-                ),
-                level < 10
-                    ? Image.asset(
-                        'assets/images/star.png',
-                        height: 140,
-                        fit: BoxFit.fill,
-                      )
-                    : Image.asset(
+              level < 10
+                  ? Image.asset(
+                      'assets/images/level-up.png',
+                      height: 140,
+                      fit: BoxFit.fill,
+                    )
+                  : Stack(alignment: Alignment.center, children: [
+                      SizedBox(
+                        height: 200,
+                        width: 200,
+                        child: ClipPath(
+                          clipper: StarClipper(14),
+                          child: Container(
+                            height: 150,
+                            color: const Color.fromARGB(255, 0, 255, 0),
+                          ),
+                        ),
+                      ),
+                      Image.asset(
                         'assets/images/trophy.png',
                         height: 140,
                         fit: BoxFit.fill,
                       ),
-              ]),
+                    ]),
               const SizedBox(height: 15),
               const Text(
                 'Congratulations!',
@@ -176,7 +176,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                           child: Column(
                             children: [
                               Image.asset(
-                                'assets/images/play_again.png',
+                                'assets/images/right.png',
                                 height: 50,
                                 fit: BoxFit.fill,
                               ),
