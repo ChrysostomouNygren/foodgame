@@ -19,7 +19,7 @@
       "name": "Pizza",
       "healthy": false,
       "img": "assets/game_images/pizza.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Pizza isn't the healthiest food you can eat, but in term of content it isn't really bad food... It contains carbohydrates, protein, vitamins and minerals if you have it as topping. Unfortunately, most of the content consists of fat, which is because the cheese on the pizza is so greasy."
     },
     {
       "id": 4,
