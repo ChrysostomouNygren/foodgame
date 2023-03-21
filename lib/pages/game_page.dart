@@ -17,6 +17,7 @@ class DragAndDropGame extends StatefulWidget {
 }
 
 int level = 1;
+int errors = 5;
 
 class _DragAndDropGameState extends State<DragAndDropGame>
     with TickerProviderStateMixin {
@@ -90,9 +91,23 @@ class _DragAndDropGameState extends State<DragAndDropGame>
           succesfullModal();
         }
       } else if (!item['healthy'] && type.healthy) {
-        failedModal(context, item['name'], item['comment']);
+        errors--;
+        if (errors == 0) {
+          gameOverModal();
+          // failedModal(context, item['name'], item['comment'], errors);
+          // errors = 5;
+        } else {
+          failedModal(context, item['name'], item['comment'], errors);
+        }
       } else if (item['healthy'] && !type.healthy) {
-        failedModal(context, item['name'], item['comment']);
+        errors--;
+        if (errors == 0) {
+          // failedModal(context, item['name'], item['comment'], errors);
+          gameOverModal();
+          // errors = 5;
+        } else {
+          failedModal(context, item['name'], item['comment'], errors);
+        }
       }
     });
   }
@@ -143,15 +158,18 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                   ? const Padding(
                       padding: EdgeInsets.all(10.0),
                       child: Text(
-                        'Would you like to try again, or view your recipies?',
-                        style: TextStyle(fontSize: 18),
+                        'Would you like to play the next level or view your recipes?',
+                        style: TextStyle(fontSize: 16),
                         textAlign: TextAlign.center,
                       ),
                     )
                   : const Padding(
                       padding: EdgeInsets.all(10.0),
                       child: Text(
-                          'You have finished all the levels! Get inspired to cook more healthy by looking at your recipes!'),
+                        'You have finished all the levels! Get inspired to cook more healthy by looking at your recipes!',
+                        style: TextStyle(fontSize: 16),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -232,6 +250,133 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         ),
       ),
     );
+  }
+
+  Future<String?> gameOverModal() {
+    return showDialog<String>(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) => Dialog(
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        const SizedBox(height: 150, width: 200),
+                        Image.asset(
+                          'assets/images/broken_plate.png',
+                          height: 120,
+                          fit: BoxFit.fill,
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Center(
+                          child: Column(
+                        children: [
+                          const Text(
+                            'Game over',
+                            style: TextStyle(
+                              fontSize: 30,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Text(
+                              'Would you like to try again or view your recipes?',
+                              style: TextStyle(fontSize: 16),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              TextButton(
+                                  style: TextButton.styleFrom(
+                                      foregroundColor: Colors.black,
+                                      textStyle: const TextStyle(
+                                        fontSize: 15,
+                                      )),
+                                  onPressed: () {
+                                    setState(() {
+                                      _gameItems.clear();
+                                      for (var btn in _sortingButtons) {
+                                        btn.items.clear();
+                                      }
+                                      errors = 5;
+                                      level = 1;
+                                    });
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return const Home();
+                                    }));
+                                    readJsonItems();
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/play_btn.png',
+                                        height: 50,
+                                        width: 50,
+                                      ),
+                                      const Text('Retry'),
+                                    ],
+                                  )),
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              TextButton(
+                                  style: TextButton.styleFrom(
+                                      foregroundColor: Colors.black,
+                                      textStyle: const TextStyle(
+                                        fontSize: 15,
+                                      )),
+                                  onPressed: () {
+                                    setState(() {
+                                      _gameItems.clear();
+                                      for (var btn in _sortingButtons) {
+                                        btn.items.clear();
+                                      }
+                                      errors = 5;
+                                      level = 1;
+                                    });
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return const Recipes();
+                                    }));
+                                    readJsonItems();
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/recipes.png',
+                                        height: 50,
+                                        width: 50,
+                                      ),
+                                      const Text('Recipes'),
+                                    ],
+                                  )),
+                            ],
+                          )
+                        ],
+                      )),
+                    )
+                  ]),
+            )));
   }
 
   Future<String?> cancelModal(context) {

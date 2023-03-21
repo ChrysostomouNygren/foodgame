@@ -2,7 +2,9 @@ import 'package:drag_drop/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class Back2StartBtn extends StatelessWidget {
-  const Back2StartBtn({super.key});
+  Back2StartBtn({super.key, required this.props});
+
+  String props;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class Back2StartBtn extends StatelessWidget {
       child: SizedBox(
         height: 40,
         width: 40,
-        child: Image.asset('assets/images/back.png'),
+        child: Image.asset(props),
       ),
     );
   }

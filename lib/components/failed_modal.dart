@@ -1,6 +1,8 @@
+import 'package:drag_drop/components/back_to_start_btn.dart';
+import 'package:drag_drop/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
-Future<String?> failedModal(context, name, comment) {
+Future<String?> failedModal(context, name, comment, errors) {
   return showDialog<String>(
     context: context,
     builder: (BuildContext context) => Dialog(
@@ -32,7 +34,7 @@ Future<String?> failedModal(context, name, comment) {
               child: Center(
                 child: Column(
                   children: [
-                    const Text('Oh noes!'),
+                    Text('$errors tries left'),
                     Text(
                       "$name",
                       style: const TextStyle(

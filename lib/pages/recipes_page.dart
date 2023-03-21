@@ -40,7 +40,7 @@ class _RecipesState extends State<Recipes> {
 
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
-      leading: const Back2StartBtn(),
+      leading: Back2StartBtn(props: 'assets/images/back.png'),
       title: Text(
         'Recipes',
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
