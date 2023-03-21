@@ -222,7 +222,7 @@
       "name": "White bread",
       "healthy": false,
       "img": "assets/game_images/bread.png",
-      "comment": "Sugarbomb!"
+      "comment": "The highly processed flour and additives in white packaged bread can make it unhealthful. Consuming too much white bread can contribute to obesity, heart disease and diabetes."
     },
     {
       "id": 33,
