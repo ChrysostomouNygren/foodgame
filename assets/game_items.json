@@ -96,7 +96,7 @@
       "name": "Fried chicken",
       "healthy": false,
       "img": "assets/game_images/fried_chicken.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Fried chicken isn't the best for you due to the high amounts of sodium and fat from the frying process, try to boil or steam the chicken instead!"
     },
     {
       "id": 15,
