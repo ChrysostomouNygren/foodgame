@@ -34,7 +34,19 @@ Future<String?> failedModal(context, name, comment, errors) {
               child: Center(
                 child: Column(
                   children: [
-                    Text('$errors tries left'),
+                    errors == 1
+                        ? Text(
+                            'Only $errors try left!',
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          )
+                        : Text(
+                            '$errors tries left',
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
                     Text(
                       "$name",
                       style: const TextStyle(
@@ -43,7 +55,10 @@ Future<String?> failedModal(context, name, comment, errors) {
                     const SizedBox(
                       height: 10,
                     ),
-                    Text('$comment'),
+                    Text('$comment',
+                        style: const TextStyle(
+                          fontSize: 16,
+                        )),
                   ],
                 ),
               ),
