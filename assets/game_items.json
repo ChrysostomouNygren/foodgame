@@ -68,7 +68,7 @@
       "name": "Hamburger",
       "healthy": false,
       "img": "assets/game_images/burger.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Hamburgers are usually unhealthy for you because they often contain a lot of carbohydrates and fat."
     },
     {
       "id": 11,
