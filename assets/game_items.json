@@ -103,7 +103,7 @@
       "name": "Fries",
       "healthy": false,
       "img": "assets/game_images/fries.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Fries aren't healthy for you because they are so processed, which means that the structure has been affected in such a way that they break down faster in the body. This raises the blood sugar faster than if you were to eat a regular boiled potato with a little oil on it."
     },
     {
       "id": 16,
