@@ -110,7 +110,7 @@
       "name": "Ketchup",
       "healthy": false,
       "img": "assets/game_images/ketchup.png",
-      "comment": "This might come as a surprise, but ketchup contains A LOT of sugars!"
+      "comment": "This might come as a surprise, but ketchup contains A LOT of sugars, usually about 15-25% of the bottle is just pure sugar."
     },
     {
       "id": 17,
