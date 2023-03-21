@@ -21,7 +21,7 @@ class SortingTile extends StatelessWidget {
         elevation: highlighted ? 8.0 : 4.0,
         borderRadius: BorderRadius.circular(22.0),
         color: highlighted
-            ? const Color.fromARGB(255, 88, 162, 136)
+            ? const Color.fromARGB(255, 88, 157, 162)
             : Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(

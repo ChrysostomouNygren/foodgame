@@ -16,6 +16,9 @@ class DragAndDropGame extends StatefulWidget {
   State<DragAndDropGame> createState() => _DragAndDropGameState();
 }
 
+int level = 1;
+int errors = 5;
+
 class _DragAndDropGameState extends State<DragAndDropGame>
     with TickerProviderStateMixin {
   final List<Sorting> _sortingButtons = [
@@ -42,7 +45,26 @@ class _DragAndDropGameState extends State<DragAndDropGame>
       _gameItems = data['items'];
     });
     _gameItems.shuffle();
-    _gameItems.length = 6;
+
+    if (level <= 2) {
+      _gameItems.length = level;
+    } else if (level == 3) {
+      _gameItems.length = 4;
+    } else if (level == 4) {
+      _gameItems.length = 6;
+    } else if (level == 5) {
+      _gameItems.length = 9;
+    } else if (level == 6) {
+      _gameItems.length = 12;
+    } else if (level == 7) {
+      _gameItems.length = 16;
+    } else if (level == 8) {
+      _gameItems.length = 20;
+    } else if (level == 9) {
+      _gameItems.length = 24;
+    } else if (level == 10) {
+      _gameItems.length = 40;
+    }
   }
 
   @override
@@ -69,9 +91,23 @@ class _DragAndDropGameState extends State<DragAndDropGame>
           succesfullModal();
         }
       } else if (!item['healthy'] && type.healthy) {
-        failedModal(context);
+        errors--;
+        if (errors == 0) {
+          gameOverModal();
+          // failedModal(context, item['name'], item['comment'], errors);
+          // errors = 5;
+        } else {
+          failedModal(context, item['name'], item['comment'], errors);
+        }
       } else if (item['healthy'] && !type.healthy) {
-        failedModal(context);
+        errors--;
+        if (errors == 0) {
+          // failedModal(context, item['name'], item['comment'], errors);
+          gameOverModal();
+          // errors = 5;
+        } else {
+          failedModal(context, item['name'], item['comment'], errors);
+        }
       }
     });
   }
@@ -89,72 +125,92 @@ class _DragAndDropGameState extends State<DragAndDropGame>
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Stack(alignment: Alignment.center, children: [
-                SizedBox(
-                  height: 200,
-                  width: 200,
-                  child: ClipPath(
-                    clipper: StarClipper(14),
-                    child: Container(
-                      height: 150,
-                      color: const Color.fromARGB(255, 0, 255, 0),
-                    ),
-                  ),
-                ),
-                Image.asset(
-                  'assets/images/trophy.png',
-                  height: 140,
-                  fit: BoxFit.fill,
-                ),
-              ]),
+              level < 10
+                  ? Image.asset(
+                      'assets/images/level-up.png',
+                      height: 140,
+                      fit: BoxFit.fill,
+                    )
+                  : Stack(alignment: Alignment.center, children: [
+                      SizedBox(
+                        height: 200,
+                        width: 200,
+                        child: ClipPath(
+                          clipper: StarClipper(14),
+                          child: Container(
+                            height: 150,
+                            color: const Color.fromARGB(255, 0, 255, 0),
+                          ),
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/images/trophy.png',
+                        height: 140,
+                        fit: BoxFit.fill,
+                      ),
+                    ]),
               const SizedBox(height: 15),
               const Text(
                 'Congratulations!',
                 style: TextStyle(fontSize: 30),
               ),
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  'Would you like to try again, or view your recipies?',
-                  style: TextStyle(fontSize: 18),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+              level < 10
+                  ? const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                        'Would you like to play the next level or view your recipes?',
+                        style: TextStyle(fontSize: 16),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  : const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                        'You have finished all the levels! Get inspired to cook more healthy by looking at your recipes!',
+                        style: TextStyle(fontSize: 16),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
-                    style: TextButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        textStyle: const TextStyle(
-                          fontSize: 15,
-                        )),
-                    onPressed: () {
-                      Navigator.pop(context);
-                      setState(() {
-                        for (var btn in _sortingButtons) {
-                          btn.items.clear();
-                        }
-                      });
-                      readJsonItems();
-                    },
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          'assets/images/play_again.png',
-                          height: 50,
-                          fit: BoxFit.fill,
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        const Text('Play again'),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 30,
-                  ),
+                  level < 10
+                      ? TextButton(
+                          style: TextButton.styleFrom(
+                              foregroundColor: Colors.black,
+                              textStyle: const TextStyle(
+                                fontSize: 15,
+                              )),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            setState(() {
+                              for (var btn in _sortingButtons) {
+                                btn.items.clear();
+                              }
+                            });
+                            level = level + 1;
+                            readJsonItems();
+                          },
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                'assets/images/right.png',
+                                height: 50,
+                                fit: BoxFit.fill,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text('Play level ${level + 1}'),
+                            ],
+                          ),
+                        )
+                      : const SizedBox.shrink(),
+                  level < 10
+                      ? const SizedBox(
+                          width: 30,
+                        )
+                      : const SizedBox.shrink(),
                   TextButton(
                     style: TextButton.styleFrom(
                         foregroundColor: Colors.black,
@@ -194,6 +250,133 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         ),
       ),
     );
+  }
+
+  Future<String?> gameOverModal() {
+    return showDialog<String>(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) => Dialog(
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        const SizedBox(height: 150, width: 200),
+                        Image.asset(
+                          'assets/images/broken_plate.png',
+                          height: 120,
+                          fit: BoxFit.fill,
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Center(
+                          child: Column(
+                        children: [
+                          const Text(
+                            'Game over',
+                            style: TextStyle(
+                              fontSize: 30,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Text(
+                              'Would you like to try again or view your recipes?',
+                              style: TextStyle(fontSize: 16),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              TextButton(
+                                  style: TextButton.styleFrom(
+                                      foregroundColor: Colors.black,
+                                      textStyle: const TextStyle(
+                                        fontSize: 15,
+                                      )),
+                                  onPressed: () {
+                                    setState(() {
+                                      _gameItems.clear();
+                                      for (var btn in _sortingButtons) {
+                                        btn.items.clear();
+                                      }
+                                      errors = 5;
+                                      level = 1;
+                                    });
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return const Home();
+                                    }));
+                                    readJsonItems();
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/play_btn.png',
+                                        height: 50,
+                                        width: 50,
+                                      ),
+                                      const Text('Retry'),
+                                    ],
+                                  )),
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              TextButton(
+                                  style: TextButton.styleFrom(
+                                      foregroundColor: Colors.black,
+                                      textStyle: const TextStyle(
+                                        fontSize: 15,
+                                      )),
+                                  onPressed: () {
+                                    setState(() {
+                                      _gameItems.clear();
+                                      for (var btn in _sortingButtons) {
+                                        btn.items.clear();
+                                      }
+                                      errors = 5;
+                                      level = 1;
+                                    });
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return const Recipes();
+                                    }));
+                                    readJsonItems();
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/recipes.png',
+                                        height: 50,
+                                        width: 50,
+                                      ),
+                                      const Text('Recipes'),
+                                    ],
+                                  )),
+                            ],
+                          )
+                        ],
+                      )),
+                    )
+                  ]),
+            )));
   }
 
   Future<String?> cancelModal(context) {
@@ -340,7 +523,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
       iconTheme: const IconThemeData(color: Color.fromARGB(166, 247, 247, 247)),
       leading: cancelBtn(),
       title: Text(
-        'Pick the healthy food',
+        'Level $level',
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
               fontSize: 30,
               color: const Color.fromARGB(255, 3, 39, 52),
@@ -349,7 +532,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
       ),
       backgroundColor: const Color.fromARGB(255, 247, 247, 247),
       elevation: 5,
-      toolbarHeight: 120,
+      toolbarHeight: 100,
     );
   }
 
@@ -372,7 +555,15 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   Widget _buildGameGrid() {
     return GridView.count(
-      crossAxisCount: 2,
+      crossAxisCount: level < 2
+          ? 1
+          : level < 5
+              ? 2
+              : level < 7
+                  ? 3
+                  : level < 10
+                      ? 4
+                      : 5,
       shrinkWrap: true,
       children: List.generate(_gameItems.length, (index) {
         return GestureDetector(
@@ -446,11 +637,13 @@ class GameItem extends StatelessWidget {
   const GameItem({
     super.key,
     this.name = '',
+    this.comment = '',
     required this.img,
     this.isPressed = false,
   });
 
   final String name;
+  final String comment;
   final String img;
   final bool isPressed;
 
@@ -503,8 +696,8 @@ class DraggingGameItem extends StatelessWidget {
         key: dragKey,
         borderRadius: BorderRadius.circular(12.0),
         child: SizedBox(
-          height: 150,
-          width: 150,
+          height: level < 7 ? 150 : 100,
+          width: level < 7 ? 150 : 100,
           child: Opacity(
             opacity: 0.85,
             child: Image(
