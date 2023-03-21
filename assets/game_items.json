@@ -12,14 +12,14 @@
       "name": "Crisps",
       "healthy": false,
       "img": "assets/game_images/crisps.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "This may not come as a surprise, but crisps aren't healthy! The carbohydrates in crisps are so-called empty, which means they have very low nutritional value, and therefore easily contribute to overweight and obesity."
     },
     {
       "id": 3,
       "name": "Pizza",
       "healthy": false,
       "img": "assets/game_images/pizza.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Pizza isn't the healthiest food you can eat, but in term of content it isn't really bad food... It contains carbohydrates, protein, vitamins and minerals if you have it as topping. Unfortunately, most of the content consists of fat, which is because the cheese on the pizza is so greasy."
     },
     {
       "id": 4,
@@ -40,14 +40,14 @@
       "name": "Ice Cream",
       "healthy": false,
       "img": "assets/game_images/ice_cream.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Ice cream isn't healthy for you, since it usually contains very little nutrition, but a high percentage of sugar, fat and calories."
     },
     {
       "id": 7,
       "name": "Cheesecake",
       "healthy": false,
       "img": "assets/game_images/cheesecake.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Due to the large amount of sugar, cheesecake isn't healthy for you. Enjoy fruits instead!"
     },
     {
       "id": 8,
@@ -68,7 +68,7 @@
       "name": "Hamburger",
       "healthy": false,
       "img": "assets/game_images/burger.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Hamburgers are usually unhealthy for you because they often contain a lot of carbohydrates and fat."
     },
     {
       "id": 11,
@@ -96,21 +96,21 @@
       "name": "Fried chicken",
       "healthy": false,
       "img": "assets/game_images/fried_chicken.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Fried chicken isn't the best for you due to the high amounts of sodium and fat from the frying process, try to boil or steam the chicken instead!"
     },
     {
       "id": 15,
       "name": "Fries",
       "healthy": false,
       "img": "assets/game_images/fries.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Fries aren't healthy for you because they are so processed, which means that the structure has been affected in such a way that they break down faster in the body. This raises the blood sugar faster than if you were to eat a regular boiled potato with a little oil on it."
     },
     {
       "id": 16,
       "name": "Ketchup",
       "healthy": false,
       "img": "assets/game_images/ketchup.png",
-      "comment": "This might come as a surprise, but ketchup contains A LOT of sugars!"
+      "comment": "This might come as a surprise, but ketchup contains A LOT of sugars, usually about 15-25% of the bottle is just pure sugar."
     },
     {
       "id": 17,
@@ -131,7 +131,7 @@
       "name": "Mashed potatoes",
       "healthy": false,
       "img": "assets/game_images/mashed_potatoes.png",
-      "comment": "If you mash your taters, 25% more sugars are released than if you just cut it."
+      "comment": "This may come as a surprise, it sure did for my partner, but if you mash your taters, 25% more sugars are released than if you just cut it!"
     },
     {
       "id": 20,
@@ -152,7 +152,7 @@
       "name": "Toilet paper",
       "healthy": false,
       "img": "assets/game_images/toilet_paper.png",
-      "comment": "...why would you want to eat this?! D:"
+      "comment": "...why would you want to eat this? I don't know what kind of wierd 90's diet you've heard about, but you shouldn't eat toilet paper..."
     },
     {
       "id": 23,
@@ -180,14 +180,14 @@
       "name": "Cupcake",
       "healthy": false,
       "img": "assets/game_images/cupcake.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Cupcakes should be avoided since they are high in sugar and saturated fat, two nutrients that should be consumed in moderation."
     },
     {
       "id": 27,
       "name": "Croissant",
       "healthy": false,
       "img": "assets/game_images/croissant.png",
-      "comment": "Butterrrrrrrrrr bomb"
+      "comment": "Most types of croissants should be avoided since they are relatively high in calories, sodium and saturated fat, which some people may need to limit. Some types may also contain trans fat, which can have harmful effects on your health."
     },
     {
       "id": 28,
@@ -222,14 +222,14 @@
       "name": "White bread",
       "healthy": false,
       "img": "assets/game_images/bread.png",
-      "comment": "Sugarbomb!"
+      "comment": "The highly processed flour and additives in white packaged bread can make it unhealthful. Consuming too much white bread can contribute to obesity, heart disease and diabetes."
     },
     {
       "id": 33,
       "name": "Soda",
       "healthy": false,
       "img": "assets/game_images/can.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Soda contains no essential nutrients! No vitamins, minerals or fibre, and regular soda is full of calories. Drinking sugary soft drinks has been linked to obesity, type 2 diabetes, weight gain, fatty liver disease and an increased risk of heart disease and cancer."
     },
     {
       "id": 34,
@@ -243,7 +243,7 @@
       "name": "Cookie",
       "healthy": false,
       "img": "assets/game_images/cookie.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Cookies isn't the best for you since it's packed with sugar. There's a risk of sugar highs, that will lead to a crash and just leaving you wanting more. It's a vicious cycle."
     },
     {
       "id": 36,
@@ -292,7 +292,7 @@
       "name": "Pie",
       "healthy": false,
       "img": "assets/game_images/pie.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Pies aren't a great part of your regular diet, an avarage meat pie contains a lot of saturated fat."
     },
     {
       "id": 43,
