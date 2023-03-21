@@ -292,7 +292,7 @@
       "name": "Pie",
       "healthy": false,
       "img": "assets/game_images/pie.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Pies aren't a great part of your regular diet, an avarage meat pie contains a lot of saturated fat."
     },
     {
       "id": 43,
