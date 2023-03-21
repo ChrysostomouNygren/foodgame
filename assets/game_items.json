@@ -180,7 +180,7 @@
       "name": "Cupcake",
       "healthy": false,
       "img": "assets/game_images/cupcake.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Cupcakes should be avoided since they are high in sugar and saturated fat, two nutrients that should be consumed in moderation."
     },
     {
       "id": 27,
