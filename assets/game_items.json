@@ -40,7 +40,7 @@
       "name": "Ice Cream",
       "healthy": false,
       "img": "assets/game_images/ice_cream.png",
-      "comment": "...for real, do I need to explain it?"
+      "comment": "Ice cream isn't healthy for you, since it usually contains very little nutrition, but a high percentage of sugar, fat and calories."
     },
     {
       "id": 7,
