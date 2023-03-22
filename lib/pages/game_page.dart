@@ -272,114 +272,100 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        const SizedBox(height: 150, width: 200),
-                        Image.asset(
-                          'assets/images/broken_plate.png',
-                          height: 120,
-                          fit: BoxFit.fill,
-                        )
-                      ],
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Image.asset(
+                      'assets/images/broken_plate.png',
+                      height: 120,
+                      fit: BoxFit.fill,
                     ),
                     const SizedBox(
                       height: 15,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Center(
-                          child: Column(
-                        children: [
-                          const Text(
-                            'Game over',
-                            style: TextStyle(
-                              fontSize: 30,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Text(
-                              'Would you like to try again or view your recipes?',
-                              style: TextStyle(fontSize: 16),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              TextButton(
-                                  style: TextButton.styleFrom(
-                                      foregroundColor: Colors.black,
-                                      textStyle: const TextStyle(
-                                        fontSize: 15,
-                                      )),
-                                  onPressed: () {
-                                    setState(() {
-                                      _gameItems.clear();
-                                      for (var btn in _sortingButtons) {
-                                        btn.items.clear();
-                                      }
-                                      errors = 5;
-                                      level = 1;
-                                    });
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return const Home();
-                                    }));
-                                    readJsonItems();
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        'assets/images/play_btn.png',
-                                        height: 50,
-                                        width: 50,
-                                      ),
-                                      const Text('Retry'),
-                                    ],
-                                  )),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              TextButton(
-                                  style: TextButton.styleFrom(
-                                      foregroundColor: Colors.black,
-                                      textStyle: const TextStyle(
-                                        fontSize: 15,
-                                      )),
-                                  onPressed: () {
-                                    setState(() {
-                                      _gameItems.clear();
-                                      for (var btn in _sortingButtons) {
-                                        btn.items.clear();
-                                      }
-                                      errors = 5;
-                                      level = 1;
-                                    });
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return const Recipes();
-                                    }));
-                                    readJsonItems();
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        'assets/images/recipes.png',
-                                        height: 50,
-                                        width: 50,
-                                      ),
-                                      const Text('Recipes'),
-                                    ],
-                                  )),
-                            ],
-                          )
-                        ],
-                      )),
+                    const Text(
+                      'Game over',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Text(
+                        'Would you like to try again or view your recipes?',
+                        style: TextStyle(fontSize: 20),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton(
+                            style: TextButton.styleFrom(
+                                foregroundColor: Colors.black,
+                                textStyle: const TextStyle(
+                                  fontSize: 15,
+                                )),
+                            onPressed: () {
+                              setState(() {
+                                _gameItems.clear();
+                                for (var btn in _sortingButtons) {
+                                  btn.items.clear();
+                                }
+                                errors = 5;
+                                level = 1;
+                              });
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return const Home();
+                              }));
+                              readJsonItems();
+                            },
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/images/play_btn.png',
+                                  height: 50,
+                                  width: 50,
+                                ),
+                                const Text('Retry'),
+                              ],
+                            )),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        TextButton(
+                            style: TextButton.styleFrom(
+                                foregroundColor: Colors.black,
+                                textStyle: const TextStyle(
+                                  fontSize: 15,
+                                )),
+                            onPressed: () {
+                              setState(() {
+                                _gameItems.clear();
+                                for (var btn in _sortingButtons) {
+                                  btn.items.clear();
+                                }
+                                errors = 5;
+                                level = 1;
+                              });
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return const Recipes();
+                              }));
+                              readJsonItems();
+                            },
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/images/recipes.png',
+                                  height: 50,
+                                  width: 50,
+                                ),
+                                const Text('Recipes'),
+                              ],
+                            )),
+                      ],
                     )
                   ]),
             )));
