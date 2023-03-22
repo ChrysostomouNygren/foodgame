@@ -82,13 +82,13 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         type.items.add(item);
         _gameItems.removeWhere((produce) => produce['id'] == item['id']);
         if (_gameItems.isEmpty) {
-          succesfulModal();
+          successfulModal();
         }
       } else if (!item['healthy'] && !type.healthy) {
         type.items.add(item);
         _gameItems.removeWhere((produce) => produce['id'] == item['id']);
         if (_gameItems.isEmpty) {
-          succesfulModal();
+          successfulModal();
         }
       } else if (!item['healthy'] && type.healthy) {
         errors--;
@@ -108,7 +108,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
     });
   }
 
-  Future<String?> succesfulModal() {
+  Future<String?> successfulModal() {
     return showDialog<String>(
       barrierDismissible: false,
       context: context,
