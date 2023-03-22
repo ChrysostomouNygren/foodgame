@@ -165,7 +165,10 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                       padding: EdgeInsets.all(10.0),
                       child: Text(
                         'Would you like to play the next level or view your recipes?',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black54,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     )
@@ -173,7 +176,10 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                       padding: EdgeInsets.all(10.0),
                       child: Text(
                         'You have finished all the levels! Get inspired to cook more healthy by looking at your recipes!',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black54,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -183,7 +189,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                   level < 10
                       ? TextButton(
                           style: TextButton.styleFrom(
-                              foregroundColor: Colors.black,
+                              foregroundColor: Colors.black54,
                               textStyle: const TextStyle(
                                 fontSize: 15,
                               )),
@@ -219,7 +225,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                       : const SizedBox.shrink(),
                   TextButton(
                     style: TextButton.styleFrom(
-                        foregroundColor: Colors.black,
+                        foregroundColor: Colors.black54,
                         textStyle: const TextStyle(
                           fontSize: 15,
                         )),
