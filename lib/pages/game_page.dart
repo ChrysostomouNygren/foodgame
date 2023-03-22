@@ -110,6 +110,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
 
   Future<String?> succesfullModal() {
     return showDialog<String>(
+      barrierDismissible: false,
       context: context,
       builder: (BuildContext context) => Dialog(
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
