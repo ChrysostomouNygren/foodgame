@@ -393,39 +393,37 @@ class _DragAndDropGameState extends State<DragAndDropGame>
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  const SizedBox(
-                    height: 150,
-                    width: 200,
-                  ),
-                  Image.asset(
-                    'assets/images/stop.png',
-                    height: 120,
-                    fit: BoxFit.fill,
-                  )
-                ],
+              const SizedBox(
+                height: 15,
               ),
-              const SizedBox(height: 15),
+              Image.asset(
+                'assets/images/stop.png',
+                height: 120,
+                fit: BoxFit.fill,
+              ),
+              const SizedBox(height: 35),
               const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Center(
-                  child: Text(
-                    "Are you sure you want to cancel the game?",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                padding: EdgeInsets.only(
+                  left: 10,
+                  right: 10,
+                ),
+                child: Text(
+                  "Are you sure you want to cancel the game?",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
                   ),
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
                     style: TextButton.styleFrom(
-                        foregroundColor: Colors.black,
+                        foregroundColor: Colors.black54,
                         textStyle: const TextStyle(
                           fontSize: 15,
                         )),
@@ -451,7 +449,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                   ),
                   TextButton(
                     style: TextButton.styleFrom(
-                        foregroundColor: Colors.black,
+                        foregroundColor: Colors.black54,
                         textStyle: const TextStyle(
                           fontSize: 15,
                         )),
