@@ -94,17 +94,13 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         errors--;
         if (errors == 0) {
           gameOverModal();
-          // failedModal(context, item['name'], item['comment'], errors);
-          // errors = 5;
         } else {
           failedModal(context, item['name'], item['comment'], errors);
         }
       } else if (item['healthy'] && !type.healthy) {
         errors--;
         if (errors == 0) {
-          // failedModal(context, item['name'], item['comment'], errors);
           gameOverModal();
-          // errors = 5;
         } else {
           failedModal(context, item['name'], item['comment'], errors);
         }
