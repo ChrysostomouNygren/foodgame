@@ -82,13 +82,13 @@ class _DragAndDropGameState extends State<DragAndDropGame>
         type.items.add(item);
         _gameItems.removeWhere((produce) => produce['id'] == item['id']);
         if (_gameItems.isEmpty) {
-          succesfulModal();
+          successfulModal();
         }
       } else if (!item['healthy'] && !type.healthy) {
         type.items.add(item);
         _gameItems.removeWhere((produce) => produce['id'] == item['id']);
         if (_gameItems.isEmpty) {
-          succesfulModal();
+          successfulModal();
         }
       } else if (!item['healthy'] && type.healthy) {
         errors--;
@@ -108,7 +108,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
     });
   }
 
-  Future<String?> succesfulModal() {
+  Future<String?> successfulModal() {
     return showDialog<String>(
       barrierDismissible: false,
       context: context,
@@ -187,13 +187,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   level < 10
-                      ? TextButton(
-                          style: TextButton.styleFrom(
-                              foregroundColor: Colors.black54,
-                              textStyle: const TextStyle(
-                                fontSize: 15,
-                              )),
-                          onPressed: () {
+                      ? GestureDetector(
+                          onTap: () {
                             Navigator.pop(context);
                             setState(() {
                               for (var btn in _sortingButtons) {
@@ -213,7 +208,11 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                               const SizedBox(
                                 height: 10,
                               ),
-                              Text('Play level ${level + 1}'),
+                              Text(
+                                'Play level ${level + 1}',
+                                style: const TextStyle(
+                                    color: Colors.black54, fontSize: 15),
+                              ),
                             ],
                           ),
                         )
@@ -223,13 +222,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                           width: 30,
                         )
                       : const SizedBox.shrink(),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                        foregroundColor: Colors.black54,
-                        textStyle: const TextStyle(
-                          fontSize: 15,
-                        )),
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
                         return const Recipes();
@@ -251,7 +245,11 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                         const SizedBox(
                           height: 10,
                         ),
-                        const Text('Recipes'),
+                        const Text('Recipes',
+                            style: TextStyle(
+                              color: Colors.black54,
+                              fontSize: 15,
+                            )),
                       ],
                     ),
                   ),
@@ -309,13 +307,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        TextButton(
-                            style: TextButton.styleFrom(
-                                foregroundColor: Colors.black54,
-                                textStyle: const TextStyle(
-                                  fontSize: 15,
-                                )),
-                            onPressed: () {
+                        GestureDetector(
+                            onTap: () {
                               setState(() {
                                 _gameItems.clear();
                                 for (var btn in _sortingButtons) {
@@ -337,19 +330,20 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                                   height: 50,
                                   width: 50,
                                 ),
-                                const Text('Retry'),
+                                const Text(
+                                  'Retry',
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ],
                             )),
                         const SizedBox(
                           width: 20,
                         ),
-                        TextButton(
-                            style: TextButton.styleFrom(
-                                foregroundColor: Colors.black54,
-                                textStyle: const TextStyle(
-                                  fontSize: 15,
-                                )),
-                            onPressed: () {
+                        GestureDetector(
+                            onTap: () {
                               setState(() {
                                 _gameItems.clear();
                                 for (var btn in _sortingButtons) {
@@ -371,7 +365,13 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                                   height: 50,
                                   width: 50,
                                 ),
-                                const Text('Recipes'),
+                                const Text(
+                                  'Recipes',
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ],
                             )),
                       ],
@@ -421,13 +421,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
-                    style: TextButton.styleFrom(
-                        foregroundColor: Colors.black54,
-                        textStyle: const TextStyle(
-                          fontSize: 15,
-                        )),
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       Navigator.pop(context);
                     },
                     child: Column(
@@ -440,20 +435,21 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                         const SizedBox(
                           height: 10,
                         ),
-                        const Text('Resume'),
+                        const Text(
+                          'Resume',
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 15,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                   const SizedBox(
                     width: 20,
                   ),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                        foregroundColor: Colors.black54,
-                        textStyle: const TextStyle(
-                          fontSize: 15,
-                        )),
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       setState(() {
                         _gameItems.clear();
                         for (var btn in _sortingButtons) {
@@ -476,7 +472,13 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                         const SizedBox(
                           height: 10,
                         ),
-                        const Text('Cancel'),
+                        const Text(
+                          'Cancel',
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 15,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -506,8 +508,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
   }
 
   Widget cancelBtn() {
-    return TextButton(
-        onPressed: () {
+    return GestureDetector(
+        onTap: () {
           cancelModal(context);
         },
         child: SizedBox(

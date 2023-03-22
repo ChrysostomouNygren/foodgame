@@ -8,8 +8,8 @@ class Back2StartBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
           return const Home();
         }));
