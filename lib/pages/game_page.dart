@@ -146,16 +146,25 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                       ),
                     ]),
               const SizedBox(height: 15),
-              const Text(
-                'Congratulations!',
-                style: TextStyle(fontSize: 30),
-              ),
+              level < 10
+                  ? Text(
+                      'Level $level finished!',
+                      style: const TextStyle(
+                        fontSize: 30,
+                      ),
+                    )
+                  : const Text(
+                      'Congratulations!',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
               level < 10
                   ? const Padding(
                       padding: EdgeInsets.all(10.0),
                       child: Text(
                         'Would you like to play the next level or view your recipes?',
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 20),
                         textAlign: TextAlign.center,
                       ),
                     )
