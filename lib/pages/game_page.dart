@@ -173,7 +173,7 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                       padding: EdgeInsets.all(10.0),
                       child: Text(
                         'You have finished all the levels! Get inspired to cook more healthy by looking at your recipes!',
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 20),
                         textAlign: TextAlign.center,
                       ),
                     ),
