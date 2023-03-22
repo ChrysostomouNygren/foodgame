@@ -506,8 +506,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
   }
 
   Widget cancelBtn() {
-    return TextButton(
-        onPressed: () {
+    return GestureDetector(
+        onTap: () {
           cancelModal(context);
         },
         child: SizedBox(
