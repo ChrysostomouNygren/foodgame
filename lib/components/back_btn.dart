@@ -5,8 +5,8 @@ class BackBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         Navigator.of(context).pop();
       },
       child: SizedBox(
