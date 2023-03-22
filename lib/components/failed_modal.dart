@@ -20,47 +20,56 @@ Future<String?> failedModal(context, name, comment, errors) {
               height: 120,
               fit: BoxFit.fill,
             ),
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Center(
-                child: Column(
-                  children: [
-                    errors == 1
-                        ? Text(
-                            'Only $errors try left!',
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          )
-                        : Text(
-                            '$errors tries left',
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
-                    Text(
-                      "$name",
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text('$comment',
+            const SizedBox(height: 10),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                errors == 1
+                    ? Text(
+                        'Only $errors try left!',
                         style: const TextStyle(
                           fontSize: 16,
-                        )),
-                  ],
+                        ),
+                      )
+                    : Text(
+                        '$errors tries left',
+                        style: const TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
+                Text(
+                  "$name",
+                  style: const TextStyle(
+                    fontSize: 30,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 10.0,
+                    right: 10.0,
+                  ),
+                  child: Text('$comment',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.black54,
+                      )),
+                ),
+              ],
             ),
             const SizedBox(
               height: 20,
             ),
             TextButton(
               style: TextButton.styleFrom(
-                  foregroundColor: Colors.black,
+                  foregroundColor: Colors.black54,
                   textStyle: const TextStyle(
                     fontSize: 15,
                   )),
@@ -75,9 +84,11 @@ Future<String?> failedModal(context, name, comment, errors) {
                     fit: BoxFit.fill,
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
-                  const Text('Try again'),
+                  const Text(
+                    'Try again',
+                  ),
                 ],
               ),
             ),
