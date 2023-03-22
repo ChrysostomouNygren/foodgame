@@ -187,13 +187,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   level < 10
-                      ? TextButton(
-                          style: TextButton.styleFrom(
-                              foregroundColor: Colors.black54,
-                              textStyle: const TextStyle(
-                                fontSize: 15,
-                              )),
-                          onPressed: () {
+                      ? GestureDetector(
+                          onTap: () {
                             Navigator.pop(context);
                             setState(() {
                               for (var btn in _sortingButtons) {
@@ -213,7 +208,11 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                               const SizedBox(
                                 height: 10,
                               ),
-                              Text('Play level ${level + 1}'),
+                              Text(
+                                'Play level ${level + 1}',
+                                style: const TextStyle(
+                                    color: Colors.black54, fontSize: 15),
+                              ),
                             ],
                           ),
                         )
@@ -223,13 +222,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                           width: 30,
                         )
                       : const SizedBox.shrink(),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                        foregroundColor: Colors.black54,
-                        textStyle: const TextStyle(
-                          fontSize: 15,
-                        )),
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
                         return const Recipes();
@@ -251,7 +245,11 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                         const SizedBox(
                           height: 10,
                         ),
-                        const Text('Recipes'),
+                        const Text('Recipes',
+                            style: TextStyle(
+                              color: Colors.black54,
+                              fontSize: 15,
+                            )),
                       ],
                     ),
                   ),
