@@ -14,19 +14,11 @@ Future<String?> failedModal(context, name, comment, errors) {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                const SizedBox(
-                  height: 150,
-                  width: 200,
-                ),
-                Image.asset(
-                  'assets/images/stop.png',
-                  height: 120,
-                  fit: BoxFit.fill,
-                )
-              ],
+            const SizedBox(height: 15),
+            Image.asset(
+              'assets/images/stop.png',
+              height: 120,
+              fit: BoxFit.fill,
             ),
             const SizedBox(height: 15),
             Padding(
