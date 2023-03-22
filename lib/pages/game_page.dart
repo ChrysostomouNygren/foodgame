@@ -309,13 +309,8 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        TextButton(
-                            style: TextButton.styleFrom(
-                                foregroundColor: Colors.black54,
-                                textStyle: const TextStyle(
-                                  fontSize: 15,
-                                )),
-                            onPressed: () {
+                        GestureDetector(
+                            onTap: () {
                               setState(() {
                                 _gameItems.clear();
                                 for (var btn in _sortingButtons) {
@@ -337,19 +332,20 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                                   height: 50,
                                   width: 50,
                                 ),
-                                const Text('Retry'),
+                                const Text(
+                                  'Retry',
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ],
                             )),
                         const SizedBox(
                           width: 20,
                         ),
-                        TextButton(
-                            style: TextButton.styleFrom(
-                                foregroundColor: Colors.black54,
-                                textStyle: const TextStyle(
-                                  fontSize: 15,
-                                )),
-                            onPressed: () {
+                        GestureDetector(
+                            onTap: () {
                               setState(() {
                                 _gameItems.clear();
                                 for (var btn in _sortingButtons) {
@@ -371,7 +367,13 @@ class _DragAndDropGameState extends State<DragAndDropGame>
                                   height: 50,
                                   width: 50,
                                 ),
-                                const Text('Recipes'),
+                                const Text(
+                                  'Recipes',
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ],
                             )),
                       ],
